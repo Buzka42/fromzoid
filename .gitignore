@@ -1,0 +1,7 @@
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.log
+.graphify_python
+.graphify_*.json
+.graphify_*.txt

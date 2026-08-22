@@ -1,0 +1,14 @@
+module FromZoid
+{
+	item Talisman
+	{
+		DisplayName = Talisman,
+		DisplayCategory = Household,
+		ItemType = base:normal,
+		Weight = 0.2,
+		Icon = FromTalisman,
+		WorldStaticModel = Necklace_YingYang_Ground,
+		Tooltip = Tooltip_FromZoid_Talisman,
+		Tags = fromzoidtalisman,
+	}
+}

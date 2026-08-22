@@ -1,0 +1,22 @@
+module FromZoid
+{
+	craftRecipe AssembleTalisman
+	{
+		timedAction = Making,
+		time = 80,
+		OnTest = FromZoid_Recipe.canCraftTalisman,
+		Tags = InHandCraft;CanBeDoneInDark,
+		category = Survivalist,
+		Tooltip = Tooltip_FromZoid_AssembleTalisman,
+		inputs
+		{
+			item 1 [Base.Stone2;Base.SharpedStone] flags[Prop2],
+			item 1 tags[base:feather],
+			item 1 [Base.Twine;Base.String;Base.Thread] flags[Prop1],
+		}
+		outputs
+		{
+			item 1 FromZoid.Talisman,
+		}
+	}
+}

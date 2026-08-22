@@ -1,0 +1,161 @@
+VERSION = 1,
+
+option FromZoid.EnableSunCycle
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableSunCycle,
+}
+
+option FromZoid.NestTeleport
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_NestTeleport,
+}
+
+option FromZoid.EnableNightStats
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableNightStats,
+}
+
+option FromZoid.NightSprinters
+{
+	type = boolean,
+	default = false,
+	page = FromZoid,
+	translation = FromZoid_NightSprinters,
+}
+
+option FromZoid.EnableWhispers
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableWhispers,
+}
+
+option FromZoid.WhisperChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 18,
+	page = FromZoid,
+	translation = FromZoid_WhisperChance,
+}
+
+option FromZoid.EnableDarkness
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableDarkness,
+}
+
+option FromZoid.DarknessDayChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 8,
+	page = FromZoid,
+	translation = FromZoid_DarknessDayChance,
+}
+
+option FromZoid.EnableTown
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableTown,
+}
+
+option FromZoid.WindowSmashChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 45,
+	page = FromZoid,
+	translation = FromZoid_WindowSmashChance,
+}
+
+option FromZoid.BarricadeChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 28,
+	page = FromZoid,
+	translation = FromZoid_BarricadeChance,
+}
+
+option FromZoid.EnableTalismans
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableTalismans,
+}
+
+option FromZoid.TalismanCraftable
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_TalismanCraftable,
+}
+
+option FromZoid.InvitationRequired
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_InvitationRequired,
+}
+
+option FromZoid.SneakWakeChance
+{
+	type = double,
+	min = 0.0,
+	max = 100.0,
+	default = 1.0,
+	page = FromZoid,
+	translation = FromZoid_SneakWakeChance,
+}
+
+option FromZoid.StepWakeChance
+{
+	type = double,
+	min = 0.0,
+	max = 100.0,
+	default = 12.0,
+	page = FromZoid,
+	translation = FromZoid_StepWakeChance,
+}
+
+option FromZoid.HitWakeChance
+{
+	type = double,
+	min = 0.0,
+	max = 100.0,
+	default = 75.0,
+	page = FromZoid,
+	translation = FromZoid_HitWakeChance,
+}
+
+option FromZoid.LureChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 80,
+	page = FromZoid,
+	translation = FromZoid_LureChance,
+}

@@ -1,0 +1,114 @@
+{
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_DarknessFx.lua": {
+    "mtime": 1787356541.2456353,
+    "hash": "7bea2b71892e2d3c45647ff2dbab786a"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_TalismanMenu.lua": {
+    "mtime": 1787356650.3992386,
+    "hash": "b94890b89cddf3867d41cf9c02851173"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_Whispers.lua": {
+    "mtime": 1787356534.275729,
+    "hash": "80d434b9b6dc6f22d043267b20c80505"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Darkness.lua": {
+    "mtime": 1787356551.3721175,
+    "hash": "94d3da7e484a5eee766d65a4aa2d3bef"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Loot.lua": {
+    "mtime": 1787356679.9237964,
+    "hash": "116b7b7bb11b7178daaafd07fe2c977e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_NightStats.lua": {
+    "mtime": 1787356609.8576977,
+    "hash": "2fc1f9d0f3ccc19d367c87328f7cb324"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Sun.lua": {
+    "mtime": 1787356697.7581835,
+    "hash": "152c925d7f928672ad724ecba867ea47"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Talisman.lua": {
+    "mtime": 1787356620.768377,
+    "hash": "e9b011605145d773bf03787c847aa489"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Town.lua": {
+    "mtime": 1787356582.5885875,
+    "hash": "acdefb9dcd9b038889e90173994330f1"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Core.lua": {
+    "mtime": 1787356581.2059891,
+    "hash": "4802031b7119f6e8b274cca381220f2c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Invite.lua": {
+    "mtime": 1787356599.3168757,
+    "hash": "882b45db9ed450c612232d7ce2a8b276"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Recipe.lua": {
+    "mtime": 1787356412.767316,
+    "hash": "41ebc215afb60828a5e70a1179942f30"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_TalismanUtil.lua": {
+    "mtime": 1787356513.3276525,
+    "hash": "ac480d9883816bdeeccd9e90901612a7"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\CREDITS.md": {
+    "mtime": 1787356355.314934,
+    "hash": "79543ce91af68a761502d45f265dc009"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\README.md": {
+    "mtime": 1787356632.0553832,
+    "hash": "41b4dd7f2b49f235d269261d3228393f"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\workshop.txt": {
+    "mtime": 1787356343.7544017,
+    "hash": "1be59e684bac760b3aead9db58492401"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sandbox-options.txt": {
+    "mtime": 1787356368.0129287,
+    "hash": "888fb7c25dcd524a9bfc7c62cdf670f1"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\ContextMenu_EN.txt": {
+    "mtime": 1787356374.3371294,
+    "hash": "9e7def97f71337e40d143d1207c69a05"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\IGUI_EN.txt": {
+    "mtime": 1787356372.9190426,
+    "hash": "6560414ff27ef6267d8dc04dc438e57c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\ItemName_EN.txt": {
+    "mtime": 1787356375.7912278,
+    "hash": "b5e55b51b0893ccadb4e4ec910a6684d"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\Recipes_EN.txt": {
+    "mtime": 1787356375.8513632,
+    "hash": "0d193942180742ffeed72789ce290ee5"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\Sandbox_EN.txt": {
+    "mtime": 1787356371.9135578,
+    "hash": "73ab2048dd9cea467297fc3b906e0850"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\Tooltip_EN.txt": {
+    "mtime": 1787356375.0217388,
+    "hash": "d5236097b14c90f69b0eb4a582e4f305"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\scripts\\fromzoid_items.txt": {
+    "mtime": 1787356649.926392,
+    "hash": "5703cc43f6fe5b89a48e99426096a7d4"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\scripts\\fromzoid_recipes.txt": {
+    "mtime": 1787356411.3907435,
+    "hash": "5f8a9b80d3b6eadd3c5107ca12a0d4ff"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\preview.png": {
+    "mtime": 1787356633.791463,
+    "hash": "f05806afc80abe01eb65f9ab7233c9f7"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\42\\poster.png": {
+    "mtime": 1787356633.667276,
+    "hash": "f05806afc80abe01eb65f9ab7233c9f7"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Item_FromTalisman.png": {
+    "mtime": 1787356633.795466,
+    "hash": "833a9559eb58007fdf37ccf393083240"
+  }
+}

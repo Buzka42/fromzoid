@@ -1,0 +1,4 @@
+ContextMenu_EN = {
+	ContextMenu_FromZoid_HangTalisman = "Hang Talisman",
+	ContextMenu_FromZoid_TakeTalisman = "Take Down Talisman",
+}

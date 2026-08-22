@@ -1,0 +1,6 @@
+version=1
+id=
+title=FromZoid
+description=Night people hide from the sun, whisper at sealed windows, and a hung talisman is the only thing that keeps them out unless you invite them in.
+tags=Build 42;Gameplay;Hardcore;Silly;Multiplayer
+visibility=unlisted

@@ -1,0 +1,10 @@
+IGUI_EN = {
+	IGUI_FromZoid_RadioWarn = "A weak radio voice: something is coming with the dark. Stay inside. Do not open the door.",
+	IGUI_FromZoid_RadioStart = "The broadcast dies in static. The town goes black.",
+	IGUI_FromZoid_RadioEnd = "The hiss on the radio fades. Morning might hold.",
+	IGUI_FromZoid_TalismanHung = "The talisman hangs. This house is sealed.",
+	IGUI_FromZoid_TalismanRemoved = "The talisman comes down. The house is just a house.",
+	IGUI_FromZoid_NeedBuilding = "You need to hang this inside a building.",
+	IGUI_FromZoid_AlreadySealed = "A talisman is already hanging in this building.",
+	IGUI_FromZoid_NeedTalisman = "You need a talisman in your inventory.",
+}
