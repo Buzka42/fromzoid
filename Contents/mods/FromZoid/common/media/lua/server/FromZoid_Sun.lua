@@ -3,6 +3,8 @@ if isClient() then
 end
 
 local NEST_MINUTES = {}
+local porchCache = {}
+local porchCacheMin = -1
 
 local function chance(percent)
 	if not percent or percent <= 0 then
@@ -14,24 +16,27 @@ local function chance(percent)
 	return ZombRand(10000) < (percent * 100)
 end
 
+local lastNight = nil
+
 local function outdoorSquareNear(zombie, dist)
 	dist = dist or 8
 	local x = math.floor(zombie:getX()) + ZombRand(dist * 2 + 1) - dist
 	local y = math.floor(zombie:getY()) + ZombRand(dist * 2 + 1) - dist
 	local sq = getCell():getGridSquare(x, y, 0)
-	if sq and not sq:getBuilding() and sq:isFree(false) then
+	if sq and not sq:getBuilding() and sq.isFree and sq:isFree(false) then
 		return sq
 	end
-	return getCell():getGridSquare(x, y, 0)
+	return nil
 end
 
 local function sendIndoors(zombie, teleport)
 	local sq = FromZoid.zombieSquare(zombie)
 	if sq and sq:getBuilding() then
-		if not FromZoid.isBuildingSealed(sq:getBuilding()) then
-			FromZoid.putZombieToSleep(zombie)
-			return true
+		if FromZoid.shouldKeepZombiesOut(sq:getBuilding()) then
+			return false
 		end
+		FromZoid.putZombieToSleep(zombie)
+		return true
 	end
 	local tile = FromZoid.pickNestSquare(zombie)
 	if not tile then
@@ -48,12 +53,35 @@ end
 
 local function lureOutside(zombie)
 	FromZoid.wakeZombieBody(zombie)
-	if chance(FromZoid.getSandbox("LureChance", 80)) then
-		local dest = outdoorSquareNear(zombie, 12)
-		if dest then
-			FromZoid.pathZombieToSquare(zombie, dest)
-		end
+	local dest = outdoorSquareNear(zombie, 12)
+	if dest then
+		FromZoid.pathZombieToSquare(zombie, dest)
 	end
+end
+
+function FromZoid.cachedPorchSquare(building, x, y)
+	if not building then
+		return nil
+	end
+	local id = FromZoid.buildingId(building) or "_"
+	local gt = getGameTime()
+	local minute = 0
+	if gt and gt.getWorldAgeHours then
+		minute = math.floor(gt:getWorldAgeHours() * 60)
+	end
+	if porchCacheMin ~= minute then
+		porchCache = {}
+		porchCacheMin = minute
+	end
+	if porchCache[id] ~= nil then
+		if porchCache[id] == false then
+			return nil
+		end
+		return porchCache[id]
+	end
+	local porch = FromZoid.nearestPorchSquare(building, x, y)
+	porchCache[id] = porch or false
+	return porch
 end
 
 local function processSunCycle()
@@ -61,7 +89,15 @@ local function processSunCycle()
 		return
 	end
 	local night = FromZoid.isNight()
+	if FromZoid.isEnabled("EnableDarkness") then
+		local state = FromZoid.getState()
+		if state.darknessActive then
+			night = true
+		end
+	end
 	local nest = FromZoid.isEnabled("NestTeleport")
+	local duskNow = lastNight == false and night == true
+	lastNight = night
 	FromZoid.eachLoadedZombie(function(zombie)
 		local id
 		if zombie.getOnlineID and zombie:getOnlineID() then
@@ -71,16 +107,28 @@ local function processSunCycle()
 		end
 		if night then
 			NEST_MINUTES[id] = nil
-			if zombie:isUseless() then
+			FromZoid.wakeZombieBody(zombie)
+			if duskNow and chance(FromZoid.getSandbox("LureChance", 80)) then
 				lureOutside(zombie)
-			else
-				FromZoid.wakeZombieBody(zombie)
 			end
 			return
 		end
 		local sq = FromZoid.zombieSquare(zombie)
 		local building = sq and sq:getBuilding() or nil
-		if building and not FromZoid.isBuildingSealed(building) then
+		if building and FromZoid.shouldKeepZombiesOut(building) then
+			FromZoid.wakeZombieBody(zombie)
+			if FromZoid.isZombieOffscreen(zombie) then
+				local dest = outdoorSquareNear(zombie, 16)
+				if dest then
+					FromZoid.teleportZombieToSquare(zombie, dest)
+				end
+			else
+				lureOutside(zombie)
+			end
+			NEST_MINUTES[id] = nil
+			return
+		end
+		if building then
 			FromZoid.putZombieToSleep(zombie)
 			NEST_MINUTES[id] = nil
 			return
@@ -108,26 +156,40 @@ local function wakeZombie(zombie, wakeBuilding)
 		return
 	end
 	FromZoid.wakeZombieBody(zombie)
-	if wakeBuilding and chance(8) then
-		local sq = FromZoid.zombieSquare(zombie)
-		local building = sq and sq:getBuilding()
-		if building and building.getRooms then
-			local rooms = building:getRooms()
-			if rooms then
-				for r = 0, rooms:size() - 1 do
-					local room = rooms:get(r)
-					local squares = room and room.getSquares and room:getSquares()
-					if squares then
-						for s = 0, squares:size() - 1 do
-							local tile = squares:get(s)
-							local movers = tile and tile:getMovingObjects()
-							if movers then
-								for m = 0, movers:size() - 1 do
-									local other = movers:get(m)
-									if instanceof(other, "IsoZombie") and other:isUseless() then
-										FromZoid.wakeZombieBody(other)
-									end
-								end
+	if not wakeBuilding or not chance(8) then
+		return
+	end
+	local sq = FromZoid.zombieSquare(zombie)
+	local building = sq and sq:getBuilding()
+	if not building or not building.getRooms then
+		return
+	end
+	local rooms = building:getRooms()
+	if not rooms then
+		return
+	end
+	local woken = 0
+	for r = 0, rooms:size() - 1 do
+		if woken >= 8 then
+			return
+		end
+		local room = rooms:get(r)
+		local squares = room and room.getSquares and room:getSquares()
+		if squares then
+			for s = 0, squares:size() - 1 do
+				if woken >= 8 then
+					return
+				end
+				local tile = squares:get(s)
+				local movers = tile and tile:getMovingObjects()
+				if movers then
+					for m = 0, movers:size() - 1 do
+						local other = movers:get(m)
+						if instanceof(other, "IsoZombie") and other:isUseless() then
+							FromZoid.wakeZombieBody(other)
+							woken = woken + 1
+							if woken >= 8 then
+								return
 							end
 						end
 					end
@@ -137,29 +199,36 @@ local function wakeZombie(zombie, wakeBuilding)
 	end
 end
 
-local function onZombieUpdate(zombie)
+function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
+	if not sliced then
+		return
+	end
 	if not FromZoid.isEnabled("EnableSunCycle") then
 		return
 	end
-	if not zombie or not instanceof(zombie, "IsoZombie") or not zombie:isAlive() then
+	if not zombie or not zombie:isAlive() then
 		return
 	end
-	if FromZoid.isNight() then
+	if ctx.night then
 		return
 	end
 	if not zombie:isUseless() then
 		return
 	end
-	local players = FromZoid.playerList()
-	for i = 1, #players do
-		local player = players[i]
-		local dist = zombie:DistTo(player)
-		if dist < 1.4 and chance(FromZoid.getSandbox("HitWakeChance", 75)) then
+	local infos = ctx.infos
+	if not infos then
+		return
+	end
+	for i = 1, #infos do
+		local info = infos[i]
+		local d2 = FromZoid.dist2ToPlayer(zombie, info.player)
+		if d2 > 36 then
+			-- too far to wake
+		elseif d2 < 2 and chance(FromZoid.getSandbox("HitWakeChance", 75)) then
 			wakeZombie(zombie, true)
 			return
-		end
-		if dist < 6 then
-			local sneak = player:isSneaking()
+		else
+			local sneak = info.player:isSneaking()
 			local pct = sneak and FromZoid.getSandbox("SneakWakeChance", 1) or FromZoid.getSandbox("StepWakeChance", 12)
 			if chance(pct / 30) then
 				wakeZombie(zombie, sneak == false)
@@ -185,5 +254,9 @@ local function onHit(attacker, target, weapon, damage)
 end
 
 Events.EveryOneMinute.Add(processSunCycle)
-Events.OnZombieUpdate.Add(onZombieUpdate)
+Events.OnGameStart.Add(function()
+	lastNight = nil
+	porchCache = {}
+	porchCacheMin = -1
+end)
 Events.OnWeaponHitCharacter.Add(onHit)

@@ -1,4 +1,14 @@
-local OUTFITS = { "Generic01", "Student", "Young", "HonorStudent" }
+local OUTFITS = {
+	"Generic01",
+	"Generic02",
+	"Generic03",
+	"Student",
+	"Young",
+	"DressLong",
+	"OfficeWorker",
+	"Classy",
+	"HonorStudent",
+}
 
 local MALE_VOICES = { "Vlad", "Miles", "Knox" }
 local FEMALE_VOICES = { "Roxie", "Annie", "Zelda" }
@@ -22,47 +32,70 @@ local function assignVoice(zombie)
 	md.fromzoidVoice = pool[ZombRand(#pool) + 1]
 end
 
-local function cleanVisuals(zombie)
-	pcall(function()
-		local hv = zombie:getHumanVisual()
-		if hv then
-			if hv.removeBlood then
-				hv:removeBlood()
-			end
-			if hv.removeDirt then
-				hv:removeDirt()
-			end
-			if hv.setBlood then
-				hv:setBlood(0)
-			end
-			if hv.setDirt then
-				hv:setDirt(0)
-			end
+local function wornCount(zombie)
+	if not zombie.getWornItems then
+		return 0
+	end
+	local worn = zombie:getWornItems()
+	if not worn or not worn.size then
+		return 0
+	end
+	return worn:size()
+end
+
+local function wornItem(worn, i)
+	if worn.getItemByIndex then
+		return worn:getItemByIndex(i)
+	end
+	local slot = worn:get(i)
+	if slot and slot.getItem then
+		return slot:getItem()
+	end
+	return slot
+end
+
+local function wipeBlood(zombie)
+	local hv = zombie.getHumanVisual and zombie:getHumanVisual() or nil
+	if hv then
+		if hv.removeBlood then
+			hv:removeBlood()
 		end
-	end)
-	pcall(function()
-		local visuals = zombie:getItemVisuals()
-		if visuals then
-			for i = 0, visuals:size() - 1 do
-				local vis = visuals:get(i)
-				if vis then
-					if vis.setBlood then
-						vis:setBlood(0)
-					end
-					if vis.setDirt then
-						vis:setDirt(0)
-					end
-					if vis.removeBlood then
-						vis:removeBlood()
-					end
+		if BloodBodyPartType and BloodBodyPartType.MAX then
+			for i = 0, BloodBodyPartType.MAX:index() - 1 do
+				local part = BloodBodyPartType.FromIndex(i)
+				if hv.setBlood then
+					hv:setBlood(part, 0)
+				end
+				if hv.setDirt then
+					hv:setDirt(part, 0)
 				end
 			end
 		end
-	end)
+	end
+	local worn = zombie.getWornItems and zombie:getWornItems() or nil
+	if worn then
+		for i = 0, worn:size() - 1 do
+			local item = wornItem(worn, i)
+			if item and instanceof(item, "Clothing") and item.getBloodClothingType and BloodClothingType then
+				local covered = BloodClothingType.getCoveredParts(item:getBloodClothingType())
+				if covered then
+					for j = 0, covered:size() - 1 do
+						local part = covered:get(j)
+						if item.setBlood then
+							item:setBlood(part, 0)
+						end
+						if item.setDirt then
+							item:setDirt(part, 0)
+						end
+					end
+				end
+			elseif item and item.setBloodLevel then
+				item:setBloodLevel(0)
+			end
+		end
+	end
 	if zombie.resetModelNextFrame then
-		pcall(function()
-			zombie:resetModelNextFrame()
-		end)
+		zombie:resetModelNextFrame()
 	end
 end
 
@@ -70,22 +103,18 @@ local function dressLikePerson(zombie)
 	if not zombie or not instanceof(zombie, "IsoZombie") then
 		return
 	end
-	pcall(function()
+	if zombie.dressInNamedOutfit then
 		zombie:dressInNamedOutfit(pickOutfit())
-	end)
-	cleanVisuals(zombie)
-	if zombie.setReanimatedPlayer then
-		pcall(function()
-			zombie:setReanimatedPlayer(true)
-		end)
 	end
+	if wornCount(zombie) < 2 and zombie.dressInRandomOutfit then
+		zombie:dressInRandomOutfit()
+	end
+	wipeBlood(zombie)
 	if zombie.setCrawler then
 		zombie:setCrawler(false)
 	end
 	if zombie.setCanWalk then
-		pcall(function()
-			zombie:setCanWalk(true)
-		end)
+		zombie:setCanWalk(true)
 	end
 	assignVoice(zombie)
 end

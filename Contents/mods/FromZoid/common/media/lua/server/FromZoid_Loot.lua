@@ -25,6 +25,6 @@ end
 
 Events.OnPreDistributionMerge.Add(function()
 	for i = 1, #LOOT_TABLES do
-		add(LOOT_TABLES[i], "FromZoid.Talisman", 0.08)
+		add(LOOT_TABLES[i], "FromZoid.Talisman", 0.35)
 	end
 end)

@@ -83,6 +83,40 @@ function FromZoidTakeTalismanAction:new(character, square)
 	return o
 end
 
+FromZoidRefreshTalismanAction = ISBaseTimedAction:derive("FromZoidRefreshTalismanAction")
+
+function FromZoidRefreshTalismanAction:isValid()
+	return self.square ~= nil and self.character ~= nil and FromZoid.findRefreshHerb(self.character:getInventory()) ~= nil
+end
+
+function FromZoidRefreshTalismanAction:waitToStart()
+	self.character:faceLocation(self.square:getX(), self.square:getY())
+	return self.character:shouldBeTurning()
+end
+
+function FromZoidRefreshTalismanAction:start()
+	self:setActionAnim("Loot")
+end
+
+function FromZoidRefreshTalismanAction:stop()
+	ISBaseTimedAction.stop(self)
+end
+
+function FromZoidRefreshTalismanAction:perform()
+	FromZoid.refreshTalismanOnSquare(self.character, self.square)
+	HaloTextHelper.addGoodText(self.character, getText("IGUI_FromZoid_TalismanRefreshed"))
+	ISBaseTimedAction.perform(self)
+end
+
+function FromZoidRefreshTalismanAction:new(character, square)
+	local o = ISBaseTimedAction.new(self, character)
+	o.square = square
+	o.maxTime = 40
+	o.stopOnWalk = true
+	o.stopOnRun = true
+	return o
+end
+
 local function squareHasHungTalisman(square)
 	if not square then
 		return false
@@ -103,6 +137,34 @@ local function squareHasHungTalisman(square)
 		end
 	end
 	return false
+end
+
+local function squareTalismanWilted(square)
+	if not square then
+		return false
+	end
+	local worldObjects = square:getWorldObjects()
+	if not worldObjects then
+		return false
+	end
+	for i = 0, worldObjects:size() - 1 do
+		local wo = worldObjects:get(i)
+		local item = wo.getItem and wo:getItem() or nil
+		local md = item and item.getModData and item:getModData() or nil
+		if md and md.fromzoid_wilted then
+			return true
+		end
+	end
+	local building = square:getBuilding()
+	if not building then
+		local door = FromZoid.getDoorOnSquare(square)
+		if door then
+			building = FromZoid.buildingFromDoor(door)
+		end
+	end
+	local id = FromZoid.buildingId(building)
+	local entry = id and FromZoid.getTalismanData()[id] or nil
+	return type(entry) == "table" and entry.wilted == true
 end
 
 local function doorFromContext(worldobjects)
@@ -137,10 +199,23 @@ local function onFillWorld(playerIndex, context, worldobjects, test)
 	if not square then
 		return
 	end
-	if squareHasHungTalisman(square) then
-		context:addOption(getText("ContextMenu_FromZoid_TakeTalisman"), square, function(sq)
+	local hangSq = FromZoid.doorHangSquare(door) or square
+	if squareHasHungTalisman(hangSq) or squareHasHungTalisman(square) then
+		context:addOption(getText("ContextMenu_FromZoid_TakeTalisman"), hangSq, function(sq)
 			ISTimedActionQueue.add(FromZoidTakeTalismanAction:new(player, sq))
 		end)
+		if FromZoid.isEnabled("EnableWornCharms") then
+			local herb = FromZoid.findRefreshHerb(player:getInventory())
+			local opt = context:addOption(getText("ContextMenu_FromZoid_RefreshTalisman"), hangSq, function(sq)
+				ISTimedActionQueue.add(FromZoidRefreshTalismanAction:new(player, sq))
+			end)
+			if not herb then
+				opt.notAvailable = true
+				local tooltip = ISWorldObjectContextMenu.addToolTip()
+				tooltip.description = getText("IGUI_FromZoid_NeedHerb")
+				opt.toolTip = tooltip
+			end
+		end
 		return
 	end
 	if not FromZoid.findTalismanInInventory(player:getInventory()) then

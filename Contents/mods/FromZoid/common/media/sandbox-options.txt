@@ -183,3 +183,225 @@ option FromZoid.TalismanDebug
 	page = FromZoid,
 	translation = FromZoid_TalismanDebug,
 }
+
+option FromZoid.EnableWornCharms
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableWornCharms,
+}
+
+option FromZoid.TalismanNights
+{
+	type = integer,
+	min = 1,
+	max = 30,
+	default = 7,
+	page = FromZoid,
+	translation = FromZoid_TalismanNights,
+}
+
+option FromZoid.CalmUntilProvoked
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_CalmUntilProvoked,
+}
+
+option FromZoid.GunshotWakesStreet
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_GunshotWakesStreet,
+}
+
+option FromZoid.EnableGatheringNights
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableGatheringNights,
+}
+
+option FromZoid.GatheringIntervalNights
+{
+	type = integer,
+	min = 1,
+	max = 30,
+	default = 7,
+	page = FromZoid,
+	translation = FromZoid_GatheringIntervalNights,
+}
+
+option FromZoid.GatheringMax
+{
+	type = integer,
+	min = 1,
+	max = 40,
+	default = 12,
+	page = FromZoid,
+	translation = FromZoid_GatheringMax,
+}
+
+option FromZoid.EnableWoodsDread
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableWoodsDread,
+}
+
+option FromZoid.WoodsDistance
+{
+	type = integer,
+	min = 20,
+	max = 200,
+	default = 80,
+	page = FromZoid,
+	translation = FromZoid_WoodsDistance,
+}
+
+option FromZoid.EnableSanity
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableSanity,
+}
+
+option FromZoid.SanitySleepDrain
+{
+	type = double,
+	min = 0.0,
+	max = 5.0,
+	default = 1.0,
+	page = FromZoid,
+	translation = FromZoid_SanitySleepDrain,
+}
+
+option FromZoid.SanityCrowdDrain
+{
+	type = double,
+	min = 0.0,
+	max = 5.0,
+	default = 1.0,
+	page = FromZoid,
+	translation = FromZoid_SanityCrowdDrain,
+}
+
+option FromZoid.WhispersBreakSleep
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_WhispersBreakSleep,
+}
+
+option FromZoid.EnableDelusions
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableDelusions,
+}
+
+option FromZoid.EnablePsychosis
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnablePsychosis,
+}
+
+option FromZoid.TheyKnowYourName
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_TheyKnowYourName,
+}
+
+option FromZoid.EnableArmedHouses
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableArmedHouses,
+}
+
+option FromZoid.HandgunHouseChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 50,
+	page = FromZoid,
+	translation = FromZoid_HandgunHouseChance,
+}
+
+option FromZoid.LongGunHouseChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 33,
+	page = FromZoid,
+	translation = FromZoid_LongGunHouseChance,
+}
+
+option FromZoid.GunAmmoReloads
+{
+	type = integer,
+	min = 1,
+	max = 10,
+	default = 3,
+	page = FromZoid,
+	translation = FromZoid_GunAmmoReloads,
+}
+
+option FromZoid.EnableLodgedWeapons
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_EnableLodgedWeapons,
+}
+
+option FromZoid.LodgedWeaponChance
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 4,
+	page = FromZoid,
+	translation = FromZoid_LodgedWeaponChance,
+}
+
+option FromZoid.LodgedKatanaWeight
+{
+	type = integer,
+	min = 0,
+	max = 100,
+	default = 40,
+	page = FromZoid,
+	translation = FromZoid_LodgedKatanaWeight,
+}
+
+option FromZoid.PreferBasementNests
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_PreferBasementNests,
+}
+
+option FromZoid.NestEveryOtherHouse
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_NestEveryOtherHouse,
+}

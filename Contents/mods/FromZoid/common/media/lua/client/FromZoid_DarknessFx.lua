@@ -1,41 +1,153 @@
-local function applyFx(active)
+local fxSnap = nil
+local lastPhase = nil
+
+local function weatherFx()
+	local cell = getCell()
+	if cell and cell.getWeatherFX then
+		return cell:getWeatherFX()
+	end
+	return nil
+end
+
+local function readFx()
+	local clim = getClimateManager()
+	local snap = {}
+	if clim then
+		if clim.getViewDistance then
+			snap.viewDistance = clim:getViewDistance()
+		end
+		if clim.getNightStrength then
+			snap.nightStrength = clim:getNightStrength()
+		end
+		if clim.getDayLightStrength then
+			snap.dayLightStrength = clim:getDayLightStrength()
+		end
+		if clim.getDesaturation then
+			snap.desaturation = clim:getDesaturation()
+		end
+		if clim.getAmbient then
+			snap.ambient = clim:getAmbient()
+		end
+	end
+	local fx = weatherFx()
+	if fx and fx.getFogIntensity then
+		snap.fog = fx:getFogIntensity()
+	end
+	return snap
+end
+
+local function applySnap(snap)
+	if not snap then
+		return
+	end
+	local clim = getClimateManager()
+	if clim then
+		if snap.viewDistance ~= nil and clim.setViewDistance then
+			clim:setViewDistance(snap.viewDistance)
+		end
+		if snap.nightStrength ~= nil and clim.setNightStrength then
+			clim:setNightStrength(snap.nightStrength)
+		end
+		if snap.dayLightStrength ~= nil and clim.setDayLightStrength then
+			clim:setDayLightStrength(snap.dayLightStrength)
+		end
+		if snap.desaturation ~= nil and clim.setDesaturation then
+			clim:setDesaturation(snap.desaturation)
+		end
+		if snap.ambient ~= nil and clim.setAmbient then
+			clim:setAmbient(snap.ambient)
+		end
+	end
+	local fx = weatherFx()
+	if fx and snap.fog ~= nil and fx.setFogIntensity then
+		fx:setFogIntensity(snap.fog)
+	end
+end
+
+local function mixWanted()
+	local player = getPlayer()
+	local wanted = nil
+	local function take(view, fog, night, day, desat, ambient)
+		if not wanted then
+			wanted = {
+				view = view,
+				fog = fog,
+				night = night,
+				day = day,
+				desat = desat,
+				ambient = ambient,
+			}
+			return
+		end
+		if view and (not wanted.view or view < wanted.view) then
+			wanted.view = view
+		end
+		if fog and (not wanted.fog or fog > wanted.fog) then
+			wanted.fog = fog
+		end
+		if night and (not wanted.night or night > wanted.night) then
+			wanted.night = night
+		end
+		if day and (not wanted.day or day < wanted.day) then
+			wanted.day = day
+		end
+		if desat and (not wanted.desat or desat > wanted.desat) then
+			wanted.desat = desat
+		end
+		if ambient and (not wanted.ambient or ambient < wanted.ambient) then
+			wanted.ambient = ambient
+		end
+	end
+	local state = FromZoid.getState()
+	if FromZoid.isEnabled("EnableDarkness") and state and state.darknessActive then
+		take(8, 0.85, 0.92, 0.08, 0.45, 0.12)
+	end
+	if player and FromZoid.inTheWoods and FromZoid.inTheWoods(player) then
+		take(12, 0.72, 0.88, 0.12, 0.35, 0.16)
+	end
+	if player and FromZoid.isEnabled("EnableSanity") then
+		local level = FromZoid.sanityLevel(player)
+		if level == "delusion" and FromZoid.isEnabled("EnableDelusions") then
+			take(16, 0.25, nil, nil, 0.18, nil)
+		elseif level == "psychosis" and FromZoid.isEnabled("EnablePsychosis") then
+			take(6, 0.9, 0.94, 0.06, 0.5, 0.1)
+		end
+	end
+	return wanted
+end
+
+local function applyWanted(wanted)
 	local clim = getClimateManager()
 	if not clim then
 		return
 	end
-	if active then
-		if clim.setViewDistance then
-			clim:setViewDistance(8)
+	if wanted then
+		if not fxSnap then
+			fxSnap = readFx()
 		end
-		if clim.setNightStrength then
-			clim:setNightStrength(0.92)
+		if wanted.view and clim.setViewDistance then
+			clim:setViewDistance(wanted.view)
 		end
-		if clim.setDayLightStrength then
-			clim:setDayLightStrength(0.08)
+		if wanted.night and clim.setNightStrength then
+			clim:setNightStrength(wanted.night)
 		end
-		if clim.setDesaturation then
-			clim:setDesaturation(0.45)
+		if wanted.day and clim.setDayLightStrength then
+			clim:setDayLightStrength(wanted.day)
 		end
-		if clim.setAmbient then
-			clim:setAmbient(0.12)
+		if wanted.desat and clim.setDesaturation then
+			clim:setDesaturation(wanted.desat)
 		end
-		local cell = getCell()
-		if cell and cell.getWeatherFX then
-			local fx = cell:getWeatherFX()
-			if fx and fx.setFogIntensity then
-				fx:setFogIntensity(0.85)
-			end
+		if wanted.ambient and clim.setAmbient then
+			clim:setAmbient(wanted.ambient)
+		end
+		local fx = weatherFx()
+		if fx and wanted.fog and fx.setFogIntensity then
+			fx:setFogIntensity(wanted.fog)
 		end
 	else
-		if clim.setDesaturation then
-			clim:setDesaturation(0)
-		end
-		local cell = getCell()
-		if cell and cell.getWeatherFX then
-			local fx = cell:getWeatherFX()
-			if fx and fx.setFogIntensity then
-				fx:setFogIntensity(0)
-			end
+		if fxSnap then
+			applySnap(fxSnap)
+			fxSnap = nil
 		end
 	end
 end
@@ -50,9 +162,8 @@ local function radioLine(player, text)
 	end
 end
 
-local lastPhase = nil
-
 local function tickDarknessClient()
+	applyWanted(mixWanted())
 	if not FromZoid.isEnabled("EnableDarkness") then
 		return
 	end
@@ -63,7 +174,6 @@ local function tickDarknessClient()
 	elseif state.darknessWarn then
 		phase = "warn"
 	end
-	applyFx(phase == "active")
 	if phase == lastPhase then
 		return
 	end
@@ -83,5 +193,6 @@ end
 Events.EveryOneMinute.Add(tickDarknessClient)
 Events.OnGameStart.Add(function()
 	lastPhase = nil
+	fxSnap = nil
 	tickDarknessClient()
 end)

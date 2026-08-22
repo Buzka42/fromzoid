@@ -1,67 +1,95 @@
 {
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_DarknessFx.lua": {
-    "mtime": 1787356541.2456353,
-    "hash": "7bea2b71892e2d3c45647ff2dbab786a"
+    "mtime": 1787432505.7859764,
+    "hash": "fde0af792147c6c09f6abdb9e9f2e6da"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_SanityFx.lua": {
+    "mtime": 1787433920.622746,
+    "hash": "c8c83a3b84e2c96e0009ee5964edc056"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_TalismanMenu.lua": {
-    "mtime": 1787387617.8191373,
-    "hash": "a3586cb22449b4270fc60eeec9166b79"
+    "mtime": 1787432581.1287754,
+    "hash": "eb9f830e7ca954e2c614d5ba308639bb"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_Whispers.lua": {
-    "mtime": 1787404806.668439,
-    "hash": "756197eaf0ca1690ac7b2811788534df"
+    "mtime": 1787432545.9594398,
+    "hash": "8a2ce74210835324b87b4d07e21c305c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_ArmedHouses.lua": {
+    "mtime": 1787434568.643591,
+    "hash": "cfc4e1c6497fe4c0dfda76efdfde6b7a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Darkness.lua": {
-    "mtime": 1787356551.3721175,
-    "hash": "94d3da7e484a5eee766d65a4aa2d3bef"
+    "mtime": 1787423629.4051812,
+    "hash": "4e2b2ab109ccc83c582fa10751874138"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Gather.lua": {
+    "mtime": 1787432439.875057,
+    "hash": "123099d304d7ab27f657023aa33ac958"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_LodgedWeapons.lua": {
+    "mtime": 1787433409.8928251,
+    "hash": "c99d973c8adb44eea1347ac6cf988e03"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Loot.lua": {
-    "mtime": 1787356679.9237964,
-    "hash": "116b7b7bb11b7178daaafd07fe2c977e"
+    "mtime": 1787423632.758436,
+    "hash": "729e296a72ef3883f4103da6949575c0"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_NightStats.lua": {
-    "mtime": 1787387653.7753417,
-    "hash": "879a35de1390790222bd97c9d7cc8328"
+    "mtime": 1787434568.730593,
+    "hash": "a93633d0dc8f3b3d9cd93ded01ae6e01"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_People.lua": {
-    "mtime": 1787404807.1039515,
-    "hash": "21853650b71b2d61f37ccd87a281089f"
+    "mtime": 1787432365.645153,
+    "hash": "0d8cbd7b3b26f333f42e0972677b8b9a"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_SanityTick.lua": {
+    "mtime": 1787432426.894014,
+    "hash": "c1f3d0a5f242d3397560af2ef40059b6"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_SpawnTalisman.lua": {
-    "mtime": 1787387670.5084755,
-    "hash": "4550b541b69a0fc6f8ae1757b20aba7e"
+    "mtime": 1787432383.7248092,
+    "hash": "18219e9d24f32da8360c0b8fa977701c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Sun.lua": {
-    "mtime": 1787387643.475294,
-    "hash": "2dd9a6e34f24bc7df537c83abc33f444"
+    "mtime": 1787432360.0928109,
+    "hash": "ab2be01d51f585fba4d6fcc048f63e13"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Talisman.lua": {
-    "mtime": 1787387617.8201368,
-    "hash": "724a42cb59e46c61d855139bf2a810d6"
+    "mtime": 1787432317.494905,
+    "hash": "02dac450319d98d88cdaa78bca9ea8d5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Town.lua": {
-    "mtime": 1787387661.0927665,
-    "hash": "207a2d869d6d5373a03c9ae8fae37aeb"
+    "mtime": 1787432370.23015,
+    "hash": "95e11a063be26fc3b0d5876447beabd2"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_UltraStrong.lua": {
-    "mtime": 1787387803.210074,
-    "hash": "4d89ad136877f3a0d291754d3fea4484"
+    "mtime": 1787432368.1181512,
+    "hash": "acc9fd7e24ce27bed1d6dbd7213a2c32"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_ZombieTick.lua": {
+    "mtime": 1787432363.5211604,
+    "hash": "41ee700f9a3e3bf0a4411ef9ff8b8b5c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Core.lua": {
-    "mtime": 1787387821.1921954,
-    "hash": "85a4203e99330cc8932ddecd6486bac4"
+    "mtime": 1787434486.6818204,
+    "hash": "1a3cc49419640738f68f096a67948891"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Invite.lua": {
-    "mtime": 1787356599.3168757,
-    "hash": "882b45db9ed450c612232d7ce2a8b276"
+    "mtime": 1787415723.549642,
+    "hash": "d5521b7b0c7f7d0ff5abe6c84fa058ce"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Recipe.lua": {
     "mtime": 1787356412.767316,
     "hash": "41ebc215afb60828a5e70a1179942f30"
   },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Sanity.lua": {
+    "mtime": 1787432418.9732435,
+    "hash": "2508c0b4d20b08acb5a28ba13a1c2fdb"
+  },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_TalismanUtil.lua": {
-    "mtime": 1787387803.7000751,
-    "hash": "78925eeb3c4d216849e86ec8f49210dd"
+    "mtime": 1787432306.020868,
+    "hash": "6f2d267dd3186c8c8159e2a77db9fe35"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_VoiceData.lua": {
     "mtime": 1787387755.3688104,
@@ -84,16 +112,16 @@
     "hash": "1be59e684bac760b3aead9db58492401"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sandbox-options.txt": {
-    "mtime": 1787387776.5090995,
-    "hash": "174f9a91823d36c39a2e65f5887e45f7"
+    "mtime": 1787432619.3899014,
+    "hash": "0ef75f17b0007816cd46cf7db63df0ac"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\ContextMenu_EN.txt": {
-    "mtime": 1787356374.3371294,
-    "hash": "9e7def97f71337e40d143d1207c69a05"
+    "mtime": 1787432629.0252771,
+    "hash": "d36fcd0dbdc4a6f3c7dce459ca0e2242"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\IGUI_EN.txt": {
-    "mtime": 1787405277.2468724,
-    "hash": "0b65ff9f079e90713f170ca44487519c"
+    "mtime": 1787433879.0045536,
+    "hash": "a59455da93a9adc5535f507ca5502250"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\ItemName_EN.txt": {
     "mtime": 1787356375.7912278,
@@ -104,24 +132,28 @@
     "hash": "0d193942180742ffeed72789ce290ee5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\Sandbox_EN.txt": {
-    "mtime": 1787387777.4089482,
-    "hash": "8f09915b064219087d717f59b1342ff3"
+    "mtime": 1787434568.6745906,
+    "hash": "7f92cbd9a095a732cbcc0287b5a8e970"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\Translate\\EN\\Tooltip_EN.txt": {
-    "mtime": 1787387834.0337112,
-    "hash": "63c57937be500d53ae9fc1f362055a05"
+    "mtime": 1787432629.6992748,
+    "hash": "a9a093469623c3f3eee45771cf153970"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\scripts\\fromzoid_items.txt": {
-    "mtime": 1787387758.6779916,
-    "hash": "1fe7d3630d8681d751f3762ce74944a1"
+    "mtime": 1787423716.6813636,
+    "hash": "3899a9dbc293202ecccbc68889e1b8de"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\scripts\\fromzoid_recipes.txt": {
     "mtime": 1787356411.3907435,
     "hash": "5f8a9b80d3b6eadd3c5107ca12a0d4ff"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\scripts\\fromzoid_sounds.txt": {
-    "mtime": 1787405276.609841,
-    "hash": "f88bcf3152d432064f1447da2e2aa77a"
+    "mtime": 1787423664.1682608,
+    "hash": "678ce70866d710ef5be833288742ad9a"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\docs\\ENGAGEMENT_AND_PERF_PLAN.md": {
+    "mtime": 1787432726.6884964,
+    "hash": "da7b2e02b4ee8f4f71f661ac9caad005"
   },
   "C:\\Users\\Arawn\\fromzoid\\docs\\VOICE_COMMISSION.md": {
     "mtime": 1787386659.9990041,
@@ -144,580 +176,580 @@
     "hash": "833a9559eb58007fdf37ccf393083240"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_01.ogg": {
-    "mtime": 1787404752.3702471,
-    "hash": "fe433688cfedbde250d5fbf96dfa45dd"
+    "mtime": 1787422968.7339597,
+    "hash": "d7743e9315e1ceae01194bdf977d04ac"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_02.ogg": {
-    "mtime": 1787404752.4602468,
-    "hash": "699a7ecff3ab25f6fda4ba5a793f47cc"
+    "mtime": 1787422968.9639935,
+    "hash": "8ddda8166beeffa765a214d59a037786"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_03.ogg": {
-    "mtime": 1787404752.5671084,
-    "hash": "96f1fc6a2134dd75f42a6a0431859039"
+    "mtime": 1787422969.2975104,
+    "hash": "5d2f3aab234c6144ff8ef6cbb033fc2b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_04.ogg": {
-    "mtime": 1787404752.6786256,
-    "hash": "c95742316b1d7a988b62f95c8ec91606"
+    "mtime": 1787422969.6215417,
+    "hash": "82f89fcb4444123b09f4fc9d977297c8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_05.ogg": {
-    "mtime": 1787404752.7756271,
-    "hash": "f070f0a15a7d66e22a8d58473f9042dd"
+    "mtime": 1787422969.9060552,
+    "hash": "03c07d6b080b0222e3e1a3ffb168bb06"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_06.ogg": {
-    "mtime": 1787404752.8666267,
-    "hash": "73452278af9af4f8e974dad0fb65462e"
+    "mtime": 1787422970.1470606,
+    "hash": "42649460719ec75b2522b5e47e126e68"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_07.ogg": {
-    "mtime": 1787404752.972627,
-    "hash": "c91270c83db0690bd59d39e621748717"
+    "mtime": 1787422970.4370804,
+    "hash": "ba398384dc93a817cc777657e2da984e"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_08.ogg": {
-    "mtime": 1787404753.0751388,
-    "hash": "0c30688cbfcffb49b41dc39b2635d0ea"
+    "mtime": 1787422970.7505963,
+    "hash": "9486502af011bea10c89541ce55dfde9"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_09.ogg": {
-    "mtime": 1787404753.1511388,
-    "hash": "33d8a514aba08a2c6770ba2aff60e652"
+    "mtime": 1787422970.9332254,
+    "hash": "464625a6c749a5fd567e514e959b29ce"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_10.ogg": {
-    "mtime": 1787404753.2576492,
-    "hash": "d0a1632fc2df629f2b39549a1682b0b4"
+    "mtime": 1787422971.2672381,
+    "hash": "6b7e10f3ba22a7e6bb38789232a1c6bb"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_11.ogg": {
-    "mtime": 1787405244.9421084,
-    "hash": "8cf84be57165251b7ecffad2b58e97a1"
+    "mtime": 1787422971.7280686,
+    "hash": "479604ddda3bc08e6a47fde6ba78e8f7"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_12.ogg": {
-    "mtime": 1787404753.4957418,
-    "hash": "877c92666993a0ac066d1d89270e245a"
+    "mtime": 1787422971.985647,
+    "hash": "60583e9900b671a48c244594e3473489"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_13.ogg": {
-    "mtime": 1787404753.5987623,
-    "hash": "a38feaa526792c4fc6f776f65cc3477f"
+    "mtime": 1787422972.252193,
+    "hash": "7c7524d60188601fc872176e9c6c33e6"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_14.ogg": {
-    "mtime": 1787404753.6820762,
-    "hash": "39fbe0c2ca0b83cb1d6fb471dbb4cd81"
+    "mtime": 1787422972.4788516,
+    "hash": "f9b3b103cecc2aaa554db2b44130702f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_15.ogg": {
-    "mtime": 1787404753.7670734,
-    "hash": "10bfc1ba6ec9bb3e29b1b7c363d0f68f"
+    "mtime": 1787422972.7155583,
+    "hash": "0d1d4dba73014ea1e8af6277ae0e27ca"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_16.ogg": {
-    "mtime": 1787404753.8770764,
-    "hash": "de8a9978df8b957e2f4a5eff0fa70edc"
+    "mtime": 1787422973.068455,
+    "hash": "9909c961ab9ad5a25d15a369a5cb9eb5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_17.ogg": {
-    "mtime": 1787405245.3911376,
-    "hash": "bdd92ee6e65ad5c20ef9fba63b2b46d3"
+    "mtime": 1787422973.3007722,
+    "hash": "af13bef72ef0dc92775ef460153aa24b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_18.ogg": {
-    "mtime": 1787404754.0909984,
-    "hash": "c1fc30fca33e88a3844b79c75497822b"
+    "mtime": 1787422973.6464415,
+    "hash": "3d3724f239869330ae1cde5de4d063c5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_19.ogg": {
-    "mtime": 1787404754.1696887,
-    "hash": "4d4a6866456e5699ac0517aa835fbc85"
+    "mtime": 1787422974.349624,
+    "hash": "a36310e1f5a1cb8975cec07f9797786a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_20.ogg": {
-    "mtime": 1787405245.6746554,
-    "hash": "c496045f8e5f67fdead45f487a63a826"
+    "mtime": 1787422974.7503889,
+    "hash": "23c4ecbf40b87e7e47484222faec630f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_21.ogg": {
-    "mtime": 1787404754.369422,
-    "hash": "6b17d5c8f8a2628cbdebc3d9b2cfc9e9"
+    "mtime": 1787422975.0668876,
+    "hash": "cbe3e4aa2228f659cd27dfdd5f71e024"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_22.ogg": {
-    "mtime": 1787404754.4752321,
-    "hash": "f8df5e3c37bd8c4bce9103fd14c4e5fc"
+    "mtime": 1787422975.3397799,
+    "hash": "5c6dbb136daaf608233a63a94e11cd3a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_23.ogg": {
-    "mtime": 1787405245.9376776,
-    "hash": "94c18f21161988ef0ea9defec350ab17"
+    "mtime": 1787422975.6153207,
+    "hash": "a111cc08d2fa8e2e2593ef1c23bda917"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_24.ogg": {
-    "mtime": 1787405246.0986555,
-    "hash": "dbe59a2323657299308b411c85408e3c"
+    "mtime": 1787422975.929857,
+    "hash": "cab44fde28d156abacf15351fe7767a4"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_01.ogg": {
-    "mtime": 1787404754.8372297,
-    "hash": "cfc39e350a6dcdb629869247c4dcaaec"
+    "mtime": 1787422976.3201218,
+    "hash": "2b5341bc4f371db9e941b6c099ed5bf8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_02.ogg": {
-    "mtime": 1787404754.9721062,
-    "hash": "11e3e00317d25997fd36bd1ee2e742ca"
+    "mtime": 1787422976.683407,
+    "hash": "9544be2b885ed536b2fedc4696ccb2d1"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_03.ogg": {
-    "mtime": 1787404755.1109445,
-    "hash": "e86c5b530a0436f72e904a23809b4b61"
+    "mtime": 1787422977.016356,
+    "hash": "13a510f0bf6bf97a1c449a49b57bbac9"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_04.ogg": {
-    "mtime": 1787404755.209236,
-    "hash": "9153a7b5780f72c66e84dc27a7e8e03f"
+    "mtime": 1787422977.2562113,
+    "hash": "22436e3838ce64066a83c5daa13ee657"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_05.ogg": {
-    "mtime": 1787405246.4646544,
-    "hash": "aaeb5b582e73ba6694088908f184f574"
+    "mtime": 1787422977.6316917,
+    "hash": "16a093fc8c9c31392657c9a1a30354b2"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_06.ogg": {
-    "mtime": 1787404755.445054,
-    "hash": "1406f6b95ea2de6e93b4b58b4e14cacb"
+    "mtime": 1787422978.017736,
+    "hash": "b39c1c7925f1afb551fefa5b2530674d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_07.ogg": {
-    "mtime": 1787404755.5445645,
-    "hash": "7371c91294ab58d3d525595c21b28986"
+    "mtime": 1787422978.3174126,
+    "hash": "aeee704daaf8a31e6ec3916d72374d61"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_08.ogg": {
-    "mtime": 1787404755.6429143,
-    "hash": "8a3f743fa5b311f2966de9d80132bfd2"
+    "mtime": 1787422978.5979123,
+    "hash": "982c90b0772d395f5586aaa03cdb01c1"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_09.ogg": {
-    "mtime": 1787405246.827654,
-    "hash": "caeabf30b35e3c3a98c5299aeb768364"
+    "mtime": 1787422979.020852,
+    "hash": "17438d98b607b5ef5791c47444d6cc8f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_10.ogg": {
-    "mtime": 1787404755.8588507,
-    "hash": "3ad573a2ef9b4e06a47693f73ebf7ae5"
+    "mtime": 1787422979.3832338,
+    "hash": "b504dcc23df4db75d4f12722b0970a16"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_11.ogg": {
-    "mtime": 1787404755.9712381,
-    "hash": "120409f8887cdb30fefc48c230a7bf8a"
+    "mtime": 1787422979.726377,
+    "hash": "03adb3c424fb14f020ca3034b8cc82db"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_12.ogg": {
-    "mtime": 1787404756.107655,
-    "hash": "8900c071b7e72094337302ca16a2330c"
+    "mtime": 1787422980.1365962,
+    "hash": "369f14c75f63570a13b9570785120559"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_13.ogg": {
-    "mtime": 1787405247.1786907,
-    "hash": "81df19f74b6dcd0974947d7d13e88bcd"
+    "mtime": 1787422980.4336376,
+    "hash": "48b2b19aee9960a75204af5cf37c1afd"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_14.ogg": {
-    "mtime": 1787404756.329347,
-    "hash": "44e347672886e94b65117f8a9fdf6e59"
+    "mtime": 1787422980.723827,
+    "hash": "e59667f47025cdd9167c28d1417ce1e8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_15.ogg": {
-    "mtime": 1787404756.4288638,
-    "hash": "ce3d89b0e776497f5415359549b1e551"
+    "mtime": 1787422981.0710897,
+    "hash": "100c51526a7f2b81cce2ffb1cdc4130d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_16.ogg": {
-    "mtime": 1787404756.5443714,
-    "hash": "1f4a258f97415a32f1f99a3fa2eb4961"
+    "mtime": 1787422981.4318206,
+    "hash": "49582b6b9736557b7ad2191527cbfc84"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_17.ogg": {
-    "mtime": 1787405247.5357215,
-    "hash": "690c358f4a832ec558874f8e24945c55"
+    "mtime": 1787422981.9332404,
+    "hash": "969669c387cbefe66eafcf77510eaacc"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_18.ogg": {
-    "mtime": 1787404756.8116899,
-    "hash": "40ab0cb664e9990130019db84df052f9"
+    "mtime": 1787422982.4800665,
+    "hash": "089a2463f82afdfa2237ba943745e708"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_19.ogg": {
-    "mtime": 1787405247.7277195,
-    "hash": "d9285776583efb7322473c55c52bc8d8"
+    "mtime": 1787422982.7778478,
+    "hash": "996b6420c9b0c641bdc63c2926778b1c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_20.ogg": {
-    "mtime": 1787404757.0046313,
-    "hash": "794c1edfa74fb101b97bfb856c273b71"
+    "mtime": 1787422983.0490315,
+    "hash": "226373e47b15e12d70df6ce3e298c528"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_21.ogg": {
-    "mtime": 1787404757.1381216,
-    "hash": "67dc13ad78c3f68988f1850dc20b7673"
+    "mtime": 1787422983.5295503,
+    "hash": "027f509d811a7e8b66e9b8825051347d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_22.ogg": {
-    "mtime": 1787405248.0084622,
-    "hash": "934414519e8c6a18f48f4e6d2a5fe7de"
+    "mtime": 1787422983.8888278,
+    "hash": "aa73650e115664596340113c13cc471b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_23.ogg": {
-    "mtime": 1787404757.3785152,
-    "hash": "1d0f532c78bca064bd61d069f7736133"
+    "mtime": 1787422984.213714,
+    "hash": "297fc220c3d3b849b79d079aa5c8215f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Knox_24.ogg": {
-    "mtime": 1787404757.5347595,
-    "hash": "8e104010c85bef6f87b2dad472ca3a34"
+    "mtime": 1787422984.81099,
+    "hash": "862e0dc35807f762da025a78ae233776"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_01.ogg": {
-    "mtime": 1787405248.2495613,
-    "hash": "3fe8686d20003309a2f4c81232b8f1b4"
+    "mtime": 1787422985.0841618,
+    "hash": "76b384257429761f18f29c374add5387"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_02.ogg": {
-    "mtime": 1787405248.4791093,
-    "hash": "9b9a6dfbd0f7c526584e2111bbd77cef"
+    "mtime": 1787422985.714395,
+    "hash": "7224506be75ad7dbb65deb477a9df96c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_03.ogg": {
-    "mtime": 1787405248.6248748,
-    "hash": "718c6545913336a125acf6d58da38f08"
+    "mtime": 1787422985.9572065,
+    "hash": "780a7fddb675e5f4c96d3bd841bae375"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_04.ogg": {
-    "mtime": 1787405248.7780938,
-    "hash": "a86bf831624575264bb7f39aa7f38cc0"
+    "mtime": 1787422986.2240899,
+    "hash": "9af5c1b96f503a5ff772a8bfe502acb0"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_05.ogg": {
-    "mtime": 1787405249.0575128,
-    "hash": "b0541e1644165826231a11a67e49a462"
+    "mtime": 1787422986.950824,
+    "hash": "5083a1ab5d89eb1d0e7a6ec811becc02"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_06.ogg": {
-    "mtime": 1787405249.1937208,
-    "hash": "84713a50fac92cfa9dcc968b3fe18fb6"
+    "mtime": 1787422987.1735313,
+    "hash": "112e002d7dae9d419c7506f0034946a5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_07.ogg": {
-    "mtime": 1787405249.346892,
-    "hash": "dcc895182c48bbb7a5fb83ae9c43f82d"
+    "mtime": 1787422987.5394902,
+    "hash": "1d9cf60d5a718bb2a45e61905a922e91"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_08.ogg": {
-    "mtime": 1787405249.578504,
-    "hash": "ec5f3d59bf646ffc11796c430cabe77c"
+    "mtime": 1787422988.2831776,
+    "hash": "f7a8bcb176393d5166f8e4bec42b163e"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_09.ogg": {
-    "mtime": 1787405249.7100582,
-    "hash": "02ec9c3396436bf0e3135886e3c663d3"
+    "mtime": 1787422988.4866092,
+    "hash": "3d5b60571be071924cca7533d154b887"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_10.ogg": {
-    "mtime": 1787405249.8470564,
-    "hash": "2b8f80eaf23ed8509fdf054e32ac11f9"
+    "mtime": 1787422988.7056177,
+    "hash": "727f504d81db8c03486d8be0b3efa092"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_11.ogg": {
-    "mtime": 1787405250.1653962,
-    "hash": "36798d1b376cb9c5135b1af75f1ceb7f"
+    "mtime": 1787422989.4005902,
+    "hash": "d45118ec3726c1c873ab70b418af9501"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_12.ogg": {
-    "mtime": 1787405250.310247,
-    "hash": "53bd6eee77588c6a4f921b9e8dc18cec"
+    "mtime": 1787422989.7157054,
+    "hash": "fcd0c7af5e9dd5d129209c49b28797e6"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_13.ogg": {
-    "mtime": 1787405250.4515412,
-    "hash": "09b5a813bee6b5805367b502d5eaf7ba"
+    "mtime": 1787422989.9392235,
+    "hash": "744601393700183422b973d349ac1ba6"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_14.ogg": {
-    "mtime": 1787405250.8155875,
-    "hash": "506987871ecc1b305c46fb082f4499c2"
+    "mtime": 1787422990.5741198,
+    "hash": "788cd11db7b6720011e1937103d90a7b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_15.ogg": {
-    "mtime": 1787405251.108586,
-    "hash": "08cf7f8d35188f9f64796460773cae43"
+    "mtime": 1787422990.798631,
+    "hash": "34dc7d844247fe8a4a70caf0293ddbc5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_16.ogg": {
-    "mtime": 1787405251.2790983,
-    "hash": "3a961d5f95c675a8cd6c2c0d9db52020"
+    "mtime": 1787422991.0826402,
+    "hash": "4a589382c07f8b177af4d2942b4ce06f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_17.ogg": {
-    "mtime": 1787405251.513749,
-    "hash": "efe998936e7ccde772de740e89176fd1"
+    "mtime": 1787422991.696735,
+    "hash": "3ee802d64641161bfb9f462c844a55ac"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_18.ogg": {
-    "mtime": 1787405251.6562624,
-    "hash": "5476027222a52bb72530e22e1dc3ac70"
+    "mtime": 1787422991.9447994,
+    "hash": "48fe22a816b6e807369944aed2814118"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_19.ogg": {
-    "mtime": 1787405251.8002615,
-    "hash": "fe78863b6c7e2d99f2917e1f2e15a391"
+    "mtime": 1787422992.2470403,
+    "hash": "b254e1e551206590fdd4d34786877ad5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_20.ogg": {
-    "mtime": 1787405252.0597732,
-    "hash": "f279f3843e51025b6ea917d1b509c2b8"
+    "mtime": 1787422992.9461923,
+    "hash": "0c10213331d93c18535e3fcf4fd6d91b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_21.ogg": {
-    "mtime": 1787405252.2087717,
-    "hash": "c3a1e2b2fce653020cb8212ff7beae08"
+    "mtime": 1787422993.2045803,
+    "hash": "341cbe3d5319e6240d76dd2cc32a0faa"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_22.ogg": {
-    "mtime": 1787405252.371773,
-    "hash": "1ba96eaceebb5d618599e5df4d88b5a6"
+    "mtime": 1787422993.4346597,
+    "hash": "09f2d415e1d30d5a201670e0625b5d71"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_23.ogg": {
-    "mtime": 1787405252.600585,
-    "hash": "a9faf09abeec3ec6b4e4984c6bb5e378"
+    "mtime": 1787422994.0491743,
+    "hash": "ddfbc94485722ffcb2bc5d4f36cfc9f5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Miles_24.ogg": {
-    "mtime": 1787405252.7597513,
-    "hash": "823116b24e5635f7da743b48bfabea65"
+    "mtime": 1787422994.3533764,
+    "hash": "323c766d0fab49c3941b507550a3da75"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_01.ogg": {
-    "mtime": 1787405252.8937528,
-    "hash": "875a32b1f997d8f8e1ce536904bcef5b"
+    "mtime": 1787422994.6194491,
+    "hash": "f2f3070ed9baa6b1ac7ae16c29642488"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_02.ogg": {
-    "mtime": 1787404761.2063692,
-    "hash": "b8423ad2578a8dc586c125a7cacb3a44"
+    "mtime": 1787422994.8294713,
+    "hash": "a86014356ad34be21611564c97e701eb"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_03.ogg": {
-    "mtime": 1787404761.323357,
-    "hash": "fd5c97eb5d78dcf6fc2626abb97f0d33"
+    "mtime": 1787422995.0609658,
+    "hash": "198585e7a26cc597e8bd6aaad0c3774a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_04.ogg": {
-    "mtime": 1787404761.4429538,
-    "hash": "946bda3544c5b4062ad5a93411bc26ee"
+    "mtime": 1787422995.3139641,
+    "hash": "688a65fcfa98904b8d191d54278ead03"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_05.ogg": {
-    "mtime": 1787404761.5589905,
-    "hash": "f6002d559e8788aed72905dd2bc7735f"
+    "mtime": 1787422995.5824108,
+    "hash": "e671444c617a007a3f808d816d4da06b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_06.ogg": {
-    "mtime": 1787405253.2407508,
-    "hash": "0017960c4cc3f03617a519b77950c237"
+    "mtime": 1787422995.8904107,
+    "hash": "e230a5c073651f90f40f1b02b5936292"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_07.ogg": {
-    "mtime": 1787404761.8294833,
-    "hash": "717f0a83d95ad9a9dcbc43b76ec06da0"
+    "mtime": 1787422996.2943928,
+    "hash": "8a8c7c8f1235a947309fdb9f2563c573"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_08.ogg": {
-    "mtime": 1787404761.919648,
-    "hash": "52f247a55b57a5af976db3f2de4f979d"
+    "mtime": 1787422996.5541024,
+    "hash": "8629cbb7f4537d5a5ff5bfb9509cd985"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_09.ogg": {
-    "mtime": 1787404762.0217614,
-    "hash": "0816754e4240556460cd0a02f5b1cebb"
+    "mtime": 1787422996.8638823,
+    "hash": "0d1421f5ea5e57eee054ad2dfb13227c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_10.ogg": {
-    "mtime": 1787404762.1187286,
-    "hash": "9763514d2c7bb21cd9f978d47f82ae13"
+    "mtime": 1787422997.1177056,
+    "hash": "66665c7bb572d6c9c4a5f9a234b87456"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_11.ogg": {
-    "mtime": 1787404762.207007,
-    "hash": "099732539c80b228dc0afccb4f2c164f"
+    "mtime": 1787422997.3768492,
+    "hash": "1365d1e37d8c9e9b4b78c49cfab1e958"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_12.ogg": {
-    "mtime": 1787404762.325185,
-    "hash": "6b461cba18516dcb3a3515beb1ebe921"
+    "mtime": 1787422997.7383554,
+    "hash": "3d55d41fbe716f3610e68d01ef9384c6"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_13.ogg": {
-    "mtime": 1787405253.6764126,
-    "hash": "dfbf50fd39aee899508cda30ebe8725c"
+    "mtime": 1787422998.0288703,
+    "hash": "c78d561a8149b9d8524354f476d4956a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_14.ogg": {
-    "mtime": 1787404762.5393214,
-    "hash": "e5ddf3614cb229428c84468420b24270"
+    "mtime": 1787422998.266439,
+    "hash": "5ecd6cd1759b3e1a9903d2fd7152e32a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_15.ogg": {
-    "mtime": 1787404762.6377213,
-    "hash": "d8b1216002bd70be9f8135f4e10ffca6"
+    "mtime": 1787422998.5119512,
+    "hash": "9d30a6b8679a112331a66c2c0b0902e8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_16.ogg": {
-    "mtime": 1787404762.7418737,
-    "hash": "c4db3c23b8417ec55877d047675ae168"
+    "mtime": 1787422998.756571,
+    "hash": "890fc186775b6488a4c710876d40b594"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_17.ogg": {
-    "mtime": 1787404762.8602648,
-    "hash": "66559d3fc201202bda78e636c628d6f8"
+    "mtime": 1787422998.9877884,
+    "hash": "236d88c07c0280cbe33ce7c813e38bee"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_18.ogg": {
-    "mtime": 1787404763.0130126,
-    "hash": "988cf1e5070f7eb1bba52e14c1e8cec4"
+    "mtime": 1787422999.355814,
+    "hash": "77075ccd17716d28bfd34c7a791bd356"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_19.ogg": {
-    "mtime": 1787405254.0258577,
-    "hash": "48e85ced3f2d3e6d3cdd96102ae0cb95"
+    "mtime": 1787422999.604357,
+    "hash": "692186acfb7a3ec58ec5d93e23760162"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_20.ogg": {
-    "mtime": 1787404763.2578144,
-    "hash": "f8b9da66b56eb8763a03ac4ee15c7772"
+    "mtime": 1787423000.0128803,
+    "hash": "2929605e6369bd967710328f29a67af9"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_21.ogg": {
-    "mtime": 1787404763.3600702,
-    "hash": "7bc14470d93cf63e18ce56f5fad3c24d"
+    "mtime": 1787423000.2818694,
+    "hash": "fefc27a9b89fdc1f1d5f0f72dae0fef8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_22.ogg": {
-    "mtime": 1787405254.2424216,
-    "hash": "80d359a9229f813bb4f4b65295676037"
+    "mtime": 1787423000.505969,
+    "hash": "6e616de5fa9c52cd0535f03e7d3b8362"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_23.ogg": {
-    "mtime": 1787404763.5480776,
-    "hash": "75284ebe232ec411c06fd7591023423c"
+    "mtime": 1787423000.7500756,
+    "hash": "5a32fb05b9ef769909b50cb13330b5b8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Roxie_24.ogg": {
-    "mtime": 1787405254.4239404,
-    "hash": "a4eed93b6f5241f7d19aca554706bdf0"
+    "mtime": 1787423001.0131538,
+    "hash": "5e032b11e8d148baf607b28bbadea7ae"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_01.ogg": {
-    "mtime": 1787405254.5798488,
-    "hash": "2e99cf88b70a0c6abbf214b1869383a7"
+    "mtime": 1787423001.2891521,
+    "hash": "9e83ddbaba5492bd4040efd79be4dd0f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_02.ogg": {
-    "mtime": 1787405254.7380717,
-    "hash": "314697cb13bed0a4a9bbf3a2270d6552"
+    "mtime": 1787423001.636659,
+    "hash": "c05564ca92f4db55c5d87961eefb9390"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_03.ogg": {
-    "mtime": 1787405254.904783,
-    "hash": "2c16de4cc32062630cf149291cf37c1a"
+    "mtime": 1787423001.9386606,
+    "hash": "3f3d156600c2a2029b67c288a73658ae"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_04.ogg": {
-    "mtime": 1787405255.0943048,
-    "hash": "31269b168dd28594101f7e85578eaab1"
+    "mtime": 1787423002.2571695,
+    "hash": "5e9643f6f2e433e15cd9742eece38d1d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_05.ogg": {
-    "mtime": 1787405255.2524369,
-    "hash": "fcfd641bb23e2991dfc5a1f26345daa7"
+    "mtime": 1787423002.582628,
+    "hash": "813f4bed060ec46a6501c2d3913947a1"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_06.ogg": {
-    "mtime": 1787405255.4180546,
-    "hash": "5d09dd7c2516e64ee2ce514f953e0a5a"
+    "mtime": 1787423002.9376256,
+    "hash": "99975164b8f3db2bd0e87029c4791470"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_07.ogg": {
-    "mtime": 1787405255.593447,
-    "hash": "b09398b1b77b5aa8ebc71576f5639db9"
+    "mtime": 1787423003.3502417,
+    "hash": "1b2293e7f1f4a37f46287c00286e2c70"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_08.ogg": {
-    "mtime": 1787405255.7724483,
-    "hash": "b35bf2e26087081243ba2d7cabb4c2d4"
+    "mtime": 1787423003.7178116,
+    "hash": "08dda39a7fe34e7f31953c05e19a6e3e"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_09.ogg": {
-    "mtime": 1787404764.6987355,
-    "hash": "83ed342507bd0fab35e4069d192e63ee"
+    "mtime": 1787423004.0973196,
+    "hash": "d88b74edd2748b340041ba8e05559e70"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_10.ogg": {
-    "mtime": 1787405256.0104156,
-    "hash": "041cbc42ec67cef0cf70fc0cc3f1851f"
+    "mtime": 1787423004.4181423,
+    "hash": "bde33edf82b05924202704008dfb89bf"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_11.ogg": {
-    "mtime": 1787405256.2564194,
-    "hash": "ac88721fee885791dca45f50d73f4c28"
+    "mtime": 1787423004.8838918,
+    "hash": "78de48a4b816ea64ce4fab599f162ba1"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_12.ogg": {
-    "mtime": 1787405256.5124166,
-    "hash": "b7fa66c49250657c9b37f2eaba332d38"
+    "mtime": 1787423005.4783342,
+    "hash": "fcce428ba678288246ab4c390db01664"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_13.ogg": {
-    "mtime": 1787404765.2159526,
-    "hash": "89b864d294f51e1dc36e3ce60c573032"
+    "mtime": 1787423005.7798474,
+    "hash": "b99243a6b6f44ddfc27f8ca9817280ba"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_14.ogg": {
-    "mtime": 1787405256.9101973,
-    "hash": "0fb3470c15e9bbc5d7df09967e636001"
+    "mtime": 1787423006.229046,
+    "hash": "7ddb81c3576517c59e66c44eb16b99c4"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_15.ogg": {
-    "mtime": 1787405257.1261978,
-    "hash": "4d174562c5475485e038ddbf76fade11"
+    "mtime": 1787423006.6145763,
+    "hash": "bb73610dcf130503076e309f70780c05"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_16.ogg": {
-    "mtime": 1787405257.354721,
-    "hash": "3ecf376baf85e1403c265ae709ceb9a1"
+    "mtime": 1787423006.9786012,
+    "hash": "02f13383cd53905fa305ace8bc7c9bba"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_17.ogg": {
-    "mtime": 1787405257.6317132,
-    "hash": "a2f320411c8a0bebc913a30223fdaa4a"
+    "mtime": 1787423007.3886688,
+    "hash": "aa8604fbb9fa90b602f9e00b79d1ee3f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_18.ogg": {
-    "mtime": 1787405257.896556,
-    "hash": "3acdefd52ee0ac822b3830baade75656"
+    "mtime": 1787423007.9037323,
+    "hash": "bd6cb2f777639901de20d84841c9d2ae"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_19.ogg": {
-    "mtime": 1787405258.2285578,
-    "hash": "a59876d63040626f5eaf5cd2a3590cfd"
+    "mtime": 1787423008.3327837,
+    "hash": "e896c5b78b20eba8af9227ae5bbbaa5b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_20.ogg": {
-    "mtime": 1787405258.9315565,
-    "hash": "0d0b3d0c6fa460a0e9a84da586604c85"
+    "mtime": 1787423008.7398243,
+    "hash": "9952506185fd10269ceb79fd13ffecba"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_21.ogg": {
-    "mtime": 1787405259.3925912,
-    "hash": "753140d85d79b6203bbb120bfa626e32"
+    "mtime": 1787423009.2408724,
+    "hash": "9584b599b4956b5db157c62140d71f65"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_22.ogg": {
-    "mtime": 1787404766.471778,
-    "hash": "4423295ede18e9364cb496ea1b9aacd3"
+    "mtime": 1787423009.6899035,
+    "hash": "49f98af5eacca67d1595de39e2f65de7"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_23.ogg": {
-    "mtime": 1787405259.8611057,
-    "hash": "79c08bcaab9231a33730ad403e3f836e"
+    "mtime": 1787423010.1559536,
+    "hash": "32d2bfc02949b03aeed4d9ca278066aa"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Vlad_24.ogg": {
-    "mtime": 1787405260.4651363,
-    "hash": "16dd9c490a6e48f7c4bee7d1eb61142f"
+    "mtime": 1787423010.6019778,
+    "hash": "008841c0c77668282467d46b3022e8a8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_01.ogg": {
-    "mtime": 1787405260.8256507,
-    "hash": "0638444af047d2456925edd89ee1d226"
+    "mtime": 1787423010.795977,
+    "hash": "83c1ddb1c79146ddd3093ae5be148171"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_02.ogg": {
-    "mtime": 1787404766.9627407,
-    "hash": "d29f8b5bf67ea31c714cc9f2e5426bed"
+    "mtime": 1787423011.0520046,
+    "hash": "8331acd2e1cf7c907f2a35a69bd1605e"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_03.ogg": {
-    "mtime": 1787405261.1216867,
-    "hash": "f634e4803809ecf3bdb2459c6165820b"
+    "mtime": 1787423011.352007,
+    "hash": "dbde9170287163bfe6a6c2627bd03693"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_04.ogg": {
-    "mtime": 1787405261.8046951,
-    "hash": "0d7bfc24bd236c141bd49758664d62cf"
+    "mtime": 1787423011.6515207,
+    "hash": "8ac239ef06060962f5beca3ca2cc7f54"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_05.ogg": {
-    "mtime": 1787405262.094689,
-    "hash": "4082845fbbceed77ea87c01d17d79895"
+    "mtime": 1787423011.9865208,
+    "hash": "b6e5748a641644c7b965270a089c3de0"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_06.ogg": {
-    "mtime": 1787405262.3302119,
-    "hash": "c413326bec38a9bbd4aa1bf67d52f55e"
+    "mtime": 1787423012.263545,
+    "hash": "2216810407ce5e0d62c24bdc0b2e6fe4"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_07.ogg": {
-    "mtime": 1787405262.530248,
-    "hash": "02a85c2a2f588296479621d1d934c84f"
+    "mtime": 1787423012.5700533,
+    "hash": "4cde0ba52aa1ff802309f70f954db292"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_08.ogg": {
-    "mtime": 1787405262.745276,
-    "hash": "51eb11bd84b302a72e4c40e173feeb3d"
+    "mtime": 1787423013.0310812,
+    "hash": "38476711c51d6cff7bbb84d300685112"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_09.ogg": {
-    "mtime": 1787405262.9382787,
-    "hash": "950e2d00a97ec78dfb9b56754acc9911"
+    "mtime": 1787423013.3375914,
+    "hash": "d9492a98b1ef2c4a5c23e0109ebe3c31"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_10.ogg": {
-    "mtime": 1787404767.9456515,
-    "hash": "8f0da7aeac5ccac4deba8df5c425eb57"
+    "mtime": 1787423013.5816154,
+    "hash": "0fc6b1c5eb3097e25eb8e4f3d2bc54ce"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_11.ogg": {
-    "mtime": 1787404768.0505023,
-    "hash": "665a7a7f275f684afa586129dc31f8bf"
+    "mtime": 1787423013.8626163,
+    "hash": "d49d85d2a41d532059d68ce9b22a182c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_12.ogg": {
-    "mtime": 1787405263.2453034,
-    "hash": "c13e5a368813810ad13efd781ef57476"
+    "mtime": 1787423014.1826148,
+    "hash": "90f7d6243af4c5a842c2014b923c5c0d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_13.ogg": {
-    "mtime": 1787405263.4473014,
-    "hash": "ff0eed3f80871355a8736902cb24a87c"
+    "mtime": 1787423014.482643,
+    "hash": "f3d9b86318d013dab8a468bfa819527f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_14.ogg": {
-    "mtime": 1787405263.760358,
-    "hash": "2207c193925d6f211d2d955f20049175"
+    "mtime": 1787423014.900156,
+    "hash": "f88f8774e1d3574dfa8403d64134593d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_15.ogg": {
-    "mtime": 1787405264.0609107,
-    "hash": "454443d2a7b8f87cd75c9276ae397cfb"
+    "mtime": 1787423015.505186,
+    "hash": "e70492ec5de84130cc9f47ee9386e878"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_16.ogg": {
-    "mtime": 1787405264.2439625,
-    "hash": "68343dc83895b275e6b13d2af4a15e6b"
+    "mtime": 1787423015.7182527,
+    "hash": "a969a1ed96972be5063822984411258c"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_17.ogg": {
-    "mtime": 1787405264.432982,
-    "hash": "ca46fda8365ea9b0119bbf6750ba12d0"
+    "mtime": 1787423016.028275,
+    "hash": "96e14d1497a63ecdcf99cfc1d3602994"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_18.ogg": {
-    "mtime": 1787404769.004484,
-    "hash": "f6089c5ffe0f0435e7945f5abcda4248"
+    "mtime": 1787423016.3963046,
+    "hash": "b05e86ff5c0dc5c256f55673b5b08a06"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_19.ogg": {
-    "mtime": 1787404769.0917995,
-    "hash": "0ae69a1983ead86bb34e0030586a929f"
+    "mtime": 1787423016.8742995,
+    "hash": "0e347bdca774c923bd6417f2d1ca1cb5"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_20.ogg": {
-    "mtime": 1787405264.7660306,
-    "hash": "8c67922c3d7a781a1b227219c486a3be"
+    "mtime": 1787423017.2778113,
+    "hash": "385f121298f338f7b28f743a95f639f8"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_21.ogg": {
-    "mtime": 1787405264.9740236,
-    "hash": "327431087299df6e7f60ad952197f9e4"
+    "mtime": 1787423017.6508298,
+    "hash": "4deda5612f77ee6bc144a63ed77f196d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_22.ogg": {
-    "mtime": 1787405265.1950238,
-    "hash": "e39023de65879e417864d4519a1f5af0"
+    "mtime": 1787423018.004341,
+    "hash": "4132df7d9b0363cde60620ed8604356b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_23.ogg": {
-    "mtime": 1787405265.5600235,
-    "hash": "39007d1ad8f7bbf4f423f3233d7ad489"
+    "mtime": 1787423018.3283446,
+    "hash": "b5840dda68ab620e7154ed2c1af9730b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Zelda_24.ogg": {
-    "mtime": 1787405265.9800272,
-    "hash": "65438aebc0693d570d2fe96b718dbea5"
+    "mtime": 1787423018.8133733,
+    "hash": "55ed3db45fa62370035b863db584530a"
   },
   "C:\\Users\\Arawn\\fromzoid\\docs\\audition\\Annie_elevenlabs.mp3": {
     "mtime": 1787387214.2930152,

@@ -73,14 +73,18 @@ local function processSquare(square)
 	if FromZoid.isBuildingSealed(building) then
 		return
 	end
-	if not FromZoid.isResidentialBuilding(building) then
+	local spawnId = FromZoid.getState().spawnBuildingId
+	if spawnId and FromZoid.buildingId(building) == spawnId then
 		return
 	end
-	if alreadyDone(square) then
+	if not FromZoid.isResidentialBuilding(building) then
 		return
 	end
 	local kind = FromZoid.getClusterKind(square:getX(), square:getY())
 	if kind == "none" then
+		return
+	end
+	if alreadyDone(square) then
 		return
 	end
 	local objects = square:getObjects()

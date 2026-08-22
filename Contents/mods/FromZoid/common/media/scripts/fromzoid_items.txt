@@ -6,8 +6,7 @@ module FromZoid
 		DisplayCategory = Household,
 		ItemType = base:normal,
 		Weight = 0.2,
-		Icon = FromTalisman,
-		WorldStaticModel = ChristmasOrnament_Red1,
+		Icon = DriedHerbs_generic,
 		Tooltip = Tooltip_FromZoid_Talisman,
 		Tags = fromzoidtalisman,
 	}

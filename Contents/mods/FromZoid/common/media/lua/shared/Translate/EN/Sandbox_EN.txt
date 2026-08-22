@@ -8,16 +8,16 @@ Sandbox_EN = {
 	Sandbox_FromZoid_NestTeleport_tooltip = "If a night person is still outdoors and off-screen, teleport them into a nearby unsealed house. Turn off to rely on pathfinding only.",
 
 	Sandbox_FromZoid_EnableNightStats = "Day / night hunter stats",
-	Sandbox_FromZoid_EnableNightStats_tooltip = "Day: sluggish, poor senses. Night: hearing, memory, and door use. They never crawl.",
+	Sandbox_FromZoid_EnableNightStats_tooltip = "Day: slow walk, never crawl. Night: sprint (if that option is on) or shamble. Does not change your sandbox zombie lore (doors, hearing, cognition).",
 
 	Sandbox_FromZoid_NightSprinters = "Night sprinters",
 	Sandbox_FromZoid_NightSprinters_tooltip = "If hunter stats are on, night people sprint instead of fast-shambling.",
 
 	Sandbox_FromZoid_EnableWhispers = "Window whispers",
-	Sandbox_FromZoid_EnableWhispers_tooltip = "Night people speak at doors and windows. Knox only speaks at windows.",
+	Sandbox_FromZoid_EnableWhispers_tooltip = "Night people speak only while loitering at a talisman-sealed house. Knox only speaks at windows.",
 
 	Sandbox_FromZoid_WhisperChance = "Whisper chance (percent / check)",
-	Sandbox_FromZoid_WhisperChance_tooltip = "Rolled on a slow timer for nearby night people at openings.",
+	Sandbox_FromZoid_WhisperChance_tooltip = "Once per minute, chance a night person at your sealed door or window speaks. Then at least 45 seconds of silence.",
 
 	Sandbox_FromZoid_EnableDarkness = "Darkness events",
 	Sandbox_FromZoid_EnableDarkness_tooltip = "Rare fog and blackout events that last one to three days.",
@@ -53,14 +53,89 @@ Sandbox_EN = {
 	Sandbox_FromZoid_HitWakeChance_tooltip = "Percent chance they wake when struck or bumped.",
 
 	Sandbox_FromZoid_LureChance = "Dusk street lure chance",
-	Sandbox_FromZoid_LureChance_tooltip = "Percent of indoor night people who path outside at dusk.",
+	Sandbox_FromZoid_LureChance_tooltip = "Percent of indoor night people who leave their nest at dusk. After that they gather at nearby doors and windows instead of wandering every minute.",
 
 	Sandbox_FromZoid_StartWithSpareTalisman = "Start with a spare talisman",
 	Sandbox_FromZoid_StartWithSpareTalisman_tooltip = "New games hang a talisman on the spawn-house door and put one extra talisman in your inventory.",
 
 	Sandbox_FromZoid_UltraStrong = "Ultra-strong night people",
-	Sandbox_FromZoid_UltraStrong_tooltip = "Superhuman zombie strength plus extra connected-hit damage. About three or four unarmored hits kill. Off by default.",
+	Sandbox_FromZoid_UltraStrong_tooltip = "On top of double damage, night people get superhuman strength. About three or four unarmored hits kill. Off by default.",
 
 	Sandbox_FromZoid_TalismanDebug = "Talisman debug prints",
 	Sandbox_FromZoid_TalismanDebug_tooltip = "Print seal/unseal events to the console. For troubleshooting only.",
+
+	Sandbox_FromZoid_EnableWornCharms = "Worn charms",
+	Sandbox_FromZoid_EnableWornCharms_tooltip = "Hung talismans die after a number of nights unless refreshed with sage or dried herbs.",
+
+	Sandbox_FromZoid_TalismanNights = "Nights until a charm wilts",
+	Sandbox_FromZoid_TalismanNights_tooltip = "How many nights a hanging talisman keeps the house sealed.",
+
+	Sandbox_FromZoid_CalmUntilProvoked = "They walk until you run",
+	Sandbox_FromZoid_CalmUntilProvoked_tooltip = "At night they shamble unless you sprint, fire, or hit them. Then that cluster hunts.",
+
+	Sandbox_FromZoid_GunshotWakesStreet = "Gunshot wakes the street",
+	Sandbox_FromZoid_GunshotWakesStreet_tooltip = "If they walk until you run, a gunshot makes nearby night people hunt.",
+
+	Sandbox_FromZoid_EnableGatheringNights = "Gathering nights",
+	Sandbox_FromZoid_EnableGatheringNights_tooltip = "Every Nth night a small group stands in the street facing your house.",
+
+	Sandbox_FromZoid_GatheringIntervalNights = "Gathering every N nights",
+	Sandbox_FromZoid_GatheringIntervalNights_tooltip = "How often gathering nights happen. Darkness events also gather.",
+
+	Sandbox_FromZoid_GatheringMax = "Max gatherers",
+	Sandbox_FromZoid_GatheringMax_tooltip = "Hard cap on how many night people path to your house on a gathering night.",
+
+	Sandbox_FromZoid_EnableWoodsDread = "The trees keep you",
+	Sandbox_FromZoid_EnableWoodsDread_tooltip = "Far from town at night: fog, nameless voices, extra sanity drain. You can still walk out.",
+
+	Sandbox_FromZoid_WoodsDistance = "Woods distance from town",
+	Sandbox_FromZoid_WoodsDistance_tooltip = "Tiles from the last residential or sealed house before the woods take hold.",
+
+	Sandbox_FromZoid_EnableSanity = "Sanity",
+	Sandbox_FromZoid_EnableSanity_tooltip = "Sleep debt and a crowd at your sealed glass raise strain: sanity, delusion, psychosis.",
+
+	Sandbox_FromZoid_SanitySleepDrain = "Sleep-debt sanity drain",
+	Sandbox_FromZoid_SanitySleepDrain_tooltip = "Multiplier on how fast staying awake wrecks you. Sleep in a quiet sealed house restores it.",
+
+	Sandbox_FromZoid_SanityCrowdDrain = "Crowd sanity drain",
+	Sandbox_FromZoid_SanityCrowdDrain_tooltip = "Multiplier on drain from night people standing outside your sealed house.",
+
+	Sandbox_FromZoid_WhispersBreakSleep = "They will not let you sleep",
+	Sandbox_FromZoid_WhispersBreakSleep_tooltip = "Voices at the glass wake you. A crowd makes rest fragile.",
+
+	Sandbox_FromZoid_EnableDelusions = "Delusions",
+	Sandbox_FromZoid_EnableDelusions_tooltip = "Radios that know your name, trees that whisper, distant screams, a little blur.",
+
+	Sandbox_FromZoid_EnablePsychosis = "Psychosis",
+	Sandbox_FromZoid_EnablePsychosis_tooltip = "Tunnel vision and regular hallucinations when strain is high.",
+
+	Sandbox_FromZoid_TheyKnowYourName = "They know your name",
+	Sandbox_FromZoid_TheyKnowYourName_tooltip = "At delusion and worse, window whispers may say your forename.",
+
+	Sandbox_FromZoid_EnableArmedHouses = "Armed houses",
+	Sandbox_FromZoid_EnableArmedHouses_tooltip = "First visit to a house can roll a handgun and/or long gun with spare ammo. Once per building.",
+
+	Sandbox_FromZoid_HandgunHouseChance = "Handgun house chance",
+	Sandbox_FromZoid_HandgunHouseChance_tooltip = "Percent chance a residential house gets a handgun on first visit.",
+
+	Sandbox_FromZoid_LongGunHouseChance = "Long-gun house chance",
+	Sandbox_FromZoid_LongGunHouseChance_tooltip = "Percent chance a residential house gets a rifle or shotgun on first visit.",
+
+	Sandbox_FromZoid_GunAmmoReloads = "Ammo reloads with house guns",
+	Sandbox_FromZoid_GunAmmoReloads_tooltip = "Ammo boxes with each house gun. Magazine weapons also get at least this many loaded magazines (minimum 2).",
+
+	Sandbox_FromZoid_EnableLodgedWeapons = "Lodged high-end weapons",
+	Sandbox_FromZoid_EnableLodgedWeapons_tooltip = "A few night people spawn with a katana, axe, or machete stuck in them.",
+
+	Sandbox_FromZoid_LodgedWeaponChance = "Lodged weapon chance",
+	Sandbox_FromZoid_LodgedWeaponChance_tooltip = "Percent chance a newly created night person carries a lodged weapon.",
+
+	Sandbox_FromZoid_LodgedKatanaWeight = "Katana among lodged weapons",
+	Sandbox_FromZoid_LodgedKatanaWeight_tooltip = "Percent chance the lodged weapon is a katana instead of another high-end blade or axe.",
+
+	Sandbox_FromZoid_PreferBasementNests = "Prefer real basements",
+	Sandbox_FromZoid_PreferBasementNests_tooltip = "By day they hide in existing cellars when the cell has them. Does not add new basements to vanilla houses.",
+
+	Sandbox_FromZoid_NestEveryOtherHouse = "Nest in every other house",
+	Sandbox_FromZoid_NestEveryOtherHouse_tooltip = "Half of residential buildings are daytime nests. The rest stay emptier. Spawn house is never a nest on night 0.",
 }
