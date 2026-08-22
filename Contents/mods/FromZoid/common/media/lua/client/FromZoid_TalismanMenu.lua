@@ -3,23 +3,25 @@ require "TimedActions/ISBaseTimedAction"
 FromZoidHangTalismanAction = ISBaseTimedAction:derive("FromZoidHangTalismanAction")
 
 function FromZoidHangTalismanAction:isValid()
-	if not self.square or not self.character then
+	if not self.door or not self.character then
 		return false
 	end
-	if not self.square:getBuilding() then
-		return false
-	end
-	local inv = self.character:getInventory()
-	return inv:getFirstTypeRecurse(FromZoid.ITEM_TALISMAN) ~= nil
+	return FromZoid.findTalismanInInventory(self.character:getInventory()) ~= nil
 end
 
 function FromZoidHangTalismanAction:waitToStart()
-	self.character:faceLocation(self.square:getX(), self.square:getY())
+	local square = self.door:getSquare()
+	if square then
+		self.character:faceLocation(square:getX(), square:getY())
+	end
 	return self.character:shouldBeTurning()
 end
 
 function FromZoidHangTalismanAction:update()
-	self.character:faceLocation(self.square:getX(), self.square:getY())
+	local square = self.door:getSquare()
+	if square then
+		self.character:faceLocation(square:getX(), square:getY())
+	end
 	self.character:setMetabolicTarget(Metabolics.LightWork)
 end
 
@@ -33,14 +35,14 @@ function FromZoidHangTalismanAction:stop()
 end
 
 function FromZoidHangTalismanAction:perform()
-	FromZoid.hangTalismanOnSquare(self.character, self.square)
+	FromZoid.hangTalismanOnDoor(self.character, self.door)
 	HaloTextHelper.addGoodText(self.character, getText("IGUI_FromZoid_TalismanHung"))
 	ISBaseTimedAction.perform(self)
 end
 
-function FromZoidHangTalismanAction:new(character, square)
+function FromZoidHangTalismanAction:new(character, door)
 	local o = ISBaseTimedAction.new(self, character)
-	o.square = square
+	o.door = door
 	o.maxTime = 50
 	o.stopOnWalk = true
 	o.stopOnRun = true
@@ -92,11 +94,28 @@ local function squareHasHungTalisman(square)
 	for i = 0, worldObjects:size() - 1 do
 		local wo = worldObjects:get(i)
 		local item = wo.getItem and wo:getItem() or nil
-		if item and item:getModData() and item:getModData().fromzoid_talisman then
-			return true
+		if item then
+			local md = item.getModData and item:getModData() or nil
+			local full = item.getFullType and item:getFullType() or ""
+			if (md and md.fromzoid_talisman) or full == FromZoid.ITEM_TALISMAN then
+				return true
+			end
 		end
 	end
 	return false
+end
+
+local function doorFromContext(worldobjects)
+	if not worldobjects then
+		return nil
+	end
+	for i = 1, #worldobjects do
+		local obj = worldobjects[i]
+		if instanceof(obj, "IsoDoor") then
+			return obj
+		end
+	end
+	return nil
 end
 
 local function onFillWorld(playerIndex, context, worldobjects, test)
@@ -110,21 +129,11 @@ local function onFillWorld(playerIndex, context, worldobjects, test)
 	if not player then
 		return
 	end
-	local square = nil
-	if worldobjects then
-		for i = 1, #worldobjects do
-			local obj = worldobjects[i]
-			if obj and obj.getSquare then
-				square = obj:getSquare()
-				if square then
-					break
-				end
-			end
-		end
+	local door = doorFromContext(worldobjects)
+	if not door then
+		return
 	end
-	if not square then
-		square = player:getCurrentSquare()
-	end
+	local square = door:getSquare()
 	if not square then
 		return
 	end
@@ -134,21 +143,21 @@ local function onFillWorld(playerIndex, context, worldobjects, test)
 		end)
 		return
 	end
-	local hasItem = player:getInventory():getFirstTypeRecurse(FromZoid.ITEM_TALISMAN) ~= nil
-	if not hasItem then
+	if not FromZoid.findTalismanInInventory(player:getInventory()) then
 		return
 	end
-	if not square:getBuilding() then
+	local building = FromZoid.buildingFromDoor(door)
+	if not building then
 		return
 	end
-	local option = context:addOption(getText("ContextMenu_FromZoid_HangTalisman"), square, function(sq)
-		if FromZoid.isBuildingSealed(sq:getBuilding()) then
+	local option = context:addOption(getText("ContextMenu_FromZoid_HangTalisman"), door, function(d)
+		if FromZoid.isBuildingSealed(FromZoid.buildingFromDoor(d)) then
 			HaloTextHelper.addBadText(player, getText("IGUI_FromZoid_AlreadySealed"))
 			return
 		end
-		ISTimedActionQueue.add(FromZoidHangTalismanAction:new(player, sq))
+		ISTimedActionQueue.add(FromZoidHangTalismanAction:new(player, d))
 	end)
-	if FromZoid.isBuildingSealed(square:getBuilding()) then
+	if FromZoid.isBuildingSealed(building) then
 		option.notAvailable = true
 		local tooltip = ISWorldObjectContextMenu.addToolTip()
 		tooltip.description = getText("IGUI_FromZoid_AlreadySealed")

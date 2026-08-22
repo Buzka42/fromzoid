@@ -27,7 +27,7 @@ option FromZoid.EnableNightStats
 option FromZoid.NightSprinters
 {
 	type = boolean,
-	default = false,
+	default = true,
 	page = FromZoid,
 	translation = FromZoid_NightSprinters,
 }
@@ -76,24 +76,24 @@ option FromZoid.EnableTown
 	translation = FromZoid_EnableTown,
 }
 
-option FromZoid.WindowSmashChance
+option FromZoid.NeighborhoodBoardedChance
 {
 	type = integer,
-	min = 0,
+	min = 1,
 	max = 100,
-	default = 45,
+	default = 22,
 	page = FromZoid,
-	translation = FromZoid_WindowSmashChance,
+	translation = FromZoid_NeighborhoodBoardedChance,
 }
 
-option FromZoid.BarricadeChance
+option FromZoid.NeighborhoodDamagedChance
 {
 	type = integer,
-	min = 0,
+	min = 1,
 	max = 100,
-	default = 28,
+	default = 22,
 	page = FromZoid,
-	translation = FromZoid_BarricadeChance,
+	translation = FromZoid_NeighborhoodDamagedChance,
 }
 
 option FromZoid.EnableTalismans
@@ -158,4 +158,28 @@ option FromZoid.LureChance
 	default = 80,
 	page = FromZoid,
 	translation = FromZoid_LureChance,
+}
+
+option FromZoid.StartWithSpareTalisman
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_StartWithSpareTalisman,
+}
+
+option FromZoid.UltraStrong
+{
+	type = boolean,
+	default = false,
+	page = FromZoid,
+	translation = FromZoid_UltraStrong,
+}
+
+option FromZoid.TalismanDebug
+{
+	type = boolean,
+	default = false,
+	page = FromZoid,
+	translation = FromZoid_TalismanDebug,
 }

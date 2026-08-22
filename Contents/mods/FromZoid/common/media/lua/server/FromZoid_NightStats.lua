@@ -8,10 +8,15 @@ local function applyWalkType(zombie, night, sprinters)
 	if not zombie then
 		return
 	end
+	if zombie.setCrawler then
+		zombie:setCrawler(false)
+	end
+	if zombie.setCanWalk then
+		pcall(function()
+			zombie:setCanWalk(true)
+		end)
+	end
 	if night then
-		if zombie.setCrawler then
-			zombie:setCrawler(false)
-		end
 		if zombie.setWalkType then
 			if sprinters then
 				zombie:setWalkType("sprint1")
@@ -20,17 +25,8 @@ local function applyWalkType(zombie, night, sprinters)
 			end
 		end
 	else
-		if ZombRand(100) < 55 then
-			if zombie.setCrawler then
-				zombie:setCrawler(true)
-			end
-		else
-			if zombie.setCrawler then
-				zombie:setCrawler(false)
-			end
-			if zombie.setWalkType then
-				zombie:setWalkType("slow1")
-			end
+		if zombie.setWalkType then
+			zombie:setWalkType("slow1")
 		end
 	end
 	if zombie.setSpeedTypeFromWalkType then
@@ -59,6 +55,9 @@ local function applyLore(night, sprinters)
 		lore.Sight = 3
 		lore.Cognition = 3
 		lore.ThumpNoChasing = true
+	end
+	if FromZoid.isEnabled("UltraStrong") then
+		lore.Strength = 1
 	end
 end
 

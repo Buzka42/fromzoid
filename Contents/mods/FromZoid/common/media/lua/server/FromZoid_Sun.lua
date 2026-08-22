@@ -29,24 +29,17 @@ local function sendIndoors(zombie, teleport)
 	local sq = FromZoid.zombieSquare(zombie)
 	if sq and sq:getBuilding() then
 		if not FromZoid.isBuildingSealed(sq:getBuilding()) then
-			zombie:setUseless(true)
+			FromZoid.putZombieToSleep(zombie)
 			return true
 		end
 	end
-	local building = FromZoid.findNearestUnsealedBuilding(zombie:getX(), zombie:getY(), 48)
-	if not building then
-		return false
-	end
-	local tile = FromZoid.freeTileInBuilding(building)
+	local tile = FromZoid.pickNestSquare(zombie)
 	if not tile then
 		return false
 	end
 	if teleport then
 		FromZoid.teleportZombieToSquare(zombie, tile)
-		zombie:setUseless(true)
-		if zombie.setTarget then
-			zombie:setTarget(nil)
-		end
+		FromZoid.putZombieToSleep(zombie)
 		return true
 	end
 	FromZoid.pathZombieToSquare(zombie, tile)
@@ -54,7 +47,7 @@ local function sendIndoors(zombie, teleport)
 end
 
 local function lureOutside(zombie)
-	zombie:setUseless(false)
+	FromZoid.wakeZombieBody(zombie)
 	if chance(FromZoid.getSandbox("LureChance", 80)) then
 		local dest = outdoorSquareNear(zombie, 12)
 		if dest then
@@ -70,41 +63,51 @@ local function processSunCycle()
 	local night = FromZoid.isNight()
 	local nest = FromZoid.isEnabled("NestTeleport")
 	FromZoid.eachLoadedZombie(function(zombie)
-		local id = zombie:getOnlineID and zombie:getOnlineID() or zombie:getID()
+		local id
+		if zombie.getOnlineID and zombie:getOnlineID() then
+			id = zombie:getOnlineID()
+		else
+			id = zombie:getID()
+		end
 		if night then
 			NEST_MINUTES[id] = nil
 			if zombie:isUseless() then
 				lureOutside(zombie)
 			else
-				zombie:setUseless(false)
+				FromZoid.wakeZombieBody(zombie)
 			end
 			return
 		end
 		local sq = FromZoid.zombieSquare(zombie)
 		local building = sq and sq:getBuilding() or nil
 		if building and not FromZoid.isBuildingSealed(building) then
-			zombie:setUseless(true)
+			FromZoid.putZombieToSleep(zombie)
 			NEST_MINUTES[id] = nil
-			if zombie.setTarget then
-				zombie:setTarget(nil)
-			end
 			return
 		end
-		zombie:setUseless(false)
+		FromZoid.wakeZombieBody(zombie)
 		local indoors = sendIndoors(zombie, false)
 		NEST_MINUTES[id] = (NEST_MINUTES[id] or 0) + 1
-		if nest and not indoors and NEST_MINUTES[id] >= 4 then
-			sendIndoors(zombie, true)
-			NEST_MINUTES[id] = nil
+		if nest and not indoors then
+			if FromZoid.isZombieOffscreen(zombie) then
+				sendIndoors(zombie, true)
+				NEST_MINUTES[id] = nil
+			elseif NEST_MINUTES[id] >= 4 then
+				sendIndoors(zombie, true)
+				NEST_MINUTES[id] = nil
+			end
 		end
 	end)
 end
 
 local function wakeZombie(zombie, wakeBuilding)
-	if not zombie or not zombie:isUseless() then
+	if not zombie then
 		return
 	end
-	zombie:setUseless(false)
+	if not zombie:isUseless() then
+		return
+	end
+	FromZoid.wakeZombieBody(zombie)
 	if wakeBuilding and chance(8) then
 		local sq = FromZoid.zombieSquare(zombie)
 		local building = sq and sq:getBuilding()
@@ -122,7 +125,7 @@ local function wakeZombie(zombie, wakeBuilding)
 								for m = 0, movers:size() - 1 do
 									local other = movers:get(m)
 									if instanceof(other, "IsoZombie") and other:isUseless() then
-										other:setUseless(false)
+										FromZoid.wakeZombieBody(other)
 									end
 								end
 							end

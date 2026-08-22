@@ -14,8 +14,12 @@ local function squareStillHasTalisman(x, y, z)
 	for i = 0, worldObjects:size() - 1 do
 		local wo = worldObjects:get(i)
 		local item = wo.getItem and wo:getItem() or nil
-		if item and item:getModData() and item:getModData().fromzoid_talisman then
-			return true
+		if item then
+			local md = item.getModData and item:getModData() or nil
+			local full = item.getFullType and item:getFullType() or ""
+			if (md and md.fromzoid_talisman) or full == FromZoid.ITEM_TALISMAN then
+				return true
+			end
 		end
 	end
 	return false
@@ -90,6 +94,22 @@ local function nearestOpeningSquare(building, zombie)
 	return best
 end
 
+local function clearThump(zombie)
+	if zombie.setThumpFlag then
+		pcall(function()
+			zombie:setThumpFlag(0)
+		end)
+	end
+	if zombie.setThumpTarget then
+		pcall(function()
+			zombie:setThumpTarget(nil)
+		end)
+	end
+	if zombie.setTarget then
+		zombie:setTarget(nil)
+	end
+end
+
 local function enforceTalisman(zombie)
 	if not FromZoid.isEnabled("EnableTalismans") then
 		return
@@ -106,10 +126,10 @@ local function enforceTalisman(zombie)
 			if out then
 				FromZoid.teleportZombieToSquare(zombie, out)
 			end
-			if zombie.setTarget then
-				zombie:setTarget(nil)
+			clearThump(zombie)
+			if zombie.setUseless then
+				zombie:setUseless(false)
 			end
-			zombie:setUseless(false)
 			return
 		end
 	end
@@ -118,9 +138,7 @@ local function enforceTalisman(zombie)
 		local tsq = target:getCurrentSquare()
 		local tb = tsq and tsq:getBuilding() or nil
 		if tb and FromZoid.isBuildingSealed(tb) and not FromZoid.buildingHasInvitation(tb) then
-			if zombie.setTarget then
-				zombie:setTarget(nil)
-			end
+			clearThump(zombie)
 			local opening = nearestOpeningSquare(tb, zombie)
 			if opening then
 				FromZoid.pathZombieToSquare(zombie, opening)
@@ -130,9 +148,4 @@ local function enforceTalisman(zombie)
 end
 
 Events.EveryTenMinutes.Add(validateSeals)
-Events.OnZombieUpdate.Add(function(zombie)
-	if zombie and zombie.getID and (zombie:getID() % 6) ~= 0 then
-		return
-	end
-	enforceTalisman(zombie)
-end)
+Events.OnZombieUpdate.Add(enforceTalisman)

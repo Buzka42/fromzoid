@@ -6,43 +6,43 @@
     {
       "label": "FromZoid_DarknessFx.lua",
       "file_type": "code",
-      "source_file": "client/FromZoid_DarknessFx.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_DarknessFx.lua",
       "source_location": "L1",
       "id": "client_fromzoid_darknessfx_lua",
-      "community": 0,
+      "community": 5,
       "norm_label": "fromzoid_darknessfx.lua"
     },
     {
       "label": "applyFx()",
       "file_type": "code",
-      "source_file": "client/FromZoid_DarknessFx.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_DarknessFx.lua",
       "source_location": "L1",
       "id": "client_fromzoid_darknessfx_applyfx",
-      "community": 0,
+      "community": 5,
       "norm_label": "applyfx()"
     },
     {
       "label": "radioLine()",
       "file_type": "code",
-      "source_file": "client/FromZoid_DarknessFx.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_DarknessFx.lua",
       "source_location": "L43",
       "id": "client_fromzoid_darknessfx_radioline",
-      "community": 0,
+      "community": 5,
       "norm_label": "radioline()"
     },
     {
       "label": "tickDarknessClient()",
       "file_type": "code",
-      "source_file": "client/FromZoid_DarknessFx.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_DarknessFx.lua",
       "source_location": "L55",
       "id": "client_fromzoid_darknessfx_tickdarknessclient",
-      "community": 0,
+      "community": 5,
       "norm_label": "tickdarknessclient()"
     },
     {
       "label": "FromZoid_TalismanMenu.lua",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
       "source_location": "L1",
       "id": "client_fromzoid_talismanmenu_lua",
       "community": 2,
@@ -51,7 +51,7 @@
     {
       "label": "FromZoidHangTalismanAction:isValid()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
       "source_location": "L5",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_isvalid",
       "community": 2,
@@ -60,8 +60,8 @@
     {
       "label": "FromZoidHangTalismanAction:waitToStart()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L16",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L12",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_waittostart",
       "community": 2,
       "norm_label": "fromzoidhangtalismanaction:waittostart()"
@@ -69,8 +69,8 @@
     {
       "label": "FromZoidHangTalismanAction:update()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L21",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L20",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_update",
       "community": 2,
       "norm_label": "fromzoidhangtalismanaction:update()"
@@ -78,8 +78,8 @@
     {
       "label": "FromZoidHangTalismanAction:start()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L26",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L28",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_start",
       "community": 2,
       "norm_label": "fromzoidhangtalismanaction:start()"
@@ -87,8 +87,8 @@
     {
       "label": "FromZoidHangTalismanAction:stop()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L31",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L33",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_stop",
       "community": 2,
       "norm_label": "fromzoidhangtalismanaction:stop()"
@@ -96,17 +96,17 @@
     {
       "label": "FromZoidHangTalismanAction:perform()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L35",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L37",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_perform",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoidhangtalismanaction:perform()"
     },
     {
       "label": "FromZoidHangTalismanAction:new()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L41",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L43",
       "id": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_new",
       "community": 2,
       "norm_label": "fromzoidhangtalismanaction:new()"
@@ -114,8 +114,8 @@
     {
       "label": "FromZoidTakeTalismanAction:isValid()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L52",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L54",
       "id": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_isvalid",
       "community": 2,
       "norm_label": "fromzoidtaketalismanaction:isvalid()"
@@ -123,8 +123,8 @@
     {
       "label": "FromZoidTakeTalismanAction:waitToStart()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L56",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L58",
       "id": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_waittostart",
       "community": 2,
       "norm_label": "fromzoidtaketalismanaction:waittostart()"
@@ -132,8 +132,8 @@
     {
       "label": "FromZoidTakeTalismanAction:start()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L61",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L63",
       "id": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_start",
       "community": 2,
       "norm_label": "fromzoidtaketalismanaction:start()"
@@ -141,8 +141,8 @@
     {
       "label": "FromZoidTakeTalismanAction:stop()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L65",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L67",
       "id": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_stop",
       "community": 2,
       "norm_label": "fromzoidtaketalismanaction:stop()"
@@ -150,17 +150,17 @@
     {
       "label": "FromZoidTakeTalismanAction:perform()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L69",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L71",
       "id": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_perform",
-      "community": 4,
+      "community": 2,
       "norm_label": "fromzoidtaketalismanaction:perform()"
     },
     {
       "label": "FromZoidTakeTalismanAction:new()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L75",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L77",
       "id": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_new",
       "community": 2,
       "norm_label": "fromzoidtaketalismanaction:new()"
@@ -168,206 +168,314 @@
     {
       "label": "squareHasHungTalisman()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L84",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L86",
       "id": "client_fromzoid_talismanmenu_squarehashungtalisman",
       "community": 2,
       "norm_label": "squarehashungtalisman()"
     },
     {
+      "label": "doorFromContext()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L108",
+      "id": "client_fromzoid_talismanmenu_doorfromcontext",
+      "community": 2,
+      "norm_label": "doorfromcontext()"
+    },
+    {
       "label": "onFillWorld()",
       "file_type": "code",
-      "source_file": "client/FromZoid_TalismanMenu.lua",
-      "source_location": "L102",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_TalismanMenu.lua",
+      "source_location": "L121",
       "id": "client_fromzoid_talismanmenu_onfillworld",
-      "community": 2,
+      "community": 1,
       "norm_label": "onfillworld()"
     },
     {
       "label": "FromZoid_Whispers.lua",
       "file_type": "code",
-      "source_file": "client/FromZoid_Whispers.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
       "source_location": "L1",
       "id": "client_fromzoid_whispers_lua",
-      "community": 6,
+      "community": 4,
       "norm_label": "fromzoid_whispers.lua"
+    },
+    {
+      "label": "pad2()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L3",
+      "id": "client_fromzoid_whispers_pad2",
+      "community": 4,
+      "norm_label": "pad2()"
+    },
+    {
+      "label": "genderPool()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L10",
+      "id": "client_fromzoid_whispers_genderpool",
+      "community": 4,
+      "norm_label": "genderpool()"
+    },
+    {
+      "label": "voiceFits()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L17",
+      "id": "client_fromzoid_whispers_voicefits",
+      "community": 4,
+      "norm_label": "voicefits()"
+    },
+    {
+      "label": "clipsFor()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L30",
+      "id": "client_fromzoid_whispers_clipsfor",
+      "community": 4,
+      "norm_label": "clipsfor()"
+    },
+    {
+      "label": "nearKind()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L38",
+      "id": "client_fromzoid_whispers_nearkind",
+      "community": 4,
+      "norm_label": "nearkind()"
+    },
+    {
+      "label": "voiceFor()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L66",
+      "id": "client_fromzoid_whispers_voicefor",
+      "community": 4,
+      "norm_label": "voicefor()"
     },
     {
       "label": "speak()",
       "file_type": "code",
-      "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L21",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L86",
       "id": "client_fromzoid_whispers_speak",
-      "community": 6,
+      "community": 4,
       "norm_label": "speak()"
-    },
-    {
-      "label": "nearOpening()",
-      "file_type": "code",
-      "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L32",
-      "id": "client_fromzoid_whispers_nearopening",
-      "community": 6,
-      "norm_label": "nearopening()"
     },
     {
       "label": "tryWhispers()",
       "file_type": "code",
-      "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L52",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L105",
       "id": "client_fromzoid_whispers_trywhispers",
-      "community": 6,
+      "community": 4,
       "norm_label": "trywhispers()"
     },
     {
       "label": "FromZoid_Darkness.lua",
       "file_type": "code",
-      "source_file": "server/FromZoid_Darkness.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Darkness.lua",
       "source_location": "L1",
       "id": "server_fromzoid_darkness_lua",
-      "community": 0,
+      "community": 9,
       "norm_label": "fromzoid_darkness.lua"
     },
     {
       "label": "worldHours()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Darkness.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Darkness.lua",
       "source_location": "L5",
       "id": "server_fromzoid_darkness_worldhours",
-      "community": 0,
+      "community": 9,
       "norm_label": "worldhours()"
     },
     {
       "label": "setPower()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Darkness.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Darkness.lua",
       "source_location": "L16",
       "id": "server_fromzoid_darkness_setpower",
-      "community": 0,
+      "community": 9,
       "norm_label": "setpower()"
     },
     {
       "label": "scheduleOrTick()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Darkness.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Darkness.lua",
       "source_location": "L25",
       "id": "server_fromzoid_darkness_scheduleortick",
-      "community": 0,
+      "community": 9,
       "norm_label": "scheduleortick()"
     },
     {
       "label": "FromZoid_Loot.lua",
       "file_type": "code",
-      "source_file": "server/FromZoid_Loot.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Loot.lua",
       "source_location": "L1",
       "id": "server_fromzoid_loot_lua",
-      "community": 8,
+      "community": 11,
       "norm_label": "fromzoid_loot.lua"
     },
     {
       "label": "add()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Loot.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Loot.lua",
       "source_location": "L13",
       "id": "server_fromzoid_loot_add",
-      "community": 8,
+      "community": 11,
       "norm_label": "add()"
     },
     {
       "label": "FromZoid_NightStats.lua",
       "file_type": "code",
-      "source_file": "server/FromZoid_NightStats.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_NightStats.lua",
       "source_location": "L1",
       "id": "server_fromzoid_nightstats_lua",
-      "community": 0,
+      "community": 5,
       "norm_label": "fromzoid_nightstats.lua"
     },
     {
       "label": "applyWalkType()",
       "file_type": "code",
-      "source_file": "server/FromZoid_NightStats.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_NightStats.lua",
       "source_location": "L7",
       "id": "server_fromzoid_nightstats_applywalktype",
-      "community": 0,
+      "community": 5,
       "norm_label": "applywalktype()"
     },
     {
       "label": "applyLore()",
       "file_type": "code",
-      "source_file": "server/FromZoid_NightStats.lua",
-      "source_location": "L43",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_NightStats.lua",
+      "source_location": "L39",
       "id": "server_fromzoid_nightstats_applylore",
-      "community": 0,
+      "community": 5,
       "norm_label": "applylore()"
     },
     {
       "label": "applyAll()",
       "file_type": "code",
-      "source_file": "server/FromZoid_NightStats.lua",
-      "source_location": "L65",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_NightStats.lua",
+      "source_location": "L64",
       "id": "server_fromzoid_nightstats_applyall",
-      "community": 0,
+      "community": 5,
       "norm_label": "applyall()"
     },
     {
       "label": "onZombieCreate()",
       "file_type": "code",
-      "source_file": "server/FromZoid_NightStats.lua",
-      "source_location": "L87",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_NightStats.lua",
+      "source_location": "L86",
       "id": "server_fromzoid_nightstats_onzombiecreate",
-      "community": 0,
+      "community": 5,
       "norm_label": "onzombiecreate()"
+    },
+    {
+      "label": "FromZoid_People.lua",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_People.lua",
+      "source_location": "L1",
+      "id": "server_fromzoid_people_lua",
+      "community": 8,
+      "norm_label": "fromzoid_people.lua"
+    },
+    {
+      "label": "pickOutfit()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_People.lua",
+      "source_location": "L6",
+      "id": "server_fromzoid_people_pickoutfit",
+      "community": 8,
+      "norm_label": "pickoutfit()"
+    },
+    {
+      "label": "assignVoice()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_People.lua",
+      "source_location": "L10",
+      "id": "server_fromzoid_people_assignvoice",
+      "community": 8,
+      "norm_label": "assignvoice()"
+    },
+    {
+      "label": "cleanVisuals()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_People.lua",
+      "source_location": "L25",
+      "id": "server_fromzoid_people_cleanvisuals",
+      "community": 8,
+      "norm_label": "cleanvisuals()"
+    },
+    {
+      "label": "dressLikePerson()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_People.lua",
+      "source_location": "L69",
+      "id": "server_fromzoid_people_dresslikeperson",
+      "community": 8,
+      "norm_label": "dresslikeperson()"
+    },
+    {
+      "label": "FromZoid_SpawnTalisman.lua",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_SpawnTalisman.lua",
+      "source_location": "L1",
+      "id": "server_fromzoid_spawntalisman_lua",
+      "community": 12,
+      "norm_label": "fromzoid_spawntalisman.lua"
     },
     {
       "label": "FromZoid_Sun.lua",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
       "source_location": "L1",
       "id": "server_fromzoid_sun_lua",
-      "community": 5,
+      "community": 3,
       "norm_label": "fromzoid_sun.lua"
     },
     {
       "label": "chance()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
       "source_location": "L7",
       "id": "server_fromzoid_sun_chance",
-      "community": 5,
+      "community": 3,
       "norm_label": "chance()"
     },
     {
       "label": "outdoorSquareNear()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
       "source_location": "L17",
       "id": "server_fromzoid_sun_outdoorsquarenear",
-      "community": 5,
+      "community": 3,
       "norm_label": "outdoorsquarenear()"
     },
     {
       "label": "sendIndoors()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
       "source_location": "L28",
       "id": "server_fromzoid_sun_sendindoors",
-      "community": 3,
+      "community": 0,
       "norm_label": "sendindoors()"
     },
     {
       "label": "lureOutside()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
-      "source_location": "L56",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
+      "source_location": "L49",
       "id": "server_fromzoid_sun_lureoutside",
-      "community": 5,
+      "community": 3,
       "norm_label": "lureoutside()"
     },
     {
       "label": "processSunCycle()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
-      "source_location": "L66",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
+      "source_location": "L59",
       "id": "server_fromzoid_sun_processsuncycle",
       "community": 3,
       "norm_label": "processsuncycle()"
@@ -375,233 +483,278 @@
     {
       "label": "wakeZombie()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
       "source_location": "L103",
       "id": "server_fromzoid_sun_wakezombie",
-      "community": 5,
+      "community": 3,
       "norm_label": "wakezombie()"
     },
     {
       "label": "onZombieUpdate()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
-      "source_location": "L137",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
+      "source_location": "L140",
       "id": "server_fromzoid_sun_onzombieupdate",
-      "community": 5,
+      "community": 3,
       "norm_label": "onzombieupdate()"
     },
     {
       "label": "onHit()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Sun.lua",
-      "source_location": "L169",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Sun.lua",
+      "source_location": "L172",
       "id": "server_fromzoid_sun_onhit",
-      "community": 5,
+      "community": 3,
       "norm_label": "onhit()"
     },
     {
       "label": "FromZoid_Talisman.lua",
       "file_type": "code",
-      "source_file": "server/FromZoid_Talisman.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
       "source_location": "L1",
       "id": "server_fromzoid_talisman_lua",
-      "community": 3,
+      "community": 7,
       "norm_label": "fromzoid_talisman.lua"
     },
     {
       "label": "squareStillHasTalisman()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Talisman.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
       "source_location": "L5",
       "id": "server_fromzoid_talisman_squarestillhastalisman",
-      "community": 4,
+      "community": 1,
       "norm_label": "squarestillhastalisman()"
     },
     {
       "label": "validateSeals()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Talisman.lua",
-      "source_location": "L24",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
+      "source_location": "L28",
       "id": "server_fromzoid_talisman_validateseals",
-      "community": 4,
+      "community": 1,
       "norm_label": "validateseals()"
     },
     {
       "label": "nearestExteriorSquare()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Talisman.lua",
-      "source_location": "L42",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
+      "source_location": "L46",
       "id": "server_fromzoid_talisman_nearestexteriorsquare",
-      "community": 3,
+      "community": 7,
       "norm_label": "nearestexteriorsquare()"
     },
     {
       "label": "nearestOpeningSquare()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Talisman.lua",
-      "source_location": "L62",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
+      "source_location": "L66",
       "id": "server_fromzoid_talisman_nearestopeningsquare",
-      "community": 3,
+      "community": 7,
       "norm_label": "nearestopeningsquare()"
+    },
+    {
+      "label": "clearThump()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
+      "source_location": "L97",
+      "id": "server_fromzoid_talisman_clearthump",
+      "community": 7,
+      "norm_label": "clearthump()"
     },
     {
       "label": "enforceTalisman()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Talisman.lua",
-      "source_location": "L93",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Talisman.lua",
+      "source_location": "L113",
       "id": "server_fromzoid_talisman_enforcetalisman",
-      "community": 3,
+      "community": 7,
       "norm_label": "enforcetalisman()"
     },
     {
       "label": "FromZoid_Town.lua",
       "file_type": "code",
-      "source_file": "server/FromZoid_Town.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Town.lua",
       "source_location": "L1",
       "id": "server_fromzoid_town_lua",
-      "community": 7,
+      "community": 6,
       "norm_label": "fromzoid_town.lua"
     },
     {
       "label": "alreadyDone()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Town.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Town.lua",
       "source_location": "L5",
       "id": "server_fromzoid_town_alreadydone",
-      "community": 7,
+      "community": 6,
       "norm_label": "alreadydone()"
     },
     {
       "label": "isPlayerBuilt()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Town.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Town.lua",
       "source_location": "L15",
       "id": "server_fromzoid_town_isplayerbuilt",
-      "community": 7,
+      "community": 6,
       "norm_label": "isplayerbuilt()"
     },
     {
       "label": "addPlanks()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Town.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Town.lua",
       "source_location": "L28",
       "id": "server_fromzoid_town_addplanks",
-      "community": 7,
+      "community": 6,
       "norm_label": "addplanks()"
+    },
+    {
+      "label": "smashWindow()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Town.lua",
+      "source_location": "L48",
+      "id": "server_fromzoid_town_smashwindow",
+      "community": 6,
+      "norm_label": "smashwindow()"
     },
     {
       "label": "processSquare()",
       "file_type": "code",
-      "source_file": "server/FromZoid_Town.lua",
-      "source_location": "L48",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_Town.lua",
+      "source_location": "L56",
       "id": "server_fromzoid_town_processsquare",
-      "community": 7,
+      "community": 6,
       "norm_label": "processsquare()"
+    },
+    {
+      "label": "FromZoid_UltraStrong.lua",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_UltraStrong.lua",
+      "source_location": "L1",
+      "id": "server_fromzoid_ultrastrong_lua",
+      "community": 10,
+      "norm_label": "fromzoid_ultrastrong.lua"
+    },
+    {
+      "label": "extraDamage()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_UltraStrong.lua",
+      "source_location": "L7",
+      "id": "server_fromzoid_ultrastrong_extradamage",
+      "community": 10,
+      "norm_label": "extradamage()"
+    },
+    {
+      "label": "onZombieUpdate()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/server/FromZoid_UltraStrong.lua",
+      "source_location": "L19",
+      "id": "server_fromzoid_ultrastrong_onzombieupdate",
+      "community": 10,
+      "norm_label": "onzombieupdate()"
     },
     {
       "label": "FromZoid_Core.lua",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
       "source_location": "L1",
       "id": "shared_fromzoid_core_lua",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid_core.lua"
     },
     {
       "label": "FromZoid.getSandbox()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L8",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L21",
       "id": "shared_fromzoid_core_fromzoid_getsandbox",
-      "community": 5,
+      "community": 3,
       "norm_label": "fromzoid.getsandbox()"
     },
     {
       "label": "FromZoid.isEnabled()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L20",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L33",
       "id": "shared_fromzoid_core_fromzoid_isenabled",
-      "community": 0,
+      "community": 1,
       "norm_label": "fromzoid.isenabled()"
     },
     {
       "label": "FromZoid.getState()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L31",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L44",
       "id": "shared_fromzoid_core_fromzoid_getstate",
-      "community": 0,
+      "community": 5,
       "norm_label": "fromzoid.getstate()"
     },
     {
       "label": "FromZoid.getTalismanData()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L35",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L48",
       "id": "shared_fromzoid_core_fromzoid_gettalismandata",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoid.gettalismandata()"
     },
     {
       "label": "FromZoid.getSquareData()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L39",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L52",
       "id": "shared_fromzoid_core_fromzoid_getsquaredata",
-      "community": 7,
+      "community": 6,
       "norm_label": "fromzoid.getsquaredata()"
     },
     {
       "label": "FromZoid.getTimeOfDayHours()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L43",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L56",
       "id": "shared_fromzoid_core_fromzoid_gettimeofdayhours",
-      "community": 1,
+      "community": 3,
       "norm_label": "fromzoid.gettimeofdayhours()"
     },
     {
       "label": "FromZoid.getDawnDusk()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L54",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L67",
       "id": "shared_fromzoid_core_fromzoid_getdawndusk",
-      "community": 1,
+      "community": 3,
       "norm_label": "fromzoid.getdawndusk()"
     },
     {
       "label": "FromZoid.isNight()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L71",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L84",
       "id": "shared_fromzoid_core_fromzoid_isnight",
-      "community": 1,
+      "community": 3,
       "norm_label": "fromzoid.isnight()"
     },
     {
       "label": "FromZoid.isDay()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L77",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L90",
       "id": "shared_fromzoid_core_fromzoid_isday",
-      "community": 1,
+      "community": 3,
       "norm_label": "fromzoid.isday()"
     },
     {
       "label": "FromZoid.buildingIdFromDef()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L81",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L94",
       "id": "shared_fromzoid_core_fromzoid_buildingidfromdef",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid.buildingidfromdef()"
     },
     {
       "label": "FromZoid.buildingId()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L98",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L111",
       "id": "shared_fromzoid_core_fromzoid_buildingid",
       "community": 1,
       "norm_label": "fromzoid.buildingid()"
@@ -609,53 +762,53 @@
     {
       "label": "FromZoid.buildingFromSquare()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L114",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L127",
       "id": "shared_fromzoid_core_fromzoid_buildingfromsquare",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid.buildingfromsquare()"
     },
     {
       "label": "FromZoid.isBuildingSealed()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L121",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L134",
       "id": "shared_fromzoid_core_fromzoid_isbuildingsealed",
-      "community": 3,
+      "community": 1,
       "norm_label": "fromzoid.isbuildingsealed()"
     },
     {
       "label": "FromZoid.squareHasOpening()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L134",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L147",
       "id": "shared_fromzoid_core_fromzoid_squarehasopening",
-      "community": 6,
+      "community": 7,
       "norm_label": "fromzoid.squarehasopening()"
     },
     {
       "label": "FromZoid.squareHasOpenInvitation()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L151",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L164",
       "id": "shared_fromzoid_core_fromzoid_squarehasopeninvitation",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid.squarehasopeninvitation()"
     },
     {
       "label": "FromZoid.scanBuildingInvitation()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L178",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L191",
       "id": "shared_fromzoid_core_fromzoid_scanbuildinginvitation",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid.scanbuildinginvitation()"
     },
     {
       "label": "FromZoid.buildingHasInvitation()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L208",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L238",
       "id": "shared_fromzoid_core_fromzoid_buildinghasinvitation",
       "community": 1,
       "norm_label": "fromzoid.buildinghasinvitation()"
@@ -663,79 +816,205 @@
     {
       "label": "FromZoid.eachLoadedZombie()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L219",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L249",
       "id": "shared_fromzoid_core_fromzoid_eachloadedzombie",
-      "community": 6,
+      "community": 5,
       "norm_label": "fromzoid.eachloadedzombie()"
     },
     {
       "label": "FromZoid.findNearestUnsealedBuilding()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L236",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L266",
       "id": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding",
-      "community": 3,
+      "community": 0,
       "norm_label": "fromzoid.findnearestunsealedbuilding()"
+    },
+    {
+      "label": "FromZoid.pickNestSquare()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L307",
+      "id": "shared_fromzoid_core_fromzoid_picknestsquare",
+      "community": 0,
+      "norm_label": "fromzoid.picknestsquare()"
     },
     {
       "label": "FromZoid.freeTileInBuilding()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L275",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L326",
       "id": "shared_fromzoid_core_fromzoid_freetileinbuilding",
-      "community": 3,
+      "community": 0,
       "norm_label": "fromzoid.freetileinbuilding()"
     },
     {
       "label": "FromZoid.teleportZombieToSquare()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L301",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L352",
       "id": "shared_fromzoid_core_fromzoid_teleportzombietosquare",
-      "community": 3,
+      "community": 0,
       "norm_label": "fromzoid.teleportzombietosquare()"
     },
     {
       "label": "FromZoid.pathZombieToSquare()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L323",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L374",
       "id": "shared_fromzoid_core_fromzoid_pathzombietosquare",
-      "community": 3,
+      "community": 0,
       "norm_label": "fromzoid.pathzombietosquare()"
     },
     {
       "label": "FromZoid.zombieSquare()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L334",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L385",
       "id": "shared_fromzoid_core_fromzoid_zombiesquare",
-      "community": 3,
+      "community": 4,
       "norm_label": "fromzoid.zombiesquare()"
     },
     {
       "label": "FromZoid.playerList()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L350",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L401",
       "id": "shared_fromzoid_core_fromzoid_playerlist",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid.playerlist()"
+    },
+    {
+      "label": "FromZoid.getBuildingDef()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L419",
+      "id": "shared_fromzoid_core_fromzoid_getbuildingdef",
+      "community": 0,
+      "norm_label": "fromzoid.getbuildingdef()"
+    },
+    {
+      "label": "FromZoid.roomNameIsResidential()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L432",
+      "id": "shared_fromzoid_core_fromzoid_roomnameisresidential",
+      "community": 0,
+      "norm_label": "fromzoid.roomnameisresidential()"
+    },
+    {
+      "label": "FromZoid.isResidentialBuilding()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L441",
+      "id": "shared_fromzoid_core_fromzoid_isresidentialbuilding",
+      "community": 0,
+      "norm_label": "fromzoid.isresidentialbuilding()"
+    },
+    {
+      "label": "FromZoid.getDoorOnSquare()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L465",
+      "id": "shared_fromzoid_core_fromzoid_getdooronsquare",
+      "community": 0,
+      "norm_label": "fromzoid.getdooronsquare()"
+    },
+    {
+      "label": "FromZoid.getWindowOnSquare()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L482",
+      "id": "shared_fromzoid_core_fromzoid_getwindowonsquare",
+      "community": 4,
+      "norm_label": "fromzoid.getwindowonsquare()"
+    },
+    {
+      "label": "FromZoid.firstDoorInBuilding()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L499",
+      "id": "shared_fromzoid_core_fromzoid_firstdoorinbuilding",
+      "community": 0,
+      "norm_label": "fromzoid.firstdoorinbuilding()"
+    },
+    {
+      "label": "FromZoid.findBasementSquare()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L522",
+      "id": "shared_fromzoid_core_fromzoid_findbasementsquare",
+      "community": 0,
+      "norm_label": "fromzoid.findbasementsquare()"
+    },
+    {
+      "label": "FromZoid.wallAdjacentTile()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L572",
+      "id": "shared_fromzoid_core_fromzoid_walladjacenttile",
+      "community": 0,
+      "norm_label": "fromzoid.walladjacenttile()"
+    },
+    {
+      "label": "FromZoid.isZombieOffscreen()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L587",
+      "id": "shared_fromzoid_core_fromzoid_iszombieoffscreen",
+      "community": 0,
+      "norm_label": "fromzoid.iszombieoffscreen()"
+    },
+    {
+      "label": "FromZoid.clusterKey()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L606",
+      "id": "shared_fromzoid_core_fromzoid_clusterkey",
+      "community": 6,
+      "norm_label": "fromzoid.clusterkey()"
+    },
+    {
+      "label": "FromZoid.getClusterKind()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L610",
+      "id": "shared_fromzoid_core_fromzoid_getclusterkind",
+      "community": 6,
+      "norm_label": "fromzoid.getclusterkind()"
+    },
+    {
+      "label": "FromZoid.putZombieToSleep()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L628",
+      "id": "shared_fromzoid_core_fromzoid_putzombietosleep",
+      "community": 0,
+      "norm_label": "fromzoid.putzombietosleep()"
+    },
+    {
+      "label": "FromZoid.wakeZombieBody()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L651",
+      "id": "shared_fromzoid_core_fromzoid_wakezombiebody",
+      "community": 3,
+      "norm_label": "fromzoid.wakezombiebody()"
     },
     {
       "label": "FromZoid.occupiedBuildingIds()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Core.lua",
-      "source_location": "L368",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Core.lua",
+      "source_location": "L668",
       "id": "shared_fromzoid_core_fromzoid_occupiedbuildingids",
-      "community": 1,
+      "community": 0,
       "norm_label": "fromzoid.occupiedbuildingids()"
     },
     {
       "label": "FromZoid_Invite.lua",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Invite.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Invite.lua",
       "source_location": "L1",
       "id": "shared_fromzoid_invite_lua",
       "community": 1,
@@ -744,7 +1023,7 @@
     {
       "label": "refreshInvitations()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Invite.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Invite.lua",
       "source_location": "L1",
       "id": "shared_fromzoid_invite_refreshinvitations",
       "community": 1,
@@ -753,65 +1032,119 @@
     {
       "label": "FromZoid_Recipe.lua",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Recipe.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Recipe.lua",
       "source_location": "L1",
       "id": "shared_fromzoid_recipe_lua",
-      "community": 0,
+      "community": 1,
       "norm_label": "fromzoid_recipe.lua"
     },
     {
       "label": "FromZoid_Recipe.canCraftTalisman()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_Recipe.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_Recipe.lua",
       "source_location": "L3",
       "id": "shared_fromzoid_recipe_fromzoid_recipe_cancrafttalisman",
-      "community": 0,
+      "community": 1,
       "norm_label": "fromzoid_recipe.cancrafttalisman()"
     },
     {
       "label": "FromZoid_TalismanUtil.lua",
       "file_type": "code",
-      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
       "source_location": "L1",
       "id": "shared_fromzoid_talismanutil_lua",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoid_talismanutil.lua"
     },
     {
       "label": "FromZoid.unsealBuildingId()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
       "source_location": "L1",
       "id": "shared_fromzoid_talismanutil_fromzoid_unsealbuildingid",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoid.unsealbuildingid()"
     },
     {
       "label": "FromZoid.sealBuilding()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
       "source_location": "L8",
       "id": "shared_fromzoid_talismanutil_fromzoid_sealbuilding",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoid.sealbuilding()"
+    },
+    {
+      "label": "FromZoid.buildingFromDoor()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L25",
+      "id": "shared_fromzoid_talismanutil_fromzoid_buildingfromdoor",
+      "community": 1,
+      "norm_label": "fromzoid.buildingfromdoor()"
+    },
+    {
+      "label": "FromZoid.findTalismanInInventory()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L40",
+      "id": "shared_fromzoid_talismanutil_fromzoid_findtalismanininventory",
+      "community": 1,
+      "norm_label": "fromzoid.findtalismanininventory()"
+    },
+    {
+      "label": "FromZoid.hangTalismanOnDoor()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L85",
+      "id": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
+      "community": 1,
+      "norm_label": "fromzoid.hangtalismanondoor()"
     },
     {
       "label": "FromZoid.hangTalismanOnSquare()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_TalismanUtil.lua",
-      "source_location": "L22",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L129",
       "id": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoid.hangtalismanonsquare()"
     },
     {
       "label": "FromZoid.takeTalismanFromSquare()",
       "file_type": "code",
-      "source_file": "shared/FromZoid_TalismanUtil.lua",
-      "source_location": "L56",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L137",
       "id": "shared_fromzoid_talismanutil_fromzoid_taketalismanfromsquare",
-      "community": 4,
+      "community": 1,
       "norm_label": "fromzoid.taketalismanfromsquare()"
+    },
+    {
+      "label": "FromZoid_VoiceData.lua",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_VoiceData.lua",
+      "source_location": "L1",
+      "id": "shared_fromzoid_voicedata_lua",
+      "community": 13,
+      "norm_label": "fromzoid_voicedata.lua"
+    },
+    {
+      "label": "FromZoid_VoiceIndex.lua",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/shared/FromZoid_VoiceIndex.lua",
+      "source_location": "L1",
+      "id": "shared_fromzoid_voiceindex_lua",
+      "community": 14,
+      "norm_label": "fromzoid_voiceindex.lua"
+    },
+    {
+      "label": "nearOpening()",
+      "file_type": "code",
+      "source_file": "Contents/mods/FromZoid/common/media/lua/client/FromZoid_Whispers.lua",
+      "source_location": "L32",
+      "community": 4,
+      "norm_label": "nearopening()",
+      "id": "client_fromzoid_whispers_nearopening"
     }
   ],
   "links": [
@@ -821,9 +1154,9 @@
       "source_file": "client/FromZoid_DarknessFx.lua",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_darknessfx_lua",
-      "target": "client_fromzoid_darknessfx_applyfx",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_darknessfx_applyfx"
     },
     {
       "relation": "contains",
@@ -831,9 +1164,9 @@
       "source_file": "client/FromZoid_DarknessFx.lua",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_darknessfx_lua",
-      "target": "client_fromzoid_darknessfx_radioline",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_darknessfx_radioline"
     },
     {
       "relation": "contains",
@@ -841,9 +1174,9 @@
       "source_file": "client/FromZoid_DarknessFx.lua",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_darknessfx_lua",
-      "target": "client_fromzoid_darknessfx_tickdarknessclient",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_darknessfx_tickdarknessclient"
     },
     {
       "relation": "calls",
@@ -852,9 +1185,9 @@
       "source_file": "client/FromZoid_DarknessFx.lua",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_darknessfx_tickdarknessclient",
-      "target": "client_fromzoid_darknessfx_applyfx",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_darknessfx_applyfx"
     },
     {
       "relation": "calls",
@@ -863,9 +1196,9 @@
       "source_file": "client/FromZoid_DarknessFx.lua",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_darknessfx_tickdarknessclient",
-      "target": "client_fromzoid_darknessfx_radioline",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_darknessfx_radioline"
     },
     {
       "relation": "calls",
@@ -895,9 +1228,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_isvalid",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_isvalid"
     },
     {
       "relation": "contains",
@@ -905,9 +1238,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_waittostart",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_waittostart"
     },
     {
       "relation": "contains",
@@ -915,9 +1248,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_update",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_update"
     },
     {
       "relation": "contains",
@@ -925,9 +1258,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_start",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_start"
     },
     {
       "relation": "contains",
@@ -935,9 +1268,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_stop",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_stop"
     },
     {
       "relation": "contains",
@@ -945,9 +1278,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_perform",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_perform"
     },
     {
       "relation": "contains",
@@ -955,9 +1288,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_new",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_new"
     },
     {
       "relation": "contains",
@@ -965,9 +1298,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_isvalid",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_isvalid"
     },
     {
       "relation": "contains",
@@ -975,9 +1308,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_waittostart",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_waittostart"
     },
     {
       "relation": "contains",
@@ -985,9 +1318,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_start",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_start"
     },
     {
       "relation": "contains",
@@ -995,9 +1328,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_stop",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_stop"
     },
     {
       "relation": "contains",
@@ -1005,9 +1338,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_perform",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_perform"
     },
     {
       "relation": "contains",
@@ -1015,9 +1348,9 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_new",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_fromzoidtaketalismanaction_new"
     },
     {
       "relation": "contains",
@@ -1025,9 +1358,19 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_squarehashungtalisman",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_squarehashungtalisman"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_talismanmenu_lua",
+      "target": "client_fromzoid_talismanmenu_doorfromcontext"
     },
     {
       "relation": "contains",
@@ -1035,9 +1378,31 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_lua",
-      "target": "client_fromzoid_talismanmenu_onfillworld",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_onfillworld"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_isvalid",
+      "target": "shared_fromzoid_talismanutil_fromzoid_findtalismanininventory"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "client_fromzoid_talismanmenu_fromzoidhangtalismanaction_perform",
+      "target": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor"
     },
     {
       "relation": "calls",
@@ -1068,9 +1433,20 @@
       "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_talismanmenu_onfillworld",
-      "target": "client_fromzoid_talismanmenu_squarehashungtalisman",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_talismanmenu_squarehashungtalisman"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_talismanmenu_onfillworld",
+      "target": "client_fromzoid_talismanmenu_doorfromcontext"
     },
     {
       "relation": "calls",
@@ -1089,6 +1465,28 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "client_fromzoid_talismanmenu_onfillworld",
+      "target": "shared_fromzoid_talismanutil_fromzoid_findtalismanininventory"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_TalismanMenu.lua",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "client_fromzoid_talismanmenu_onfillworld",
+      "target": "shared_fromzoid_talismanutil_fromzoid_buildingfromdoor"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_TalismanMenu.lua",
       "source_location": "L145",
       "weight": 1.0,
       "source": "client_fromzoid_talismanmenu_onfillworld",
@@ -1098,21 +1496,71 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L21",
+      "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_whispers_lua",
-      "target": "client_fromzoid_whispers_speak",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_whispers_pad2"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L32",
+      "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_whispers_lua",
-      "target": "client_fromzoid_whispers_nearopening",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_whispers_genderpool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_lua",
+      "target": "client_fromzoid_whispers_voicefits"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_lua",
+      "target": "client_fromzoid_whispers_clipsfor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_lua",
+      "target": "client_fromzoid_whispers_nearkind"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_lua",
+      "target": "client_fromzoid_whispers_voicefor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_lua",
+      "target": "client_fromzoid_whispers_speak"
     },
     {
       "relation": "contains",
@@ -1120,31 +1568,96 @@
       "source_file": "client/FromZoid_Whispers.lua",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_whispers_lua",
-      "target": "client_fromzoid_whispers_trywhispers",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_whispers_trywhispers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_lua",
+      "target": "client_fromzoid_whispers_nearopening"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L82",
+      "source_location": "L63",
       "weight": 1.0,
-      "source": "client_fromzoid_whispers_trywhispers",
-      "target": "client_fromzoid_whispers_speak",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_speak",
+      "target": "client_fromzoid_whispers_pad2"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L80",
+      "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_voicefits",
+      "target": "client_fromzoid_whispers_genderpool"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_voicefor",
+      "target": "client_fromzoid_whispers_genderpool"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_voicefor",
+      "target": "client_fromzoid_whispers_voicefits"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_voicefor",
+      "target": "client_fromzoid_whispers_clipsfor"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L146",
+      "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "client_fromzoid_whispers_trywhispers",
-      "target": "client_fromzoid_whispers_nearopening",
-      "confidence_score": 1.0
+      "target": "client_fromzoid_whispers_clipsfor"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_trywhispers",
+      "target": "client_fromzoid_whispers_nearkind"
     },
     {
       "relation": "calls",
@@ -1152,9 +1665,9 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L33",
+      "source_location": "L11",
       "weight": 1.0,
-      "source": "client_fromzoid_whispers_nearopening",
+      "source": "client_fromzoid_whispers_nearkind",
       "target": "shared_fromzoid_core_fromzoid_zombiesquare"
     },
     {
@@ -1163,10 +1676,43 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "client/FromZoid_Whispers.lua",
-      "source_location": "L37",
+      "source_location": "L21",
       "weight": 1.0,
-      "source": "client_fromzoid_whispers_nearopening",
-      "target": "shared_fromzoid_core_fromzoid_squarehasopening"
+      "source": "client_fromzoid_whispers_nearkind",
+      "target": "shared_fromzoid_core_fromzoid_getwindowonsquare"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "client_fromzoid_whispers_nearkind",
+      "target": "shared_fromzoid_core_fromzoid_getdooronsquare"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L108",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_trywhispers",
+      "target": "client_fromzoid_whispers_voicefor"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_trywhispers",
+      "target": "client_fromzoid_whispers_speak"
     },
     {
       "relation": "calls",
@@ -1235,14 +1781,25 @@
       "target": "shared_fromzoid_core_fromzoid_eachloadedzombie"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L80",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_fromzoid_whispers_trywhispers",
+      "target": "client_fromzoid_whispers_nearopening"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "server/FromZoid_Darkness.lua",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_darkness_lua",
-      "target": "server_fromzoid_darkness_worldhours",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_darkness_worldhours"
     },
     {
       "relation": "contains",
@@ -1250,9 +1807,9 @@
       "source_file": "server/FromZoid_Darkness.lua",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_darkness_lua",
-      "target": "server_fromzoid_darkness_setpower",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_darkness_setpower"
     },
     {
       "relation": "contains",
@@ -1260,9 +1817,9 @@
       "source_file": "server/FromZoid_Darkness.lua",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_darkness_lua",
-      "target": "server_fromzoid_darkness_scheduleortick",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_darkness_scheduleortick"
     },
     {
       "relation": "calls",
@@ -1271,9 +1828,9 @@
       "source_file": "server/FromZoid_Darkness.lua",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_darkness_scheduleortick",
-      "target": "server_fromzoid_darkness_worldhours",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_darkness_worldhours"
     },
     {
       "relation": "calls",
@@ -1282,9 +1839,9 @@
       "source_file": "server/FromZoid_Darkness.lua",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_darkness_scheduleortick",
-      "target": "server_fromzoid_darkness_setpower",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_darkness_setpower"
     },
     {
       "relation": "calls",
@@ -1325,9 +1882,9 @@
       "source_file": "server/FromZoid_Loot.lua",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_loot_lua",
-      "target": "server_fromzoid_loot_add",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_loot_add"
     },
     {
       "relation": "contains",
@@ -1335,9 +1892,9 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_lua",
-      "target": "server_fromzoid_nightstats_applywalktype",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_applywalktype"
     },
     {
       "relation": "contains",
@@ -1345,9 +1902,9 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_lua",
-      "target": "server_fromzoid_nightstats_applylore",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_applylore"
     },
     {
       "relation": "contains",
@@ -1355,9 +1912,9 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_lua",
-      "target": "server_fromzoid_nightstats_applyall",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_applyall"
     },
     {
       "relation": "contains",
@@ -1365,9 +1922,9 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_lua",
-      "target": "server_fromzoid_nightstats_onzombiecreate",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_onzombiecreate"
     },
     {
       "relation": "calls",
@@ -1376,9 +1933,9 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_applyall",
-      "target": "server_fromzoid_nightstats_applywalktype",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_applywalktype"
     },
     {
       "relation": "calls",
@@ -1387,9 +1944,9 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_onzombiecreate",
-      "target": "server_fromzoid_nightstats_applywalktype",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_applywalktype"
     },
     {
       "relation": "calls",
@@ -1398,9 +1955,20 @@
       "source_file": "server/FromZoid_NightStats.lua",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_nightstats_applyall",
-      "target": "server_fromzoid_nightstats_applylore",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_nightstats_applylore"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_NightStats.lua",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "server_fromzoid_nightstats_applylore",
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
     },
     {
       "relation": "calls",
@@ -1482,12 +2050,85 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_lua",
+      "target": "server_fromzoid_people_pickoutfit"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_lua",
+      "target": "server_fromzoid_people_assignvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_lua",
+      "target": "server_fromzoid_people_cleanvisuals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L63",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_lua",
+      "target": "server_fromzoid_people_dresslikeperson"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_dresslikeperson",
+      "target": "server_fromzoid_people_pickoutfit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_dresslikeperson",
+      "target": "server_fromzoid_people_assignvoice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_People.lua",
+      "source_location": "L70",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_people_dresslikeperson",
+      "target": "server_fromzoid_people_cleanvisuals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_chance",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_chance"
     },
     {
       "relation": "contains",
@@ -1495,9 +2136,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_outdoorsquarenear",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_outdoorsquarenear"
     },
     {
       "relation": "contains",
@@ -1505,9 +2146,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_sendindoors",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_sendindoors"
     },
     {
       "relation": "contains",
@@ -1515,9 +2156,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_lureoutside",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_lureoutside"
     },
     {
       "relation": "contains",
@@ -1525,9 +2166,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_processsuncycle",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_processsuncycle"
     },
     {
       "relation": "contains",
@@ -1535,9 +2176,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_wakezombie",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_wakezombie"
     },
     {
       "relation": "contains",
@@ -1545,9 +2186,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_onzombieupdate",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_onzombieupdate"
     },
     {
       "relation": "contains",
@@ -1555,9 +2196,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L169",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lua",
-      "target": "server_fromzoid_sun_onhit",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_onhit"
     },
     {
       "relation": "calls",
@@ -1566,9 +2207,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lureoutside",
-      "target": "server_fromzoid_sun_chance",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_chance"
     },
     {
       "relation": "calls",
@@ -1577,9 +2218,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_wakezombie",
-      "target": "server_fromzoid_sun_chance",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_chance"
     },
     {
       "relation": "calls",
@@ -1588,9 +2229,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_onzombieupdate",
-      "target": "server_fromzoid_sun_chance",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_chance"
     },
     {
       "relation": "calls",
@@ -1599,9 +2240,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_onhit",
-      "target": "server_fromzoid_sun_chance",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_chance"
     },
     {
       "relation": "calls",
@@ -1610,9 +2251,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_lureoutside",
-      "target": "server_fromzoid_sun_outdoorsquarenear",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_outdoorsquarenear"
     },
     {
       "relation": "calls",
@@ -1621,9 +2262,9 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_processsuncycle",
-      "target": "server_fromzoid_sun_sendindoors",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_sendindoors"
     },
     {
       "relation": "calls",
@@ -1653,10 +2294,10 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "server/FromZoid_Sun.lua",
-      "source_location": "L36",
+      "source_location": "L32",
       "weight": 1.0,
       "source": "server_fromzoid_sun_sendindoors",
-      "target": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding"
+      "target": "shared_fromzoid_core_fromzoid_putzombietosleep"
     },
     {
       "relation": "calls",
@@ -1664,10 +2305,10 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "server/FromZoid_Sun.lua",
-      "source_location": "L40",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "server_fromzoid_sun_sendindoors",
-      "target": "shared_fromzoid_core_fromzoid_freetileinbuilding"
+      "target": "shared_fromzoid_core_fromzoid_picknestsquare"
     },
     {
       "relation": "calls",
@@ -1694,13 +2335,46 @@
     {
       "relation": "calls",
       "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_sendindoors",
+      "target": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_sendindoors",
+      "target": "shared_fromzoid_core_fromzoid_freetileinbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_processsuncycle",
-      "target": "server_fromzoid_sun_lureoutside",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_lureoutside"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_lureoutside",
+      "target": "shared_fromzoid_core_fromzoid_wakezombiebody"
     },
     {
       "relation": "calls",
@@ -1763,6 +2437,17 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_processsuncycle",
+      "target": "shared_fromzoid_core_fromzoid_wakezombiebody"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L83",
       "weight": 1.0,
       "source": "server_fromzoid_sun_processsuncycle",
@@ -1782,13 +2467,35 @@
     {
       "relation": "calls",
       "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_processsuncycle",
+      "target": "shared_fromzoid_core_fromzoid_putzombietosleep"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_processsuncycle",
+      "target": "shared_fromzoid_core_fromzoid_iszombieoffscreen"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L155",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_onzombieupdate",
-      "target": "server_fromzoid_sun_wakezombie",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_wakezombie"
     },
     {
       "relation": "calls",
@@ -1797,9 +2504,20 @@
       "source_file": "server/FromZoid_Sun.lua",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_sun_onhit",
-      "target": "server_fromzoid_sun_wakezombie",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_sun_wakezombie"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Sun.lua",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "server_fromzoid_sun_wakezombie",
+      "target": "shared_fromzoid_core_fromzoid_wakezombiebody"
     },
     {
       "relation": "calls",
@@ -1895,9 +2613,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_lua",
-      "target": "server_fromzoid_talisman_squarestillhastalisman",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_squarestillhastalisman"
     },
     {
       "relation": "contains",
@@ -1905,9 +2623,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_lua",
-      "target": "server_fromzoid_talisman_validateseals",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_validateseals"
     },
     {
       "relation": "contains",
@@ -1915,9 +2633,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_lua",
-      "target": "server_fromzoid_talisman_nearestexteriorsquare",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_nearestexteriorsquare"
     },
     {
       "relation": "contains",
@@ -1925,9 +2643,19 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_lua",
-      "target": "server_fromzoid_talisman_nearestopeningsquare",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_nearestopeningsquare"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_Talisman.lua",
+      "source_location": "L97",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_talisman_lua",
+      "target": "server_fromzoid_talisman_clearthump"
     },
     {
       "relation": "contains",
@@ -1935,9 +2663,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_lua",
-      "target": "server_fromzoid_talisman_enforcetalisman",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_enforcetalisman"
     },
     {
       "relation": "calls",
@@ -1946,9 +2674,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_validateseals",
-      "target": "server_fromzoid_talisman_squarestillhastalisman",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_squarestillhastalisman"
     },
     {
       "relation": "calls",
@@ -1990,9 +2718,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_enforcetalisman",
-      "target": "server_fromzoid_talisman_nearestexteriorsquare",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_nearestexteriorsquare"
     },
     {
       "relation": "calls",
@@ -2001,9 +2729,9 @@
       "source_file": "server/FromZoid_Talisman.lua",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_talisman_enforcetalisman",
-      "target": "server_fromzoid_talisman_nearestopeningsquare",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_talisman_nearestopeningsquare"
     },
     {
       "relation": "calls",
@@ -2015,6 +2743,17 @@
       "weight": 1.0,
       "source": "server_fromzoid_talisman_nearestopeningsquare",
       "target": "shared_fromzoid_core_fromzoid_squarehasopening"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_Talisman.lua",
+      "source_location": "L129",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_talisman_enforcetalisman",
+      "target": "server_fromzoid_talisman_clearthump"
     },
     {
       "relation": "calls",
@@ -2088,9 +2827,9 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_lua",
-      "target": "server_fromzoid_town_alreadydone",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_alreadydone"
     },
     {
       "relation": "contains",
@@ -2098,9 +2837,9 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_lua",
-      "target": "server_fromzoid_town_isplayerbuilt",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_isplayerbuilt"
     },
     {
       "relation": "contains",
@@ -2108,9 +2847,9 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_lua",
-      "target": "server_fromzoid_town_addplanks",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_addplanks"
     },
     {
       "relation": "contains",
@@ -2118,9 +2857,19 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_lua",
-      "target": "server_fromzoid_town_processsquare",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_smashwindow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_Town.lua",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_town_lua",
+      "target": "server_fromzoid_town_processsquare"
     },
     {
       "relation": "calls",
@@ -2129,9 +2878,9 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_processsquare",
-      "target": "server_fromzoid_town_alreadydone",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_alreadydone"
     },
     {
       "relation": "calls",
@@ -2151,9 +2900,9 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_processsquare",
-      "target": "server_fromzoid_town_isplayerbuilt",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_isplayerbuilt"
     },
     {
       "relation": "calls",
@@ -2162,9 +2911,20 @@
       "source_file": "server/FromZoid_Town.lua",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "server_fromzoid_town_processsquare",
-      "target": "server_fromzoid_town_addplanks",
-      "confidence_score": 1.0
+      "target": "server_fromzoid_town_addplanks"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_Town.lua",
+      "source_location": "L99",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_town_processsquare",
+      "target": "server_fromzoid_town_smashwindow"
     },
     {
       "relation": "calls",
@@ -2183,6 +2943,39 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "server/FromZoid_Town.lua",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "server_fromzoid_town_processsquare",
+      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Town.lua",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "server_fromzoid_town_processsquare",
+      "target": "shared_fromzoid_core_fromzoid_isresidentialbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Town.lua",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "server_fromzoid_town_processsquare",
+      "target": "shared_fromzoid_core_fromzoid_getclusterkind"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_Town.lua",
       "source_location": "L67",
       "weight": 1.0,
       "source": "server_fromzoid_town_processsquare",
@@ -2191,12 +2984,54 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_UltraStrong.lua",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_ultrastrong_lua",
+      "target": "server_fromzoid_ultrastrong_extradamage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_UltraStrong.lua",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_ultrastrong_lua",
+      "target": "server_fromzoid_ultrastrong_onzombieupdate"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "server/FromZoid_UltraStrong.lua",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "server_fromzoid_ultrastrong_onzombieupdate",
+      "target": "server_fromzoid_ultrastrong_extradamage"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "server/FromZoid_UltraStrong.lua",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "server_fromzoid_ultrastrong_onzombieupdate",
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_getsandbox",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_getsandbox"
     },
     {
       "relation": "contains",
@@ -2204,9 +3039,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_isenabled",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
     },
     {
       "relation": "contains",
@@ -2214,9 +3049,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_getstate",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_getstate"
     },
     {
       "relation": "contains",
@@ -2224,9 +3059,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_gettalismandata",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_gettalismandata"
     },
     {
       "relation": "contains",
@@ -2234,9 +3069,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_getsquaredata",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_getsquaredata"
     },
     {
       "relation": "contains",
@@ -2244,9 +3079,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_gettimeofdayhours",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_gettimeofdayhours"
     },
     {
       "relation": "contains",
@@ -2254,9 +3089,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_getdawndusk",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_getdawndusk"
     },
     {
       "relation": "contains",
@@ -2264,9 +3099,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_isnight",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isnight"
     },
     {
       "relation": "contains",
@@ -2274,9 +3109,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_isday",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isday"
     },
     {
       "relation": "contains",
@@ -2284,9 +3119,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_buildingidfromdef",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingidfromdef"
     },
     {
       "relation": "contains",
@@ -2294,9 +3129,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_buildingid",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingid"
     },
     {
       "relation": "contains",
@@ -2304,9 +3139,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_buildingfromsquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingfromsquare"
     },
     {
       "relation": "contains",
@@ -2314,9 +3149,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed"
     },
     {
       "relation": "contains",
@@ -2324,9 +3159,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L134",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_squarehasopening",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_squarehasopening"
     },
     {
       "relation": "contains",
@@ -2334,9 +3169,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_squarehasopeninvitation",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_squarehasopeninvitation"
     },
     {
       "relation": "contains",
@@ -2344,9 +3179,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L178",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_scanbuildinginvitation",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_scanbuildinginvitation"
     },
     {
       "relation": "contains",
@@ -2354,9 +3189,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_buildinghasinvitation",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildinghasinvitation"
     },
     {
       "relation": "contains",
@@ -2364,9 +3199,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_eachloadedzombie",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_eachloadedzombie"
     },
     {
       "relation": "contains",
@@ -2374,9 +3209,19 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L307",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_picknestsquare"
     },
     {
       "relation": "contains",
@@ -2384,9 +3229,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_freetileinbuilding",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_freetileinbuilding"
     },
     {
       "relation": "contains",
@@ -2394,9 +3239,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L301",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_teleportzombietosquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_teleportzombietosquare"
     },
     {
       "relation": "contains",
@@ -2404,9 +3249,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L323",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_pathzombietosquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_pathzombietosquare"
     },
     {
       "relation": "contains",
@@ -2414,9 +3259,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L334",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_zombiesquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_zombiesquare"
     },
     {
       "relation": "contains",
@@ -2424,9 +3269,139 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L350",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_playerlist",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_playerlist"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L419",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_getbuildingdef"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L432",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_roomnameisresidential"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L441",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_isresidentialbuilding"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L465",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_getdooronsquare"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L482",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_getwindowonsquare"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L499",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_firstdoorinbuilding"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L522",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_findbasementsquare"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L572",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_walladjacenttile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L587",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_iszombieoffscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L606",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_clusterkey"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L610",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_getclusterkind"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L628",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_putzombietosleep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L651",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_lua",
+      "target": "shared_fromzoid_core_fromzoid_wakezombiebody"
     },
     {
       "relation": "contains",
@@ -2434,9 +3409,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L368",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_lua",
-      "target": "shared_fromzoid_core_fromzoid_occupiedbuildingids",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_occupiedbuildingids"
     },
     {
       "relation": "calls",
@@ -2445,9 +3420,20 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isenabled",
-      "target": "shared_fromzoid_core_fromzoid_getsandbox",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_getsandbox"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L616",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_getclusterkind",
+      "target": "shared_fromzoid_core_fromzoid_getsandbox"
     },
     {
       "relation": "calls",
@@ -2456,9 +3442,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isbuildingsealed",
-      "target": "shared_fromzoid_core_fromzoid_isenabled",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
     },
     {
       "relation": "calls",
@@ -2467,9 +3453,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L209",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_buildinghasinvitation",
-      "target": "shared_fromzoid_core_fromzoid_isenabled",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
     },
     {
       "relation": "calls",
@@ -2499,6 +3485,28 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_sealbuilding",
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
+      "target": "shared_fromzoid_core_fromzoid_isenabled"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L23",
       "weight": 1.0,
       "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
@@ -2511,9 +3519,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L129",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isbuildingsealed",
-      "target": "shared_fromzoid_core_fromzoid_gettalismandata",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_gettalismandata"
     },
     {
       "relation": "calls",
@@ -2544,9 +3552,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isnight",
-      "target": "shared_fromzoid_core_fromzoid_gettimeofdayhours",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_gettimeofdayhours"
     },
     {
       "relation": "calls",
@@ -2555,9 +3563,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isnight",
-      "target": "shared_fromzoid_core_fromzoid_getdawndusk",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_getdawndusk"
     },
     {
       "relation": "calls",
@@ -2566,9 +3574,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isday",
-      "target": "shared_fromzoid_core_fromzoid_isnight",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isnight"
     },
     {
       "relation": "calls",
@@ -2577,9 +3585,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_buildingid",
-      "target": "shared_fromzoid_core_fromzoid_buildingidfromdef",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingidfromdef"
     },
     {
       "relation": "calls",
@@ -2588,9 +3596,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_isbuildingsealed",
-      "target": "shared_fromzoid_core_fromzoid_buildingid",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingid"
     },
     {
       "relation": "calls",
@@ -2599,9 +3607,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L212",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_buildinghasinvitation",
-      "target": "shared_fromzoid_core_fromzoid_buildingid",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingid"
     },
     {
       "relation": "calls",
@@ -2610,9 +3618,9 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L373",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_occupiedbuildingids",
-      "target": "shared_fromzoid_core_fromzoid_buildingid",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingid"
     },
     {
       "relation": "calls",
@@ -2642,9 +3650,9 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "shared/FromZoid_TalismanUtil.lua",
-      "source_location": "L48",
+      "source_location": "L121",
       "weight": 1.0,
-      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
       "target": "shared_fromzoid_core_fromzoid_buildingid"
     },
     {
@@ -2661,13 +3669,24 @@
     {
       "relation": "calls",
       "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
+      "target": "shared_fromzoid_core_fromzoid_buildingid"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L372",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_occupiedbuildingids",
-      "target": "shared_fromzoid_core_fromzoid_buildingfromsquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_buildingfromsquare"
     },
     {
       "relation": "calls",
@@ -2676,9 +3695,20 @@
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L254",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding",
-      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L544",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_findbasementsquare",
+      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed"
     },
     {
       "relation": "calls",
@@ -2697,6 +3727,17 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
+      "target": "shared_fromzoid_core_fromzoid_isbuildingsealed"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L33",
       "weight": 1.0,
       "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
@@ -2705,13 +3746,35 @@
     {
       "relation": "calls",
       "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "client_fromzoid_whispers_nearopening",
+      "target": "shared_fromzoid_core_fromzoid_squarehasopening"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_scanbuildinginvitation",
-      "target": "shared_fromzoid_core_fromzoid_squarehasopeninvitation",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_squarehasopeninvitation"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L217",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_scanbuildinginvitation",
+      "target": "shared_fromzoid_core_fromzoid_getbuildingdef"
     },
     {
       "relation": "calls",
@@ -2729,11 +3792,88 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L285",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding",
+      "target": "shared_fromzoid_core_fromzoid_isresidentialbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L308",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_picknestsquare",
+      "target": "shared_fromzoid_core_fromzoid_findnearestunsealedbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L315",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_picknestsquare",
+      "target": "shared_fromzoid_core_fromzoid_findbasementsquare"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L319",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_picknestsquare",
+      "target": "shared_fromzoid_core_fromzoid_freetileinbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L321",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_picknestsquare",
+      "target": "shared_fromzoid_core_fromzoid_walladjacenttile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "client/FromZoid_Whispers.lua",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "client_fromzoid_whispers_nearopening",
+      "target": "shared_fromzoid_core_fromzoid_zombiesquare"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L594",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_iszombieoffscreen",
+      "target": "shared_fromzoid_core_fromzoid_playerlist"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
       "source_location": "L370",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_core_fromzoid_occupiedbuildingids",
-      "target": "shared_fromzoid_core_fromzoid_playerlist",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_core_fromzoid_playerlist"
     },
     {
       "relation": "calls",
@@ -2747,14 +3887,80 @@
       "target": "shared_fromzoid_core_fromzoid_playerlist"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L442",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_isresidentialbuilding",
+      "target": "shared_fromzoid_core_fromzoid_getbuildingdef"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L527",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_findbasementsquare",
+      "target": "shared_fromzoid_core_fromzoid_getbuildingdef"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L458",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_isresidentialbuilding",
+      "target": "shared_fromzoid_core_fromzoid_roomnameisresidential"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L512",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_firstdoorinbuilding",
+      "target": "shared_fromzoid_core_fromzoid_getdooronsquare"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
+      "target": "shared_fromzoid_core_fromzoid_getdooronsquare"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_Core.lua",
+      "source_location": "L612",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_core_fromzoid_getclusterkind",
+      "target": "shared_fromzoid_core_fromzoid_clusterkey"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "shared/FromZoid_Invite.lua",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_invite_lua",
-      "target": "shared_fromzoid_invite_refreshinvitations",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_invite_refreshinvitations"
     },
     {
       "relation": "contains",
@@ -2762,9 +3968,9 @@
       "source_file": "shared/FromZoid_Recipe.lua",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_recipe_lua",
-      "target": "shared_fromzoid_recipe_fromzoid_recipe_cancrafttalisman",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_recipe_fromzoid_recipe_cancrafttalisman"
     },
     {
       "relation": "contains",
@@ -2772,9 +3978,9 @@
       "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_talismanutil_lua",
-      "target": "shared_fromzoid_talismanutil_fromzoid_unsealbuildingid",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_talismanutil_fromzoid_unsealbuildingid"
     },
     {
       "relation": "contains",
@@ -2782,9 +3988,39 @@
       "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_talismanutil_lua",
-      "target": "shared_fromzoid_talismanutil_fromzoid_sealbuilding",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_talismanutil_fromzoid_sealbuilding"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_lua",
+      "target": "shared_fromzoid_talismanutil_fromzoid_buildingfromdoor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_lua",
+      "target": "shared_fromzoid_talismanutil_fromzoid_findtalismanininventory"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_lua",
+      "target": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor"
     },
     {
       "relation": "contains",
@@ -2792,9 +4028,9 @@
       "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_talismanutil_lua",
-      "target": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare"
     },
     {
       "relation": "contains",
@@ -2802,9 +4038,9 @@
       "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_talismanutil_lua",
-      "target": "shared_fromzoid_talismanutil_fromzoid_taketalismanfromsquare",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_talismanutil_fromzoid_taketalismanfromsquare"
     },
     {
       "relation": "calls",
@@ -2813,9 +4049,20 @@
       "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_talismanutil_fromzoid_taketalismanfromsquare",
-      "target": "shared_fromzoid_talismanutil_fromzoid_unsealbuildingid",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_talismanutil_fromzoid_unsealbuildingid"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
+      "target": "shared_fromzoid_talismanutil_fromzoid_sealbuilding"
     },
     {
       "relation": "calls",
@@ -2824,10 +4071,44 @@
       "source_file": "shared/FromZoid_TalismanUtil.lua",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
-      "target": "shared_fromzoid_talismanutil_fromzoid_sealbuilding",
-      "confidence_score": 1.0
+      "target": "shared_fromzoid_talismanutil_fromzoid_sealbuilding"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L92",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
+      "target": "shared_fromzoid_talismanutil_fromzoid_buildingfromdoor"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L102",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor",
+      "target": "shared_fromzoid_talismanutil_fromzoid_findtalismanininventory"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/FromZoid_TalismanUtil.lua",
+      "source_location": "L134",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_fromzoid_talismanutil_fromzoid_hangtalismanonsquare",
+      "target": "shared_fromzoid_talismanutil_fromzoid_hangtalismanondoor"
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "11ce2592c6d5d333d89f87b6843090057154ec91"
 }

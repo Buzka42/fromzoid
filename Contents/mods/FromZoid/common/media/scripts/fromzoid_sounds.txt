@@ -1,0 +1,1731 @@
+module FromZoid
+{
+    sound FromZoid_Vlad_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_01.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_02.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_03.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_04.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_05.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_06.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_07.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_08.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_09.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_10.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_11.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_12.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_13
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_13.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_14
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_14.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_15
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_15.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_16
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_16.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_17
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_17.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_18
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_18.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_19
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_19.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_20
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_20.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_21
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_21.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_22
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_22.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_23
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_23.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Vlad_24
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Vlad_24.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_01.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_02.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_03.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_04.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_05.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_06.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_07.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_08.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_09.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_10.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_11.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_12.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_13
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_13.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_14
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_14.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_15
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_15.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_16
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_16.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_17
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_17.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_18
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_18.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_19
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_19.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_20
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_20.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_21
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_21.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_22
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_22.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_23
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_23.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Miles_24
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Miles_24.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_01.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_02.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_03.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_04.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_05.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_06.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_07.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_08.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_09.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_10.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_11.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_12.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_13
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_13.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_14
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_14.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_15
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_15.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_16
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_16.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_17
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_17.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_18
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_18.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_19
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_19.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_20
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_20.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_21
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_21.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_22
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_22.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_23
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_23.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Knox_24
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Knox_24.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_01.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_02.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_03.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_04.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_05.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_06.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_07.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_08.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_09.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_10.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_11.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_12.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_13
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_13.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_14
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_14.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_15
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_15.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_16
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_16.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_17
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_17.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_18
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_18.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_19
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_19.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_20
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_20.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_21
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_21.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_22
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_22.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_23
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_23.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Roxie_24
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Roxie_24.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_01.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_02.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_03.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_04.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_05.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_06.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_07.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_08.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_09.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_10.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_11.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_12.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_13
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_13.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_14
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_14.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_15
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_15.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_16
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_16.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_17
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_17.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_18
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_18.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_19
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_19.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_20
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_20.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_21
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_21.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_22
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_22.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_23
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_23.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Annie_24
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Annie_24.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_01.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_02.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_03.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_04.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_05.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_06.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_07.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_08.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_09.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_10.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_11.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_12.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_13
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_13.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_14
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_14.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_15
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_15.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_16
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_16.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_17
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_17.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_18
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_18.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_19
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_19.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_20
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_20.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_21
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_21.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_22
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_22.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_23
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_23.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+    sound FromZoid_Zelda_24
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Zelda_24.ogg,
+            distanceMax = 14,
+            volume = 0.5,
+        }
+    }
+
+}

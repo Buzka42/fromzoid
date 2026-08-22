@@ -45,6 +45,14 @@ local function addPlanks(target, count)
 	end
 end
 
+local function smashWindow(obj)
+	if obj.setSmashed then
+		obj:setSmashed(true)
+	elseif obj.smashWindow then
+		obj:smashWindow()
+	end
+end
+
 local function processSquare(square)
 	if not square then
 		return
@@ -58,14 +66,23 @@ local function processSquare(square)
 	if square:getZ() ~= 0 then
 		return
 	end
-	if not square:getBuilding() then
+	local building = square:getBuilding()
+	if not building then
+		return
+	end
+	if FromZoid.isBuildingSealed(building) then
+		return
+	end
+	if not FromZoid.isResidentialBuilding(building) then
 		return
 	end
 	if alreadyDone(square) then
 		return
 	end
-	local smashChance = FromZoid.getSandbox("WindowSmashChance", 45)
-	local boardChance = FromZoid.getSandbox("BarricadeChance", 28)
+	local kind = FromZoid.getClusterKind(square:getX(), square:getY())
+	if kind == "none" then
+		return
+	end
 	local objects = square:getObjects()
 	if not objects then
 		return
@@ -73,30 +90,25 @@ local function processSquare(square)
 	for i = 0, objects:size() - 1 do
 		local obj = objects:get(i)
 		if not isPlayerBuilt(obj) then
-			if instanceof(obj, "IsoWindow") then
-				if ZombRand(100) < smashChance then
-					if obj.setSmashed then
-						obj:setSmashed(true)
-					elseif obj.smashWindow then
-						obj:smashWindow()
-					end
+			if kind == "boarded" then
+				if instanceof(obj, "IsoWindow") or instanceof(obj, "IsoDoor") then
+					addPlanks(obj, 2 + ZombRand(3))
 				end
-				if ZombRand(100) < boardChance then
-					addPlanks(obj, 1 + ZombRand(3))
-				end
-			elseif instanceof(obj, "IsoDoor") then
-				if ZombRand(100) < boardChance then
-					addPlanks(obj, 1 + ZombRand(2))
+			elseif kind == "damaged" then
+				if instanceof(obj, "IsoWindow") then
+					smashWindow(obj)
 				end
 			end
 		end
 	end
-	if square:getRoom() and ZombRand(1000) < 8 then
-		local junk = { "Base.Sheet", "Base.RippedSheets", "Base.EmptyTinCan", "Base.Newspaper" }
-		square:AddWorldInventoryItem(junk[ZombRand(#junk) + 1], ZombRand(100) / 100, ZombRand(100) / 100, 0)
-	end
-	if square:getRoom() and ZombRand(1000) < 2 and createRandomDeadBody then
-		pcall(createRandomDeadBody, square, 4)
+	if kind == "damaged" and square:getRoom() then
+		if ZombRand(100) < 12 then
+			local junk = { "Base.Sheet", "Base.RippedSheets", "Base.EmptyTinCan", "Base.Newspaper" }
+			square:AddWorldInventoryItem(junk[ZombRand(#junk) + 1], ZombRand(100) / 100, ZombRand(100) / 100, 0)
+		end
+		if ZombRand(1000) < 4 and createRandomDeadBody then
+			pcall(createRandomDeadBody, square, 4)
+		end
 	end
 end
 

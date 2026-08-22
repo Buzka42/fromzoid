@@ -2,19 +2,19 @@ Sandbox_EN = {
 	Sandbox_FromZoid = "FromZoid",
 
 	Sandbox_FromZoid_EnableSunCycle = "Sun cycle (hide by day)",
-	Sandbox_FromZoid_EnableSunCycle_tooltip = "Night people seek buildings at dawn and go still indoors. At dusk they wake and move into the streets.",
+	Sandbox_FromZoid_EnableSunCycle_tooltip = "Night people seek basements (or an interior wall) at dawn and lie still. At dusk they wake and move into the streets.",
 
 	Sandbox_FromZoid_NestTeleport = "Daytime nest teleport",
-	Sandbox_FromZoid_NestTeleport_tooltip = "If a night person is still outdoors after several minutes of daylight, teleport them into a nearby unsealed building. Turn off to rely on pathfinding only.",
+	Sandbox_FromZoid_NestTeleport_tooltip = "If a night person is still outdoors and off-screen, teleport them into a nearby unsealed house. Turn off to rely on pathfinding only.",
 
 	Sandbox_FromZoid_EnableNightStats = "Day / night hunter stats",
-	Sandbox_FromZoid_EnableNightStats_tooltip = "Day: sluggish, poor senses. Night: hearing, memory, and door use.",
+	Sandbox_FromZoid_EnableNightStats_tooltip = "Day: sluggish, poor senses. Night: hearing, memory, and door use. They never crawl.",
 
 	Sandbox_FromZoid_NightSprinters = "Night sprinters",
 	Sandbox_FromZoid_NightSprinters_tooltip = "If hunter stats are on, night people sprint instead of fast-shambling.",
 
 	Sandbox_FromZoid_EnableWhispers = "Window whispers",
-	Sandbox_FromZoid_EnableWhispers_tooltip = "Night people speak when they linger at doors and windows.",
+	Sandbox_FromZoid_EnableWhispers_tooltip = "Night people speak at doors and windows. Knox only speaks at windows.",
 
 	Sandbox_FromZoid_WhisperChance = "Whisper chance (percent / check)",
 	Sandbox_FromZoid_WhisperChance_tooltip = "Rolled on a slow timer for nearby night people at openings.",
@@ -25,20 +25,20 @@ Sandbox_EN = {
 	Sandbox_FromZoid_DarknessDayChance = "Darkness roll each day (percent)",
 	Sandbox_FromZoid_DarknessDayChance_tooltip = "Chance, once per day, that a darkness event is scheduled.",
 
-	Sandbox_FromZoid_EnableTown = "Abandoned town",
-	Sandbox_FromZoid_EnableTown_tooltip = "Loaded houses may already have smashed windows, boards, and leftover clutter.",
+	Sandbox_FromZoid_EnableTown = "Abandoned neighborhoods",
+	Sandbox_FromZoid_EnableTown_tooltip = "Residential blocks (64x64) roll once: boarded, damaged, or left vanilla.",
 
-	Sandbox_FromZoid_WindowSmashChance = "Smashed window chance",
-	Sandbox_FromZoid_WindowSmashChance_tooltip = "Percent chance a ground-floor window is already broken when first loaded.",
+	Sandbox_FromZoid_NeighborhoodBoardedChance = "Boarded neighborhood chance",
+	Sandbox_FromZoid_NeighborhoodBoardedChance_tooltip = "Percent chance a 64-tile residential cluster is fully planked (glass left intact). Rolled before damaged.",
 
-	Sandbox_FromZoid_BarricadeChance = "Boarded opening chance",
-	Sandbox_FromZoid_BarricadeChance_tooltip = "Percent chance a door or window gets plank barricades when first loaded.",
+	Sandbox_FromZoid_NeighborhoodDamagedChance = "Damaged neighborhood chance",
+	Sandbox_FromZoid_NeighborhoodDamagedChance_tooltip = "If not boarded, percent chance the cluster is smashed windows and leftover clutter.",
 
 	Sandbox_FromZoid_EnableTalismans = "Talismans",
-	Sandbox_FromZoid_EnableTalismans_tooltip = "Hang a talisman to seal a whole building against night people unless you open a door or window.",
+	Sandbox_FromZoid_EnableTalismans_tooltip = "Hang a talisman on a door to seal the whole building unless you open a door or window.",
 
 	Sandbox_FromZoid_TalismanCraftable = "Talismans are craftable",
-	Sandbox_FromZoid_TalismanCraftable_tooltip = "If off, talismans only appear as rare house loot.",
+	Sandbox_FromZoid_TalismanCraftable_tooltip = "If off, talismans only appear as rare house loot (and the spare you start with, if that option is on).",
 
 	Sandbox_FromZoid_InvitationRequired = "Invitation (open door) required to enter",
 	Sandbox_FromZoid_InvitationRequired_tooltip = "If on, night people cannot enter a sealed building unless a player-opened exterior door or window is open.",
@@ -54,4 +54,13 @@ Sandbox_EN = {
 
 	Sandbox_FromZoid_LureChance = "Dusk street lure chance",
 	Sandbox_FromZoid_LureChance_tooltip = "Percent of indoor night people who path outside at dusk.",
+
+	Sandbox_FromZoid_StartWithSpareTalisman = "Start with a spare talisman",
+	Sandbox_FromZoid_StartWithSpareTalisman_tooltip = "New games hang a talisman on the spawn-house door and put one extra talisman in your inventory.",
+
+	Sandbox_FromZoid_UltraStrong = "Ultra-strong night people",
+	Sandbox_FromZoid_UltraStrong_tooltip = "Superhuman zombie strength plus extra connected-hit damage. About three or four unarmored hits kill. Off by default.",
+
+	Sandbox_FromZoid_TalismanDebug = "Talisman debug prints",
+	Sandbox_FromZoid_TalismanDebug_tooltip = "Print seal/unseal events to the console. For troubleshooting only.",
 }

@@ -7,7 +7,7 @@ module FromZoid
 		ItemType = base:normal,
 		Weight = 0.2,
 		Icon = FromTalisman,
-		WorldStaticModel = Necklace_YingYang_Ground,
+		WorldStaticModel = ChristmasOrnament_Red1,
 		Tooltip = Tooltip_FromZoid_Talisman,
 		Tags = fromzoidtalisman,
 	}
