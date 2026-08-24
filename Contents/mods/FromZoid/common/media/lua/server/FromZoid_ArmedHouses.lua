@@ -81,10 +81,9 @@ local function addKit(container, kit, reloads)
 		return
 	end
 	container:AddItem(kit.gun)
-	reloads = math.max(1, reloads or 3)
+	reloads = math.max(1, reloads or 1)
 	if kit.mag and itemExists(kit.mag) then
-		local mags = math.max(2, reloads)
-		for _ = 1, mags do
+		for _ = 1, reloads do
 			addLoadedMag(container, kit.mag)
 		end
 	end
@@ -94,12 +93,8 @@ local function addKit(container, kit, reloads)
 		end
 		return
 	end
-	if kit.ammo and itemExists(kit.ammo) and container.AddItems then
-		pcall(function()
-			container:AddItems(kit.ammo, 30)
-		end)
-	elseif kit.ammo and itemExists(kit.ammo) then
-		for _ = 1, 12 do
+	if kit.ammo and itemExists(kit.ammo) then
+		for _ = 1, 8 do
 			container:AddItem(kit.ammo)
 		end
 	end
@@ -147,15 +142,19 @@ local function processSquare(square)
 		return
 	end
 	data[id] = true
-	local reloads = tonumber(FromZoid.getSandbox("GunAmmoReloads", 3)) or 3
-	local handPct = tonumber(FromZoid.getSandbox("HandgunHouseChance", 50)) or 50
-	local longPct = tonumber(FromZoid.getSandbox("LongGunHouseChance", 33)) or 33
-	if ZombRand(100) < handPct then
-		addKit(container, pickValid(HANDGUNS), reloads)
+	local armedPct = tonumber(FromZoid.getSandbox("HandgunHouseChance", 25)) or 25
+	if ZombRand(100) >= armedPct then
+		return
 	end
+	local reloads = tonumber(FromZoid.getSandbox("GunAmmoReloads", 1)) or 1
+	local longPct = tonumber(FromZoid.getSandbox("LongGunHouseChance", 12)) or 12
+	local kit = nil
 	if ZombRand(100) < longPct then
-		addKit(container, pickValid(LONGS), reloads)
+		kit = pickValid(LONGS) or pickValid(HANDGUNS)
+	else
+		kit = pickValid(HANDGUNS) or pickValid(LONGS)
 	end
+	addKit(container, kit, reloads)
 end
 
 Events.LoadGridsquare.Add(processSquare)

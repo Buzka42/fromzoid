@@ -28,6 +28,9 @@ local function extraDamage(player, amount)
 end
 
 local function onZombieHit(attacker, target, weapon, damage)
+	if not FromZoid.isEnabled("UltraStrong") then
+		return
+	end
 	if not instanceof(attacker, "IsoZombie") then
 		return
 	end
@@ -40,12 +43,9 @@ local function onZombieHit(attacker, target, weapon, damage)
 		return
 	end
 	lastHit[id] = now
-	local amount = tonumber(damage) or 0
+	local amount = (tonumber(damage) or 0) + 28
 	if amount < 8 then
 		amount = 8
-	end
-	if FromZoid.isEnabled("UltraStrong") then
-		amount = amount + 28
 	end
 	extraDamage(target, amount)
 end

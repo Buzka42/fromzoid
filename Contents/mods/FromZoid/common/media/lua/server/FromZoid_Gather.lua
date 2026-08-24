@@ -2,74 +2,113 @@ if isClient() then
 	return
 end
 
-local lastIssued = nil
+local function sealedTargets()
+	local data = FromZoid.getTalismanData()
+	local cell = getCell()
+	if not data or not cell then
+		return {}
+	end
+	local targets = {}
+	for id, entry in pairs(data) do
+		if type(entry) == "table" and entry.sealed and entry.x then
+			local sq = cell:getGridSquare(entry.x, entry.y, entry.z or 0)
+			local building = sq and sq.getBuilding and sq:getBuilding() or nil
+			local dest = nil
+			if building and FromZoid.standoffSquare then
+				dest = FromZoid.standoffSquare(building, entry.x, entry.y)
+			end
+			if not dest and building and FromZoid.nearestPorchSquare then
+				dest = FromZoid.nearestPorchSquare(building, entry.x, entry.y)
+			end
+			dest = dest or sq
+			if dest then
+				table.insert(targets, {
+					id = id,
+					building = building,
+					porch = dest,
+					x = dest:getX() + 0.5,
+					y = dest:getY() + 0.5,
+				})
+			end
+		end
+	end
+	return targets
+end
+
+local function nearestTarget(zombie, targets)
+	local best = nil
+	local bestD = nil
+	local zx = zombie:getX()
+	local zy = zombie:getY()
+	for i = 1, #targets do
+		local t = targets[i]
+		local dx = zx - t.x
+		local dy = zy - t.y
+		local d = dx * dx + dy * dy
+		if not bestD or d < bestD then
+			bestD = d
+			best = t
+		end
+	end
+	return best, bestD
+end
 
 local function tickGathering()
 	if not FromZoid.isEnabled("EnableGatheringNights") then
 		return
 	end
-	if not FromZoid.isGatheringNight() then
-		lastIssued = nil
+	if not FromZoid.isNight() then
 		return
 	end
-	local gt = getGameTime()
-	local nights = gt and gt:getNightsSurvived() or 0
-	local key = tostring(nights)
-	if lastIssued == key then
+	local targets = sealedTargets()
+	if #targets == 0 then
 		return
 	end
-	local players = FromZoid.playerList()
-	if #players == 0 then
-		return
-	end
-	local maxN = tonumber(FromZoid.getSandbox("GatheringMax", 12)) or 12
+	local maxN = tonumber(FromZoid.getSandbox("GatheringMax", 40)) or 40
 	if maxN < 1 then
 		maxN = 1
 	end
-	local cands = {}
+	local now = FromZoid.nowMs()
+	local n = 0
 	FromZoid.eachLoadedZombie(function(zombie)
-		if zombie:isUseless() then
+		if n >= maxN then
 			return
 		end
-		local best = 99999
-		local building = nil
-		local px, py = zombie:getX(), zombie:getY()
-		for i = 1, #players do
-			local player = players[i]
-			local d2 = FromZoid.dist2ToPlayer(zombie, player)
-			if d2 < best and d2 <= 1600 then
-				best = d2
-				local sq = player:getCurrentSquare()
-				building = sq and sq:getBuilding() or nil
-				px, py = player:getX(), player:getY()
+		local md = zombie:getModData()
+		if md.fromzoidHold then
+			return
+		end
+		if md.fromzoidStillUntil and now < md.fromzoidStillUntil then
+			return
+		end
+		if md.fromzoidHuntUntil and now < md.fromzoidHuntUntil then
+			return
+		end
+		if zombie:isUseless() then
+			if FromZoid.squareIsIndoorHide(FromZoid.zombieSquare(zombie)) then
+				return
 			end
+			FromZoid.wakeZombieBody(zombie)
 		end
-		if building and best <= 1600 then
-			table.insert(cands, { zombie = zombie, d2 = best, building = building, px = px, py = py })
+		if md.fromzoidGatherAt and (now - md.fromzoidGatherAt) < 20000 then
+			return
 		end
+		local t, d2 = nearestTarget(zombie, targets)
+		if not t then
+			return
+		end
+		if d2 and d2 <= 36 then
+			md.fromzoidGather = true
+			return
+		end
+		if FromZoid.pathWouldLaunch and FromZoid.pathWouldLaunch(zombie, t.porch) then
+			return
+		end
+		md.fromzoidGatherAt = now
+		md.fromzoidGather = true
+		FromZoid.pathZombieToSquare(zombie, t.porch)
+		n = n + 1
 	end)
-	table.sort(cands, function(a, b)
-		return a.d2 < b.d2
-	end)
-	local n = math.min(#cands, maxN)
-	for i = 1, n do
-		local c = cands[i]
-		local porch = FromZoid.cachedPorchSquare and FromZoid.cachedPorchSquare(c.building, c.zombie:getX(), c.zombie:getY())
-		if not porch then
-			porch = FromZoid.nearestPorchSquare(c.building, c.zombie:getX(), c.zombie:getY())
-		end
-		if porch then
-			FromZoid.pathZombieToSquare(c.zombie, porch)
-		end
-		c.zombie:getModData().fromzoidGather = true
-		if FromZoid.isBuildingSealed(c.building) and not FromZoid.buildingHasInvitation(c.building) then
-			c.zombie:getModData().fromzoidHold = true
-		end
-	end
-	lastIssued = key
 end
 
 Events.EveryOneMinute.Add(tickGathering)
-Events.OnGameStart.Add(function()
-	lastIssued = nil
-end)

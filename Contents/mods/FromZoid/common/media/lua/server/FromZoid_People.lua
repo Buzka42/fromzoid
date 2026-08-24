@@ -12,9 +12,26 @@ local OUTFITS = {
 
 local MALE_VOICES = { "Vlad", "Miles", "Knox" }
 local FEMALE_VOICES = { "Roxie", "Annie", "Zelda" }
+local maleNext = 0
+local femaleNext = 0
 
 local function pickOutfit()
 	return OUTFITS[ZombRand(#OUTFITS) + 1]
+end
+
+local function nextVoice(female)
+	if female then
+		femaleNext = femaleNext + 1
+		if femaleNext > #FEMALE_VOICES then
+			femaleNext = 1
+		end
+		return FEMALE_VOICES[femaleNext]
+	end
+	maleNext = maleNext + 1
+	if maleNext > #MALE_VOICES then
+		maleNext = 1
+	end
+	return MALE_VOICES[maleNext]
 end
 
 local function assignVoice(zombie)
@@ -29,7 +46,7 @@ local function assignVoice(zombie)
 			end
 		end
 	end
-	md.fromzoidVoice = pool[ZombRand(#pool) + 1]
+	md.fromzoidVoice = nextVoice(female)
 end
 
 local function wornCount(zombie)

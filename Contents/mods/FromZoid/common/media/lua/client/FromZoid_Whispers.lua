@@ -1,4 +1,5 @@
 local lastWhisper = 0
+local lastHeard = {}
 
 local function pad2(n)
 	if n < 10 then
@@ -83,15 +84,27 @@ local function voiceFor(zombie)
 	return name
 end
 
-local function speak(zombie, voice, index, line)
-	if line then
-		if zombie.addLineChatElement then
-			zombie:addLineChatElement(line)
-		elseif zombie.Say then
-			zombie:Say(line)
+local function playVoice(zombie, soundId)
+	local played = false
+	pcall(function()
+		local sm = getSoundManager and getSoundManager() or nil
+		local x = zombie:getX()
+		local y = zombie:getY()
+		local z = zombie:getZ() or 0
+		if sm and sm.PlayWorldSoundImpl then
+			sm:PlayWorldSoundImpl(soundId, false, x, y, z, 0, 28, 1.2, false)
+			played = true
+			return
 		end
+		local sq = FromZoid.zombieSquare(zombie)
+		if sm and sm.PlayWorldSound and sq then
+			sm:PlayWorldSound(soundId, sq, 0, 28, 1.2, false)
+			played = true
+		end
+	end)
+	if played then
+		return
 	end
-	local soundId = "FromZoid_" .. voice .. "_" .. pad2(index)
 	pcall(function()
 		local emitter = zombie.getEmitter and zombie:getEmitter() or nil
 		if emitter and emitter.playSound then
@@ -100,6 +113,17 @@ local function speak(zombie, voice, index, line)
 			zombie:playSound(soundId)
 		end
 	end)
+end
+
+local function speak(zombie, voice, index, line)
+	if line then
+		if zombie.addLineChatElement then
+			zombie:addLineChatElement(line)
+		elseif zombie.Say then
+			zombie:Say(line)
+		end
+	end
+	playVoice(zombie, "FromZoid_" .. voice .. "_" .. pad2(index))
 end
 
 local function loiteringAtSealed(zombie, players)
@@ -121,7 +145,74 @@ local function loiteringAtSealed(zombie, players)
 			end
 		end
 	end
-	return zombie:getModData().fromzoidHold == true
+	return false
+end
+
+local function fillMissingVoices(candidates)
+	local function fill(pool)
+		local counts = {}
+		local ofPool = {}
+		for i = 1, #candidates do
+			local voice = candidates[i].voice
+			for p = 1, #pool do
+				if voice == pool[p] then
+					counts[voice] = (counts[voice] or 0) + 1
+					table.insert(ofPool, candidates[i])
+					break
+				end
+			end
+		end
+		if #ofPool == 0 then
+			return
+		end
+		for p = 1, #pool do
+			local name = pool[p]
+			if (counts[name] or 0) == 0 then
+				local donor = nil
+				for i = 1, #ofPool do
+					local c = ofPool[i]
+					if (counts[c.voice] or 0) >= 2 then
+						if name ~= "Knox" or c.kind == "window" then
+							donor = c
+							break
+						end
+					end
+				end
+				if donor then
+					counts[donor.voice] = counts[donor.voice] - 1
+					counts[name] = 1
+					donor.voice = name
+					donor.zombie:getModData().fromzoidVoice = name
+				end
+			end
+		end
+	end
+	fill({ "Vlad", "Miles", "Knox" })
+	fill({ "Roxie", "Annie", "Zelda" })
+end
+
+local function pickLeastHeard(candidates)
+	local bestT = nil
+	for i = 1, #candidates do
+		local t = lastHeard[candidates[i].voice]
+		if t == nil then
+			t = -1
+		end
+		if bestT == nil or t < bestT then
+			bestT = t
+		end
+	end
+	local tied = {}
+	for i = 1, #candidates do
+		local t = lastHeard[candidates[i].voice]
+		if t == nil then
+			t = -1
+		end
+		if t == bestT then
+			table.insert(tied, candidates[i])
+		end
+	end
+	return tied[ZombRand(#tied) + 1]
 end
 
 local function tryWhispers()
@@ -129,10 +220,7 @@ local function tryWhispers()
 		return
 	end
 	if not FromZoid.isNight() then
-		local state = FromZoid.getState()
-		if not (state and state.darknessActive) then
-			return
-		end
+		return
 	end
 	local now = getTimestampMs and getTimestampMs() or (os.time() * 1000)
 	if now - lastWhisper < 45000 then
@@ -149,6 +237,18 @@ local function tryWhispers()
 	if #players == 0 then
 		return
 	end
+	local sealedPlayers = {}
+	for i = 1, #players do
+		local player = players[i]
+		local tsq = player:getCurrentSquare()
+		local tb = tsq and tsq:getBuilding() or nil
+		if tb and FromZoid.isBuildingSealed(tb) then
+			table.insert(sealedPlayers, player)
+		end
+	end
+	if #sealedPlayers == 0 then
+		return
+	end
 	local candidates = {}
 	FromZoid.eachLoadedZombie(function(zombie)
 		if not instanceof(zombie, "IsoZombie") then
@@ -157,7 +257,7 @@ local function tryWhispers()
 		if zombie:isUseless() and not zombie:getModData().fromzoidHold then
 			return
 		end
-		if not loiteringAtSealed(zombie, players) then
+		if not loiteringAtSealed(zombie, sealedPlayers) then
 			return
 		end
 		local kind = nearKind(zombie)
@@ -171,12 +271,13 @@ local function tryWhispers()
 		if voice == "Knox" and kind ~= "window" then
 			return
 		end
-		table.insert(candidates, { zombie = zombie, voice = voice })
+		table.insert(candidates, { zombie = zombie, voice = voice, kind = kind })
 	end)
 	if #candidates == 0 then
 		return
 	end
-	local pick = candidates[ZombRand(#candidates) + 1]
+	fillMissingVoices(candidates)
+	local pick = pickLeastHeard(candidates)
 	local clips = clipsFor(pick.voice)
 	if not clips then
 		return
@@ -184,27 +285,12 @@ local function tryWhispers()
 	local idx = clips[ZombRand(#clips) + 1]
 	local lines = FromZoid.VOICES and FromZoid.VOICES[pick.voice]
 	local line = lines and lines[idx] or nil
-	if line and FromZoid.isEnabled("TheyKnowYourName") then
-		local player = getPlayer()
-		if player and FromZoid.sanityLevel then
-			local level = FromZoid.sanityLevel(player)
-			if level == "delusion" or level == "psychosis" then
-				line = line .. "  " .. FromZoid.playerForename(player) .. "."
-			end
-		end
-	end
 	speak(pick.zombie, pick.voice, idx, line)
+	lastHeard[pick.voice] = now
 	lastWhisper = now
 	local player = getPlayer()
-	if player and FromZoid.isEnabled("WhispersBreakSleep") and player.isAsleep and player:isAsleep() then
-		pcall(function()
-			if player.setAsleep then
-				player:setAsleep(false)
-			end
-			if player.forceAwake then
-				player:forceAwake()
-			end
-		end)
+	if player and FromZoid.isEnabled("WhispersBreakSleep") and FromZoid.playerAsleep(player) then
+		FromZoid.wakePlayer(player)
 	end
 end
 

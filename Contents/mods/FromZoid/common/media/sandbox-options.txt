@@ -231,7 +231,7 @@ option FromZoid.GatheringIntervalNights
 	type = integer,
 	min = 1,
 	max = 30,
-	default = 7,
+	default = 1,
 	page = FromZoid,
 	translation = FromZoid_GatheringIntervalNights,
 }
@@ -240,8 +240,8 @@ option FromZoid.GatheringMax
 {
 	type = integer,
 	min = 1,
-	max = 40,
-	default = 12,
+	max = 80,
+	default = 40,
 	page = FromZoid,
 	translation = FromZoid_GatheringMax,
 }
@@ -337,7 +337,7 @@ option FromZoid.HandgunHouseChance
 	type = integer,
 	min = 0,
 	max = 100,
-	default = 50,
+	default = 25,
 	page = FromZoid,
 	translation = FromZoid_HandgunHouseChance,
 }
@@ -347,7 +347,7 @@ option FromZoid.LongGunHouseChance
 	type = integer,
 	min = 0,
 	max = 100,
-	default = 33,
+	default = 12,
 	page = FromZoid,
 	translation = FromZoid_LongGunHouseChance,
 }
@@ -357,7 +357,7 @@ option FromZoid.GunAmmoReloads
 	type = integer,
 	min = 1,
 	max = 10,
-	default = 3,
+	default = 1,
 	page = FromZoid,
 	translation = FromZoid_GunAmmoReloads,
 }

@@ -12,8 +12,79 @@ local function huntUntil(zombie)
 	return FromZoid.nowMs() < untilMs
 end
 
+local function captureLore(lore)
+	local state = FromZoid.getState()
+	if state.loreCaptured then
+		return state
+	end
+	state.loreSight = lore.Sight
+	state.loreHearing = lore.Hearing
+	state.loreToughness = lore.Toughness
+	state.loreArmor = lore.ZombiesArmorFactor
+	state.loreDefense = lore.ZombiesMaxDefense
+	state.loreCaptured = true
+	return state
+end
+
+local function applyToughness(lore)
+	if not lore then
+		return
+	end
+	local state = captureLore(lore)
+	lore.Toughness = 1
+	local armor = tonumber(state.loreArmor) or 1
+	lore.ZombiesArmorFactor = math.min(4, armor * 2)
+	if lore.ZombiesMaxDefense ~= nil then
+		local def = tonumber(state.loreDefense) or 70
+		lore.ZombiesMaxDefense = math.min(95, def * 1.25)
+	end
+	if getSandboxOptions then
+		pcall(function()
+			getSandboxOptions():set("ZombieLore.Toughness", 1)
+			getSandboxOptions():set("ZombieLore.ZombiesArmorFactor", lore.ZombiesArmorFactor)
+		end)
+	end
+end
+
+local function applySenses(night)
+	local lore = SandboxVars and SandboxVars.ZombieLore
+	if not lore then
+		return
+	end
+	local state = captureLore(lore)
+	applyToughness(lore)
+	if night then
+		lore.Sight = state.loreSight
+		lore.Hearing = state.loreHearing
+	else
+		-- 3 = Poor. 4/5 are random mixes, not "lowest".
+		lore.Sight = 3
+		lore.Hearing = 3
+	end
+	if getSandboxOptions then
+		pcall(function()
+			getSandboxOptions():set("ZombieLore.Sight", lore.Sight)
+			getSandboxOptions():set("ZombieLore.Hearing", lore.Hearing)
+		end)
+	end
+end
+
 local function applyWalkType(zombie, night, sprinters, hunting)
 	if not zombie then
+		return
+	end
+	if zombie:getModData().fromzoidAsleep then
+		return
+	end
+	local want = ""
+	if sprinters then
+		want = "sprint1"
+	end
+	local cur = nil
+	if zombie.getWalkType then
+		cur = zombie:getWalkType()
+	end
+	if cur == want then
 		return
 	end
 	if zombie.setCrawler then
@@ -24,18 +95,8 @@ local function applyWalkType(zombie, night, sprinters, hunting)
 			zombie:setCanWalk(true)
 		end)
 	end
-	if night then
-		if zombie.setWalkType then
-			if sprinters and hunting then
-				zombie:setWalkType("sprint1")
-			else
-				zombie:setWalkType("")
-			end
-		end
-	else
-		if zombie.setWalkType then
-			zombie:setWalkType("slow1")
-		end
+	if zombie.setWalkType then
+		zombie:setWalkType(want)
 	end
 	if zombie.setCanOpenDoors then
 		pcall(function()
@@ -54,14 +115,7 @@ function FromZoid.markZombieHunting(zombie, ms)
 		return
 	end
 	zombie:getModData().fromzoidHuntUntil = FromZoid.nowMs() + (ms or 25000)
-	local night = FromZoid.isNight()
-	if FromZoid.isEnabled("EnableDarkness") then
-		local state = FromZoid.getState()
-		if state and state.darknessActive then
-			night = true
-		end
-	end
-	applyWalkType(zombie, night, FromZoid.isEnabled("NightSprinters"), true)
+	applyWalkType(zombie, FromZoid.isNight(), FromZoid.isEnabled("NightSprinters"), true)
 end
 
 function FromZoid.onCalmZombieUpdate(zombie, ctx, sliced)
@@ -82,6 +136,10 @@ function FromZoid.onCalmZombieUpdate(zombie, ctx, sliced)
 	end
 	if huntUntil(zombie) then
 		return
+	end
+	if zombie:getModData().fromzoidHuntUntil then
+		zombie:getModData().fromzoidHuntUntil = nil
+		applyWalkType(zombie, true, FromZoid.isEnabled("NightSprinters"), false)
 	end
 	local infos = ctx.infos
 	if not infos then
@@ -106,20 +164,21 @@ function FromZoid.onCalmZombieUpdate(zombie, ctx, sliced)
 		provoke = near
 	end
 	if provoke then
+		for i = 1, #infos do
+			local info = infos[i]
+			if info.sealed and not info.invited and FromZoid.dist2ToPlayer(zombie, info.player) <= 400 then
+				return
+			end
+		end
 		FromZoid.markZombieHunting(zombie, 25000)
 	end
 end
 
 local function applyAll()
+	local night = FromZoid.isNight()
+	applySenses(night)
 	if not FromZoid.isEnabled("EnableNightStats") then
 		return
-	end
-	local night = FromZoid.isNight()
-	if FromZoid.isEnabled("EnableDarkness") then
-		local state = FromZoid.getState()
-		if state.darknessActive then
-			night = true
-		end
 	end
 	if lastNight == night then
 		return
@@ -128,6 +187,9 @@ local function applyAll()
 	local sprinters = FromZoid.isEnabled("NightSprinters")
 	local calm = FromZoid.isEnabled("CalmUntilProvoked")
 	FromZoid.eachLoadedZombie(function(zombie)
+		if zombie:getModData().fromzoidHold then
+			return
+		end
 		local hunting = (not calm) or huntUntil(zombie)
 		applyWalkType(zombie, night, sprinters, hunting)
 	end)
@@ -140,30 +202,31 @@ local function onZombieCreate(zombie)
 	if not instanceof(zombie, "IsoZombie") then
 		return
 	end
-	local night = FromZoid.isNight()
-	local state = FromZoid.getState()
-	if state.darknessActive then
-		night = true
-	end
 	local hunting = not FromZoid.isEnabled("CalmUntilProvoked")
-	applyWalkType(zombie, night, FromZoid.isEnabled("NightSprinters"), hunting)
+	applyWalkType(zombie, FromZoid.isNight(), FromZoid.isEnabled("NightSprinters"), hunting)
 end
 
 local function onHit(attacker, target, weapon, damage)
+	if not FromZoid.isEnabled("EnableNightStats") then
+		return
+	end
 	if instanceof(attacker, "IsoPlayer") and instanceof(target, "IsoZombie") then
 		FromZoid.markZombieHunting(target, 25000)
 	end
 	if instanceof(attacker, "IsoPlayer") and weapon and weapon.isRanged and weapon:isRanged() then
-		FromZoid.markGunshot()
+		FromZoid.markGunshot(attacker)
 	end
 end
 
 local function onSwing(character, weapon)
+	if not FromZoid.isEnabled("EnableNightStats") then
+		return
+	end
 	if not character or not weapon then
 		return
 	end
 	if instanceof(character, "IsoPlayer") and weapon.isRanged and weapon:isRanged() then
-		FromZoid.markGunshot()
+		FromZoid.markGunshot(character)
 	end
 end
 

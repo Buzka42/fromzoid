@@ -1728,4 +1728,148 @@ module FromZoid
         }
     }
 
+    sound FromZoid_Name_01
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_01.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_02
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_02.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_03
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_03.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_04
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_04.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_05
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_05.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_06
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_06.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_07
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_07.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_08
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_08.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_09
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_09.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_10
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_10.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_11
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_11.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
+    sound FromZoid_Name_12
+    {
+        category = Voice,
+        is3D = true,
+        clip
+        {
+            file = media/sound/FromZoid_Name_12.ogg,
+            distanceMax = 32,
+            volume = 2.2,
+        }
+    }
+
 }

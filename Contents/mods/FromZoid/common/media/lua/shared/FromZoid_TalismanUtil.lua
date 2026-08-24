@@ -102,21 +102,26 @@ function FromZoid.hangTalismanOnDoor(player, door)
 		return false
 	end
 	local item = nil
+	local inv = nil
 	if player then
-		local inv = player:getInventory()
+		inv = player:getInventory()
 		item = FromZoid.findTalismanInInventory(inv)
 		if not item then
 			return false
 		end
-		inv:Remove(item)
-	else
-		item = instanceItem(FromZoid.ITEM_TALISMAN)
 	end
-	if not item then
+	local hungItem = instanceItem(FromZoid.ITEM_TALISMAN)
+	if not hungItem then
 		return false
 	end
 	local ox, oy, oz = FromZoid.doorHangOffset(door, square)
-	local hung = square:AddWorldInventoryItem(item, ox, oy, oz)
+	local hung = square:AddWorldInventoryItem(hungItem, ox, oy, oz)
+	if not hung then
+		return false
+	end
+	if inv and item then
+		inv:Remove(item)
+	end
 	local worldItem = hung
 	if hung and hung.getItem then
 		worldItem = hung:getItem() or hung
@@ -157,6 +162,9 @@ end
 
 function FromZoid.refreshTalismanOnSquare(player, square)
 	if not player or not square then
+		return false
+	end
+	if not FromZoid.squareHasHungTalisman(square) then
 		return false
 	end
 	local herb = FromZoid.findRefreshHerb(player:getInventory())
@@ -261,9 +269,12 @@ function FromZoid.takeTalismanFromSquare(player, square)
 			buildingId = buildingId or id3
 		end
 	end
+	if not taken then
+		return false
+	end
 	if not buildingId then
 		buildingId = FromZoid.buildingId(square:getBuilding())
 	end
 	FromZoid.unsealBuildingId(buildingId)
-	return taken
+	return true
 end

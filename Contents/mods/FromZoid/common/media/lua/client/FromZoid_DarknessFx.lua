@@ -103,15 +103,7 @@ local function mixWanted()
 		take(8, 0.85, 0.92, 0.08, 0.45, 0.12)
 	end
 	if player and FromZoid.inTheWoods and FromZoid.inTheWoods(player) then
-		take(12, 0.72, 0.88, 0.12, 0.35, 0.16)
-	end
-	if player and FromZoid.isEnabled("EnableSanity") then
-		local level = FromZoid.sanityLevel(player)
-		if level == "delusion" and FromZoid.isEnabled("EnableDelusions") then
-			take(16, 0.25, nil, nil, 0.18, nil)
-		elseif level == "psychosis" and FromZoid.isEnabled("EnablePsychosis") then
-			take(6, 0.9, 0.94, 0.06, 0.5, 0.1)
-		end
+		take(12, 0.55, nil, nil, 0.28, nil)
 	end
 	return wanted
 end
@@ -153,18 +145,17 @@ local function applyWanted(wanted)
 end
 
 local function radioLine(player, text)
-	if not player then
-		return
-	end
-	HaloTextHelper.addBadText(player, text)
-	if player.addLineChatElement then
-		player:addLineChatElement(text)
+	if text then
+		print("[FromZoid] " .. tostring(text))
 	end
 end
 
-local function tickDarknessClient()
-	applyWanted(mixWanted())
+local function tickRadioPhase()
 	if not FromZoid.isEnabled("EnableDarkness") then
+		return
+	end
+	local player = getPlayer()
+	if FromZoid.playerInVehicle and FromZoid.playerInVehicle(player) then
 		return
 	end
 	local state = FromZoid.getState()
@@ -177,22 +168,41 @@ local function tickDarknessClient()
 	if phase == lastPhase then
 		return
 	end
-	local player = getPlayer()
 	if phase == "warn" and lastPhase ~= "warn" then
-		radioLine(player, getText("IGUI_FromZoid_RadioWarn"))
+		radioLine(player, FromZoid.text("IGUI_FromZoid_RadioWarn"))
 	elseif phase == "active" and lastPhase ~= "active" then
-		radioLine(player, getText("IGUI_FromZoid_RadioStart"))
+		radioLine(player, FromZoid.text("IGUI_FromZoid_RadioStart"))
 	elseif phase == "none" and lastPhase == "active" then
-		if player then
-			HaloTextHelper.addGoodText(player, getText("IGUI_FromZoid_RadioEnd"))
-		end
+		print("[FromZoid] " .. FromZoid.text("IGUI_FromZoid_RadioEnd"))
 	end
 	lastPhase = phase
 end
 
-Events.EveryOneMinute.Add(tickDarknessClient)
+local function tickClimate()
+	local player = getPlayer()
+	if not player or not player:isAlive() then
+		return
+	end
+	if FromZoid.playerAsleep and FromZoid.playerAsleep(player) then
+		return
+	end
+	if FromZoid.playerInVehicle and FromZoid.playerInVehicle(player) then
+		if fxSnap then
+			applySnap(fxSnap)
+			fxSnap = nil
+		end
+		return
+	end
+	local wanted = mixWanted()
+	if not wanted and not fxSnap then
+		return
+	end
+	applyWanted(wanted)
+end
+
+Events.OnPlayerUpdate.Add(tickClimate)
+Events.EveryOneMinute.Add(tickRadioPhase)
 Events.OnGameStart.Add(function()
 	lastPhase = nil
 	fxSnap = nil
-	tickDarknessClient()
 end)

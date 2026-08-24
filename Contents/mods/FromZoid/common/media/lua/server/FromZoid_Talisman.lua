@@ -68,8 +68,7 @@ local function validateSeals()
 					entry.hungNight = nowN
 				elseif (nowN - entry.hungNight) >= maxNights then
 					wiltWorldTalisman(entry.x, entry.y, entry.z)
-					entry.sealed = false
-					entry.wilted = true
+					table.insert(stale, id)
 				end
 			end
 		end
@@ -122,47 +121,36 @@ local function clearPursuit(zombie)
 	end
 end
 
-local function abortPath(zombie)
-	pcall(function()
-		if zombie.getPathFindBehavior2 then
-			zombie:getPathFindBehavior2():cancel()
-		end
-		if zombie.setPath2 then
-			zombie:setPath2(nil)
-		end
-	end)
-end
-
-local function onSealedOpening(zombie, building)
-	local sq = FromZoid.zombieSquare(zombie)
-	if not sq then
-		return false, nil
+local function squareIsSealedInterior(square, building)
+	if not square or not building then
+		return false
 	end
-	local opening = FromZoid.getDoorOnSquare(sq) or FromZoid.getWindowOnSquare(sq)
-	if not opening then
-		return false, nil
+	if not square.getRoom or not square:getRoom() then
+		return false
 	end
-	local ob = buildingFromObject(opening)
-	if ob and FromZoid.buildingId(ob) == FromZoid.buildingId(building) then
-		return true, opening
+	local b = square:getBuilding()
+	if not b then
+		return false
 	end
-	return false, opening
+	return FromZoid.buildingId(b) == FromZoid.buildingId(building)
 end
 
 local function ejectIfInside(zombie, building)
+	if FromZoid.buildingHasInvitation(building) then
+		return false
+	end
 	local sq = FromZoid.zombieSquare(zombie)
-	if not sq then
+	if not squareIsSealedInterior(sq, building) then
 		return false
 	end
-	local inside = sq:getBuilding() and FromZoid.buildingId(sq:getBuilding()) == FromZoid.buildingId(building)
-	local onOpening, opening = onSealedOpening(zombie, building)
-	if not inside and not onOpening then
-		return false
-	end
+	local opening = FromZoid.getDoorOnSquare(sq) or FromZoid.getWindowOnSquare(sq)
 	local porch = FromZoid.openingPorchSquare(opening)
 	if not porch then
+		porch = FromZoid.nearestPorchSquare(building, sq:getX(), sq:getY())
+	end
+	if not porch then
 		local cell = getCell()
-		local dirs = { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {2, 0}, {-2, 0}, {0, 2}, {0, -2} }
+		local dirs = { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {2, 0}, {-2, 0}, {0, 2}, {0, -2}, {3, 0}, {-3, 0}, {0, 3}, {0, -3} }
 		for i = 1, #dirs do
 			local n = cell:getGridSquare(sq:getX() + dirs[i][1], sq:getY() + dirs[i][2], sq:getZ())
 			if n and not n:getBuilding() and not FromZoid.getWindowOnSquare(n) and not FromZoid.getDoorOnSquare(n) and n.isFree and n:isFree(false) then
@@ -172,11 +160,17 @@ local function ejectIfInside(zombie, building)
 		end
 	end
 	if porch then
-		abortPath(zombie)
+		-- Do not pathFindBehavior2:cancel here: canceling a live path
+		-- launches them when the player gets close enough to update them.
+		-- Do not path through walls either: that is the other flyer.
+		-- Unseen: teleport to the porch. Watched: leave them until later.
+		if not FromZoid.allowVisibleTeleport(zombie) then
+			return false
+		end
 		FromZoid.teleportZombieToSquare(zombie, porch)
 		return true
 	end
-	return inside or onOpening
+	return false
 end
 
 local function stopThump(zombie)
@@ -192,20 +186,38 @@ local function stopThump(zombie)
 	end
 end
 
-local function keepOffSealedHouse(zombie, building, aggressive)
-	zombie:getModData().fromzoidHold = true
+local function shooFromSealed(zombie, building)
 	stopThump(zombie)
-	local ejected = false
+	if zombie.setTarget then
+		zombie:setTarget(nil)
+	end
+	if zombie.setCanOpenDoors then
+		pcall(function()
+			zombie:setCanOpenDoors(true)
+		end)
+	end
 	if building then
-		ejected = ejectIfInside(zombie, building)
+		ejectIfInside(zombie, building)
 	end
-	if aggressive or ejected then
-		clearPursuit(zombie)
-		return
+	if FromZoid.sendZombieToNest then
+		if FromZoid.sendZombieToNest(zombie, false) then
+			return
+		end
 	end
-	local target = zombie.getTarget and zombie:getTarget() or nil
-	if target then
-		clearPursuit(zombie)
+	FromZoid.walkAwayFromHouse(zombie)
+end
+
+local function keepOffSealedHouse(zombie, building, forceHold)
+	stopThump(zombie)
+	clearPursuit(zombie)
+	if building then
+		ejectIfInside(zombie, building)
+	end
+	FromZoid.stepOffOpening(zombie)
+	if forceHold or FromZoid.zombieNearOpening(zombie) or FromZoid.zombieAgainstBuilding(zombie, building) then
+		FromZoid.holdAtGlass(zombie)
+	elseif zombie:getModData().fromzoidHold then
+		FromZoid.releaseHold(zombie)
 	end
 end
 
@@ -216,58 +228,117 @@ function FromZoid.enforceTalisman(zombie, ctx, sliced)
 	if not zombie or not zombie:isAlive() then
 		return
 	end
+	ctx = ctx or FromZoid.refreshTickContext()
+	local night = FromZoid.isClockNight()
 	if thumpIsSealed(zombie) then
 		local thump = zombie.getThumpTarget and zombie:getThumpTarget() or nil
-		keepOffSealedHouse(zombie, buildingFromObject(thump), true)
+		local b = buildingFromObject(thump)
+		if night then
+			keepOffSealedHouse(zombie, b, true)
+		else
+			shooFromSealed(zombie, b)
+		end
 		return
 	end
 	local sq = FromZoid.zombieSquare(zombie)
 	local building = sq and sq:getBuilding() or nil
 	if building and FromZoid.isBuildingSealed(building) and not FromZoid.buildingHasInvitation(building) then
-		keepOffSealedHouse(zombie, building, true)
-		return
-	end
-	ctx = ctx or FromZoid.refreshTickContext()
-	if not ctx.anySealedUninvited then
-		if zombie:getModData().fromzoidHold and sliced then
-			zombie:getModData().fromzoidHold = nil
+		if night then
+			keepOffSealedHouse(zombie, building, true)
+		else
+			shooFromSealed(zombie, building)
 		end
 		return
 	end
-	if not sliced then
+	if not night then
+		if zombie:getModData().fromzoidHold then
+			FromZoid.releaseHold(zombie)
+		end
+		FromZoid.clearZombieHunt(zombie)
+		if zombie.setTarget then
+			zombie:setTarget(nil)
+		end
+		stopThump(zombie)
+		local infos = ctx.infos
+		local d2 = 99999
+		local sealedNear = nil
+		if infos then
+			for i = 1, #infos do
+				local info = infos[i]
+				local n = FromZoid.dist2ToPlayer(zombie, info.player)
+				if n < d2 then
+					d2 = n
+				end
+				if info.sealed and not info.invited and n <= 900 then
+					sealedNear = info.building
+				end
+			end
+		end
+		local opening = sq and (FromZoid.getDoorOnSquare(sq) or FromZoid.getWindowOnSquare(sq))
+		if opening then
+			local ob = buildingFromObject(opening)
+			if ob and FromZoid.isBuildingSealed(ob) and not FromZoid.buildingHasInvitation(ob) then
+				sealedNear = ob
+			end
+		end
+		if sealedNear or (ctx.watchBuilding and FromZoid.zombieAgainstBuilding(zombie, ctx.watchBuilding)) then
+			local nested = false
+			if FromZoid.sendZombieToNest then
+				nested = FromZoid.sendZombieToNest(zombie, FromZoid.allowNestTeleport(zombie))
+			end
+			if not nested and not FromZoid.squareIsIndoorHide(FromZoid.zombieSquare(zombie)) then
+				FromZoid.walkAwayFromHouse(zombie)
+			end
+		end
 		return
+	end
+	if not ctx.anySealedUninvited then
+		if zombie:getModData().fromzoidHold then
+			FromZoid.releaseHold(zombie)
+		end
+		return
+	end
+	local sealedBuilding = ctx.watchBuilding
+	local d2Watch = 99999
+	local invited = false
+	local hunting = zombie:getModData().fromzoidHuntUntil and FromZoid.nowMs() < zombie:getModData().fromzoidHuntUntil
+	if zombie.getTarget and zombie:getTarget() then
+		hunting = true
 	end
 	local infos = ctx.infos
-	if not infos or #infos == 0 then
-		return
-	end
-	local nearest = 9999
-	local sealedBuilding = nil
-	local invited = false
-	for i = 1, #infos do
-		local info = infos[i]
-		local d2 = FromZoid.dist2ToPlayer(zombie, info.player)
-		if d2 < nearest then
-			nearest = d2
-		end
-		if d2 <= 324 and info.sealed then
-			if info.invited then
-				invited = true
-			else
-				sealedBuilding = info.building
+	if infos then
+		for i = 1, #infos do
+			local info = infos[i]
+			if info.sealed then
+				local d2 = FromZoid.dist2ToPlayer(zombie, info.player)
+				if info.invited then
+					if d2 <= 324 then
+						invited = true
+					end
+				elseif d2 < d2Watch then
+					d2Watch = d2
+					sealedBuilding = info.building
+				end
 			end
 		end
 	end
-	if nearest > 324 then
-		zombie:getModData().fromzoidHold = nil
+	if not sealedBuilding or d2Watch > 1600 then
+		if zombie:getModData().fromzoidHold then
+			FromZoid.releaseHold(zombie)
+		end
 		return
 	end
-	if sealedBuilding then
-		keepOffSealedHouse(zombie, sealedBuilding, false)
+	local against = FromZoid.zombieAgainstBuilding(zombie, sealedBuilding)
+	local nearOpening = FromZoid.zombieNearOpening(zombie)
+	if nearOpening or against or (hunting and d2Watch <= 400) then
+		keepOffSealedHouse(zombie, sealedBuilding, true)
 		return
 	end
-	if invited then
-		zombie:getModData().fromzoidHold = nil
+	if zombie:getModData().fromzoidHold then
+		FromZoid.releaseHold(zombie)
+		return
+	end
+	if invited and sliced then
 		if zombie.setCanOpenDoors then
 			pcall(function()
 				zombie:setCanOpenDoors(true)

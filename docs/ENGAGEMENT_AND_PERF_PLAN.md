@@ -1,6 +1,8 @@
 # FromZoid — engagement + performance plan
 
-Status: **implemented in mod 1.2.0** (Phase 0–5). Restart PZ so sandbox options, items, and Lua load. New FromZoid sandbox rows default on; turn off what you do not want.
+Status: **implemented**. Live pack is **1.2.2**. For current tick order, hold/nest rules, and playtest fixes, use [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md). Gathering defaults below are stale (`GatheringMax` is 40, interval is 1, sprinters are on day and night).
+
+Restart PZ so sandbox options, items, and Lua load. New FromZoid sandbox rows default on; turn off what you do not want.
 
 Target machine: i5-4460 (4 cores). PZ 42.20. Live copy: `%UserProfile%\Zomboid\mods\FromZoid`.
 
