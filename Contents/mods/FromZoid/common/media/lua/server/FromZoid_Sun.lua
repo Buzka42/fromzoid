@@ -2,9 +2,6 @@ if isClient() then
 	return
 end
 
-local porchCache = {}
-local porchCacheMin = -1
-
 local function chance(percent)
 	if not percent or percent <= 0 then
 		return false
@@ -16,6 +13,14 @@ local function chance(percent)
 end
 
 local lastNight = nil
+-- Minutes since the sun came up, or nil at night. Drives how hard we push
+-- leftovers indoors: a nudge at first, a shove by mid-morning.
+local dawnMinute = nil
+-- Daylight drain of the talisman field: this many zombies hold a leave pass
+-- at once, for this long. The pass must outlast a real walk clear of the ring
+-- band or they get reclaimed mid-exit and loiter forever.
+local LEAVE_SLOTS = 6
+local LEAVE_MS = 30000
 
 local function outdoorSquareNear(zombie, dist)
 	dist = dist or 8
@@ -59,31 +64,6 @@ local function lureOutside(zombie)
 	end
 end
 
-function FromZoid.cachedPorchSquare(building, x, y)
-	if not building then
-		return nil
-	end
-	local id = FromZoid.buildingId(building) or "_"
-	local gt = getGameTime()
-	local minute = 0
-	if gt and gt.getWorldAgeHours then
-		minute = math.floor(gt:getWorldAgeHours() * 60)
-	end
-	if porchCacheMin ~= minute then
-		porchCache = {}
-		porchCacheMin = minute
-	end
-	if porchCache[id] ~= nil then
-		if porchCache[id] == false then
-			return nil
-		end
-		return porchCache[id]
-	end
-	local porch = FromZoid.nearestPorchSquare(building, x, y)
-	porchCache[id] = porch or false
-	return porch
-end
-
 local function processSunCycle()
 	if not FromZoid.isEnabled("EnableSunCycle") then
 		return
@@ -99,6 +79,11 @@ local function processSunCycle()
 	else
 		lastNight = night
 	end
+	if dawnNow then
+		dawnMinute = 0
+	elseif duskNow then
+		dawnMinute = nil
+	end
 	if not duskNow and not dawnNow then
 		return
 	end
@@ -111,6 +96,13 @@ local function processSunCycle()
 			return
 		end
 		FromZoid.clearZombieHunt(zombie)
+		-- Do NOT mass-release the talisman field at 07:00. Freeing a dozen
+		-- zombies stood two tiles from the glass, in the same tick, with the
+		-- player in plain view, is the sunrise charge. They leave via the
+		-- staggered leave passes in herdIndoors instead.
+		if FromZoid.nearestSealedBuilding(zombie, 40) then
+			return
+		end
 		if zombie:getModData().fromzoidHold then
 			FromZoid.releaseHold(zombie)
 		end
@@ -143,39 +135,6 @@ local function processSunCycle()
 			end
 		end
 	end)
-end
-
-local function wakeSameRoom(zombie, cap)
-	cap = cap or 8
-	local sq = FromZoid.zombieSquare(zombie)
-	local room = sq and sq.getRoom and sq:getRoom() or nil
-	if not room or not room.getSquares then
-		return
-	end
-	local squares = room:getSquares()
-	if not squares then
-		return
-	end
-	local woken = 0
-	for s = 0, squares:size() - 1 do
-		if woken >= cap then
-			return
-		end
-		local tile = squares:get(s)
-		local movers = tile and tile:getMovingObjects()
-		if movers then
-			for m = 0, movers:size() - 1 do
-				local other = movers:get(m)
-				if instanceof(other, "IsoZombie") and other:isUseless() then
-					FromZoid.wakeZombieBody(other)
-					woken = woken + 1
-					if woken >= cap then
-						return
-					end
-				end
-			end
-		end
-	end
 end
 
 local function wakeZombie(zombie, wakeBuilding)
@@ -245,8 +204,10 @@ function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
 		end
 		return
 	end
+	-- Do NOT release the hold here. The talisman field applies in daylight
+	-- too now; releasing it every tick is what handed them back to vanilla.
 	if zombie:getModData().fromzoidHold then
-		FromZoid.releaseHold(zombie)
+		return
 	end
 	local md = zombie:getModData()
 	local now = FromZoid.nowMs()
@@ -266,9 +227,30 @@ function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
 		end
 	end
 	local hunting = md.fromzoidHuntUntil and now < md.fromzoidHuntUntil
-	if hunting and not FromZoid.sameUnsealedBuilding(zombie, closest) then
+	-- Only break off a hunt aimed at someone SHELTERING. This used to fire on
+	-- `not sameUnsealedBuilding`, which needs zombie and player inside the
+	-- same building -- so with the player outdoors it was true every tick,
+	-- and clearZombieHunt nils the target. That is why daytime zombies could
+	-- never land a hit: their target was stripped every single frame.
+	local shelteredNow = closestInfo and closestInfo.sealed and not closestInfo.invited
+	if hunting and shelteredNow and not FromZoid.sameUnsealedBuilding(zombie, closest) then
 		FromZoid.clearZombieHunt(zombie)
 		hunting = false
+	end
+	-- A talisman house is never a valid target, and the person inside it is
+	-- not either. CalmUntilProvoked is gated on ctx.night, so it stops
+	-- suppressing aggro the instant the clock says day: at 07:00 the whole
+	-- street is handed a free target through the window. Hold the line here
+	-- so daylight cannot re-acquire someone stood in a sealed house.
+	local sealedPlayer = closestInfo and closestInfo.sealed and not closestInfo.invited
+	if sealedPlayer then
+		if zombie.setTarget then
+			zombie:setTarget(nil)
+		end
+		if hunting then
+			FromZoid.clearZombieHunt(zombie)
+			hunting = false
+		end
 	end
 	local loud = false
 	if ctx and ctx.loud then
@@ -285,7 +267,7 @@ function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
 	end
 	if loud then
 		FromZoid.wakeZombieBody(zombie)
-		if closest then
+		if closest and not sealedPlayer then
 			if zombie.setTarget then
 				zombie:setTarget(closest)
 			end
@@ -301,7 +283,7 @@ function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
 		if zombie:isUseless() then
 			FromZoid.wakeZombieBody(zombie)
 		end
-		if closest and zombie.setTarget then
+		if closest and not sealedPlayer and zombie.setTarget then
 			zombie:setTarget(closest)
 		end
 		return
@@ -312,6 +294,13 @@ function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
 			FromZoid.wakeZombieBody(zombie)
 		end
 		if sliced then
+			-- Near a sealed house, enforceTalisman owns them: it walks them
+			-- clear before letting them nest. Issuing a nest path here as
+			-- well would route them straight back past the windows.
+			local near = FromZoid.nearestSealedBuilding(zombie, 12)
+			if near then
+				return
+			end
 			local nested = FromZoid.sendZombieToNest(zombie, FromZoid.allowNestTeleport(zombie))
 			if not nested then
 				if not FromZoid.walkAwayFromHouse(zombie) then
@@ -325,7 +314,7 @@ function FromZoid.onDayZombieUpdate(zombie, ctx, sliced)
 		zombie:setTarget(nil)
 	end
 	if md.fromzoidAsleep and zombie:isUseless() then
-		FromZoid.stripLaunchPoses(zombie)
+		FromZoid.pinZombieSleepPose(zombie)
 		return
 	end
 	FromZoid.putZombieToSleep(zombie)
@@ -365,7 +354,6 @@ local function nestDayCreate(zombie)
 	if FromZoid.isClockNight() then
 		return
 	end
-	zombie:getModData().fromzoidDayNest = true
 	FromZoid.sendZombieToNest(zombie, FromZoid.allowNestTeleport(zombie))
 end
 
@@ -373,14 +361,23 @@ local function herdIndoors()
 	if not FromZoid.isEnabled("EnableSunCycle") then
 		return
 	end
-	if FromZoid.isClockNight() then
+	if not FromZoid.realTimeGate("herd", 1000) then
 		return
 	end
+	if FromZoid.isClockNight() then
+		dawnMinute = nil
+		return
+	end
+	if dawnMinute then
+		dawnMinute = dawnMinute + 1
+	end
+	-- No recorded dawn (mid-day load, or a save carried over) means we are
+	-- well past it: go straight to the strongest push.
+	local phase = dawnMinute or 99
 	local nest = FromZoid.isEnabled("NestTeleport")
+	local liveLeave = 0
+	local waitingLeave = {}
 	FromZoid.eachLoadedZombie(function(zombie)
-		if zombie:getModData().fromzoidHold then
-			FromZoid.releaseHold(zombie)
-		end
 		local huntUntil = zombie:getModData().fromzoidHuntUntil
 		if huntUntil and FromZoid.nowMs() < huntUntil then
 			FromZoid.clearZombieHunt(zombie)
@@ -389,15 +386,64 @@ local function herdIndoors()
 		if FromZoid.squareIsIndoorHide(sq) then
 			return
 		end
-		local nested = FromZoid.sendZombieToNest(zombie, nest and FromZoid.allowNestTeleport(zombie))
-		if not nested then
-			FromZoid.walkAwayFromHouse(zombie)
+		-- Inside the talisman field: queue for a leave pass rather than being
+		-- released. Only LEAVE_SLOTS of them hold a live pass at once, so the
+		-- yard drains steadily and everyone else stays held and cannot charge.
+		-- If they fail to get clear the pass lapses and the field takes them
+		-- back, so a failed exit can never become a charge.
+		local near = FromZoid.nearestSealedBuilding(zombie, 12)
+		if near then
+			local md = zombie:getModData()
+			if md.fromzoidLeaveUntil and FromZoid.nowMs() < md.fromzoidLeaveUntil then
+				liveLeave = liveLeave + 1
+			else
+				waitingLeave[#waitingLeave + 1] = zombie
+			end
+			return
 		end
+		if zombie:getModData().fromzoidHold then
+			FromZoid.releaseHold(zombie)
+		end
+		-- First ten minutes: drain the yard a fifth at a time. A crowd that
+		-- all turns and leaves on the same tick reads like a script.
+		if phase <= 10 and (FromZoid.zombieSeed(zombie) % 5) ~= (phase % 5) then
+			return
+		end
+		if FromZoid.sendZombieToNest(zombie, nest and FromZoid.allowNestTeleport(zombie)) then
+			return
+		end
+		-- Still outside a while after sunrise and nobody is looking: put them
+		-- away rather than let them mill in daylight all day. This is
+		-- offscreen-only, so bringing it forward cannot be seen happening.
+		if phase > 12 and nest and FromZoid.allowVisibleTeleport(zombie) then
+			local tile = FromZoid.pickNestSquare(zombie)
+			if tile then
+				FromZoid.teleportZombieToSquare(zombie, tile)
+				FromZoid.putZombieToSleep(zombie)
+				return
+			end
+		end
+		FromZoid.walkAwayFromHouse(zombie)
 	end)
+	-- Top the leave queue back up to LEAVE_SLOTS. The pass has to outlast an
+	-- actual walk out of the ring band: at shamble speed that is well over
+	-- ten seconds, and a pass that expires mid-walk just hands them back to
+	-- the field to loiter again, which is why they never left.
+	local now = FromZoid.nowMs()
+	for i = 1, #waitingLeave do
+		if liveLeave >= LEAVE_SLOTS then
+			break
+		end
+		waitingLeave[i]:getModData().fromzoidLeaveUntil = now + LEAVE_MS
+		liveLeave = liveLeave + 1
+	end
 end
 
 local function trickleOutside()
 	if not FromZoid.isEnabled("EnableSunCycle") then
+		return
+	end
+	if not FromZoid.realTimeGate("trickle", 1500) then
 		return
 	end
 	if not FromZoid.isClockNight() then
@@ -449,8 +495,16 @@ local function tickTheStill()
 	if not FromZoid.isClockNight() then
 		return
 	end
+	if not FromZoid.realTimeGate("still", 2000) then
+		return
+	end
+	-- Deep night, measured against the actual dawn/dusk rather than a fixed
+	-- 22:00. Winter dusk lands around 19:00, and the hard-coded window meant
+	-- The Still could never fire in the first hours of a short night.
 	local tod = FromZoid.getTimeOfDayHours()
-	if tod > 5 and tod < 22 then
+	local dawn, dusk = FromZoid.getDawnDusk()
+	local deep = tod < (dawn - 1) or tod > (dusk + 1)
+	if not deep then
 		return
 	end
 	local state = FromZoid.getState()
@@ -505,19 +559,134 @@ local function tickTheStill()
 		FromZoid.applyStillPose(zombie, player)
 	end
 	playKnock(player:getCurrentSquare())
-	if player.addLineChatElement then
-		player:addLineChatElement(FromZoid.text("IGUI_FromZoid_TheStill"))
+end
+
+-- Sandbox TalismanDebug turns "a lot of them stayed" into a number. Costs a
+-- single option read per minute when it is off.
+local function tickCensus()
+	if not FromZoid.isEnabled("TalismanDebug") then
+		return
 	end
+	if not FromZoid.realTimeGate("census", 2000) then
+		return
+	end
+	local n = { total = 0, hold = 0, loiter = 0, gather = 0, asleep = 0, outdoor = 0, hunting = 0, porch = 0, inside = 0, walking = 0, targeting = 0, leaving = 0, stuck = 0, yard = 0 }
+	local now = FromZoid.nowMs()
+	-- The building the player is sealed inside, if any: "porch" counts who is
+	-- still pressed against it, which is the number that has to fall at dawn.
+	-- Measure against the sealed HOUSE, not "the building the player happens
+	-- to be standing in". Keying off the player meant stepping outside to
+	-- look at the porch crowd made atwall report 0 while they were still
+	-- plainly there.
+	local sealedList = FromZoid.sealedBuildings()
+	local watch = sealedList[1] and sealedList[1].building or nil
+	FromZoid.eachLoadedZombie(function(zombie)
+		local md = zombie:getModData()
+		n.total = n.total + 1
+		if watch then
+			local d = FromZoid.distToBuildingEdge(zombie, watch)
+			if d then
+				local zsq = FromZoid.zombieSquare(zombie)
+				local zb = zsq and zsq.getBuilding and zsq:getBuilding() or nil
+				if zb and FromZoid.buildingId(zb) == FromZoid.buildingId(watch) then
+					n.inside = n.inside + 1
+				elseif d <= 3 then
+					n.porch = n.porch + 1
+				elseif d <= 10 then
+					n.yard = n.yard + 1
+				end
+			end
+		end
+		if md.fromzoidWalkTo then
+			n.walking = n.walking + 1
+		end
+		-- Vanilla has the player acquired. Near a sealed house in daylight
+		-- this is the window charge; it should stay at or near zero.
+		if zombie.getTarget and zombie:getTarget() then
+			n.targeting = n.targeting + 1
+		end
+		if md.fromzoidHold then
+			n.hold = n.hold + 1
+		end
+		if md.fromzoidLoiter then
+			n.loiter = n.loiter + 1
+		end
+		if md.fromzoidLeaveUntil and now < md.fromzoidLeaveUntil then
+			n.leaving = n.leaving + 1
+		end
+		-- Tracked an escape but has not gained ground in a while: this is the
+		-- "caught aggro and just stands there" case.
+		if (md.fromzoidEscapeFails or 0) >= 3 then
+			n.stuck = n.stuck + 1
+		end
+		if md.fromzoidGather then
+			n.gather = n.gather + 1
+		end
+		if md.fromzoidAsleep then
+			n.asleep = n.asleep + 1
+		end
+		if md.fromzoidHuntUntil and now < md.fromzoidHuntUntil then
+			n.hunting = n.hunting + 1
+		end
+		if not FromZoid.squareIsIndoorHide(FromZoid.zombieSquare(zombie)) then
+			n.outdoor = n.outdoor + 1
+		end
+	end)
+	-- One-shot: report what skin textures live zombies are actually using.
+	-- Overriding M_ZedBody* changes nothing if the game is drawing them from
+	-- the human skin list (MaleBody0X) instead, and only the game can say.
+	if not FromZoid._skinReported then
+		local seen = {}
+		local names = {}
+		FromZoid.eachLoadedZombie(function(zombie)
+			if #names >= 8 then
+				return
+			end
+			pcall(function()
+				local hv = zombie.getHumanVisual and zombie:getHumanVisual() or nil
+				local tex = hv and hv.getSkinTexture and hv:getSkinTexture() or nil
+				if tex then
+					tex = tostring(tex)
+					if not seen[tex] then
+						seen[tex] = true
+						names[#names + 1] = tex
+					end
+				end
+			end)
+		end)
+		if #names > 0 then
+			FromZoid._skinReported = true
+			print("[FromZoid] zombie skin textures in use: " .. table.concat(names, ", "))
+		end
+	end
+	local ns = FromZoid._nestStats or {}
+	local parts = {}
+	for _, k in ipairs({ "pathIssued", "enRoute", "bedded", "asleep", "arriving",
+		"noTile", "wouldLaunch", "gaveUp", "inSkipBuilding", "hunting", "still" }) do
+		if (ns[k] or 0) > 0 then
+			parts[#parts + 1] = k .. "=" .. tostring(ns[k])
+		end
+	end
+	if #parts > 0 then
+		print("[FromZoid] nest: " .. table.concat(parts, " "))
+	end
+	FromZoid._nestStats = {}
+	print(string.format(
+		"[FromZoid] %s tod=%.1f dawn+%s | loaded=%d outdoor=%d indoor=%d atwall=%d yard=%d insidesealed=%d walking=%d targeting=%d hold=%d loiter=%d leaving=%d stuck=%d gather=%d hunt=%d",
+		FromZoid.isClockNight() and "night" or "day",
+		FromZoid.getTimeOfDayHours(),
+		tostring(dawnMinute),
+		n.total, n.outdoor, n.asleep, n.porch, n.yard, n.inside, n.walking, n.targeting, n.hold, n.loiter, n.leaving, n.stuck, n.gather, n.hunting))
 end
 
 Events.EveryOneMinute.Add(processSunCycle)
 Events.EveryOneMinute.Add(herdIndoors)
 Events.EveryOneMinute.Add(trickleOutside)
 Events.EveryOneMinute.Add(tickTheStill)
+Events.EveryOneMinute.Add(tickCensus)
 Events.OnGameStart.Add(function()
 	lastNight = nil
-	porchCache = {}
-	porchCacheMin = -1
+	dawnMinute = nil
 end)
 Events.OnWeaponHitCharacter.Add(onHit)
 Events.OnZombieCreate.Add(nestDayCreate)

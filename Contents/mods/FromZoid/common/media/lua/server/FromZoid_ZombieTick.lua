@@ -13,8 +13,13 @@ Events.OnZombieUpdate.Add(function(zombie)
 	local indoor = FromZoid.squareIsIndoorHide(FromZoid.zombieSquare(zombie))
 	if md.fromzoidAsleep and not indoor then
 		FromZoid.wakeZombieBody(zombie)
+	elseif md.fromzoidAsleep then
+		FromZoid.pinZombieSleepPose(zombie)
 	elseif not indoor then
 		FromZoid.stripLaunchPoses(zombie)
+	end
+	if FromZoid.onUltraStrongUpdate then
+		FromZoid.onUltraStrongUpdate(zombie)
 	end
 	if md.fromzoidStillUntil then
 		if now < md.fromzoidStillUntil then
@@ -35,10 +40,22 @@ Events.OnZombieUpdate.Add(function(zombie)
 	if FromZoid.enforceTalisman then
 		FromZoid.enforceTalisman(zombie, ctx, sliced)
 	end
-	if not sliced then
-		if md.fromzoidHold and FromZoid.isClockNight() then
-			return
+	-- Vanilla defaults canOpenDoors to false and may reset it. Keep ordinary
+	-- doors usable except while the talisman field has them held or loitering.
+	if sliced and not md.fromzoidHold and not md.fromzoidLoiter then
+		if zombie.setCanOpenDoors then
+			pcall(function()
+				zombie:setCanOpenDoors(true)
+			end)
 		end
+	end
+	-- Held means enforceTalisman just froze them in the talisman field, day
+	-- or night. Nothing downstream may undo that: the day pass used to
+	-- release the hold every tick, which is what left them free to charge.
+	if md.fromzoidHold then
+		return
+	end
+	if not sliced then
 		if indoor and zombie:isUseless() then
 			if not (md.fromzoidHuntUntil and now < md.fromzoidHuntUntil) then
 				if not (ctx.loud or ctx.gunshot) then

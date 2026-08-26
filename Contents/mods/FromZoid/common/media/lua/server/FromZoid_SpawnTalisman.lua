@@ -406,6 +406,52 @@ local function trySpawnAlarmClock(building)
 	return false
 end
 
+-- Always board the spawn house. Runs after the talisman is hung so the door
+-- the charm picked is the one left clear.
+-- Always board the spawn house. Runs after the talisman is hung so the door
+-- the charm picked is the one left clear.
+--
+-- Deliberately keeps re-running across the first few minutes of day 0:
+-- OnNewGame fires before most of the building's squares have streamed in, so
+-- an early pass finds barely any windows. The old version boarded whatever it
+-- could see, reported success and never came back, which is why the spawn
+-- house came out unboarded. addPlanks skips anything already barricaded, so
+-- repeat passes only top up.
+local function tryBoardSpawnHouse(building)
+	if not FromZoid.isEnabled("BoardedSpawnHouse") then
+		return true
+	end
+	local state = FromZoid.getState()
+	if state.spawnBoardedDone then
+		return true
+	end
+	if not building then
+		local id = state.spawnBuildingId
+		local players = FromZoid.playerList()
+		local sq = players[1] and players[1]:getCurrentSquare() or nil
+		local b = sq and sq:getBuilding() or nil
+		if b and (not id or FromZoid.buildingId(b) == id) then
+			building = b
+		end
+	end
+	if not building or not FromZoid.boardUpBuilding then
+		return false
+	end
+	local n = FromZoid.boardUpBuilding(building) or 0
+	state.spawnBoardedCount = (state.spawnBoardedCount or 0) + n
+	state.spawnBoardTries = (state.spawnBoardTries or 0) + 1
+	if FromZoid.isEnabled("TalismanDebug") then
+		print(string.format("[FromZoid] board pass %d: +%d planked, %d total, house %s",
+			state.spawnBoardTries, n, state.spawnBoardedCount,
+			tostring(FromZoid.buildingId(building))))
+	end
+	if state.spawnBoardTries >= 10 and state.spawnBoardedCount > 0 then
+		state.spawnBoardedDone = true
+		return true
+	end
+	return false
+end
+
 local function tryHangOnPlayerHouse()
 	if not FromZoid.isEnabled("EnableTalismans") then
 		return false
@@ -454,6 +500,7 @@ Events.OnNewGame.Add(function(player, square)
 		FromZoid.evictZombiesFromBuilding(building)
 	end
 	tryHangOnPlayerHouse()
+	tryBoardSpawnHouse(building)
 	trySpawnAlarmClock(building)
 end)
 
@@ -488,6 +535,11 @@ Events.EveryOneMinute.Add(function()
 	end
 	if not state.spawnAlarmClock2 then
 		trySpawnAlarmClock()
+	end
+	-- Retry: on a fresh game the building is often not resolvable yet when
+	-- OnNewGame fires, and LoadGridsquare ordering is not guaranteed either.
+	if not state.spawnBoardedDone and day0 then
+		tryBoardSpawnHouse(nil)
 	end
 end)
 

@@ -133,6 +133,11 @@ local function dressLikePerson(zombie)
 	if zombie.setCanWalk then
 		zombie:setCanWalk(true)
 	end
+	if zombie.setCanOpenDoors then
+		pcall(function()
+			zombie:setCanOpenDoors(true)
+		end)
+	end
 	assignVoice(zombie)
 end
 

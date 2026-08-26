@@ -26,6 +26,23 @@ local function captureLore(lore)
 	return state
 end
 
+-- Only hand a value to getSandboxOptions when it actually changed. This ran
+-- every in-game minute for the whole session otherwise.
+local pushed = {}
+
+local function pushLore(key, value)
+	if value == nil or pushed[key] == value then
+		return
+	end
+	pushed[key] = value
+	if not getSandboxOptions then
+		return
+	end
+	pcall(function()
+		getSandboxOptions():set("ZombieLore." .. key, value)
+	end)
+end
+
 local function applyToughness(lore)
 	if not lore then
 		return
@@ -38,12 +55,8 @@ local function applyToughness(lore)
 		local def = tonumber(state.loreDefense) or 70
 		lore.ZombiesMaxDefense = math.min(95, def * 1.25)
 	end
-	if getSandboxOptions then
-		pcall(function()
-			getSandboxOptions():set("ZombieLore.Toughness", 1)
-			getSandboxOptions():set("ZombieLore.ZombiesArmorFactor", lore.ZombiesArmorFactor)
-		end)
-	end
+	pushLore("Toughness", lore.Toughness)
+	pushLore("ZombiesArmorFactor", lore.ZombiesArmorFactor)
 end
 
 local function applySenses(night)
@@ -61,12 +74,29 @@ local function applySenses(night)
 		lore.Sight = 3
 		lore.Hearing = 3
 	end
-	if getSandboxOptions then
-		pcall(function()
-			getSandboxOptions():set("ZombieLore.Sight", lore.Sight)
-			getSandboxOptions():set("ZombieLore.Hearing", lore.Hearing)
-		end)
+	pushLore("Sight", lore.Sight)
+	pushLore("Hearing", lore.Hearing)
+end
+
+-- Put the world back the way we found it if the option gets switched off
+-- mid-session, so a disabled mod stops nerfing day sight and doubling armor.
+local function restoreLore()
+	local lore = SandboxVars and SandboxVars.ZombieLore
+	local state = FromZoid.getState()
+	if not lore or not state.loreCaptured then
+		return
 	end
+	lore.Sight = state.loreSight
+	lore.Hearing = state.loreHearing
+	lore.Toughness = state.loreToughness
+	lore.ZombiesArmorFactor = state.loreArmor
+	if state.loreDefense ~= nil then
+		lore.ZombiesMaxDefense = state.loreDefense
+	end
+	pushLore("Sight", lore.Sight)
+	pushLore("Hearing", lore.Hearing)
+	pushLore("Toughness", lore.Toughness)
+	pushLore("ZombiesArmorFactor", lore.ZombiesArmorFactor)
 end
 
 local function applyWalkType(zombie, night, sprinters, hunting)
@@ -74,6 +104,12 @@ local function applyWalkType(zombie, night, sprinters, hunting)
 		return
 	end
 	if zombie:getModData().fromzoidAsleep then
+		return
+	end
+	-- Loiterers own their own gait. They sprint the approach and shamble
+	-- once they reach the yard; letting the sprint pass reclaim them puts
+	-- them back to grinding into the wall at full speed.
+	if zombie:getModData().fromzoidLoiter then
 		return
 	end
 	local want = ""
@@ -131,7 +167,7 @@ function FromZoid.onCalmZombieUpdate(zombie, ctx, sliced)
 	if not FromZoid.isEnabled("CalmUntilProvoked") then
 		return
 	end
-	if zombie:getModData().fromzoidHold then
+	if zombie:getModData().fromzoidHold or zombie:getModData().fromzoidLoiter then
 		return
 	end
 	if huntUntil(zombie) then
@@ -175,19 +211,26 @@ function FromZoid.onCalmZombieUpdate(zombie, ctx, sliced)
 end
 
 local function applyAll()
-	local night = FromZoid.isNight()
-	applySenses(night)
+	-- The enable check has to come first. Senses and toughness used to be
+	-- applied before it, so turning the option off still left day sight
+	-- nerfed and armor doubled.
 	if not FromZoid.isEnabled("EnableNightStats") then
+		restoreLore()
 		return
 	end
+	local night = FromZoid.isNight()
+	applySenses(night)
 	if lastNight == night then
+		return
+	end
+	if not FromZoid.realTimeGate("nightstats", 1000) then
 		return
 	end
 	lastNight = night
 	local sprinters = FromZoid.isEnabled("NightSprinters")
 	local calm = FromZoid.isEnabled("CalmUntilProvoked")
 	FromZoid.eachLoadedZombie(function(zombie)
-		if zombie:getModData().fromzoidHold then
+		if zombie:getModData().fromzoidHold or zombie:getModData().fromzoidLoiter then
 			return
 		end
 		local hunting = (not calm) or huntUntil(zombie)

@@ -24,9 +24,5 @@
     "IGUI_FromZoid_ShiftDelusion": "The names start sticking.",
     "IGUI_FromZoid_ShiftPsychosis": "The rooms are lying.",
     "IGUI_FromZoid_ShiftSane": "The house is a house again.",
-    "IGUI_FromZoid_LightFlicker": "The bulb dies, then thinks better of it.",
-    "IGUI_FromZoid_DebugHelp": "/fromzoid sane | delusion | psychosis | +10 | 75 | status | fx",
-    "IGUI_FromZoid_DebugStatus": "Strain %1 (%2)",
-    "IGUI_FromZoid_DebugDenied": "Sanity debug is off for this character.",
-    "IGUI_FromZoid_DebugFx": "A false thing happens."
+    "IGUI_FromZoid_LightFlicker": "The bulb dies, then thinks better of it."
 }

@@ -3,10 +3,6 @@
     "mtime": 1787515727.1377454,
     "hash": "5c0d96ba32f6f5e6654b9781260516b9"
   },
-  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_SanityDebug.lua": {
-    "mtime": 1787508680.1223397,
-    "hash": "57f711209367c5c76dd82fa3a53c2b85"
-  },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\client\\FromZoid_SanityFx.lua": {
     "mtime": 1787519257.5722687,
     "hash": "36bfedbfd0e9f0c0544a5b6ba82a82cb"
@@ -32,8 +28,8 @@
     "hash": "4e2b2ab109ccc83c582fa10751874138"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Gather.lua": {
-    "mtime": 1787588506.4570315,
-    "hash": "a3e944753b6ce4bbaa399b397e4f72e5"
+    "mtime": 1787687291.2204733,
+    "hash": "b3f1bcc8dddc747d5b6058e39eea9a50"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_LodgedWeapons.lua": {
     "mtime": 1787433409.8928251,
@@ -44,44 +40,44 @@
     "hash": "729e296a72ef3883f4103da6949575c0"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_NightStats.lua": {
-    "mtime": 1787587585.0293767,
-    "hash": "818fb4b3ff8a3fa62b2b33035a6f45cf"
+    "mtime": 1787687291.404003,
+    "hash": "6a69fca52963d04a24ebfff8cdb55a9a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_People.lua": {
-    "mtime": 1787525965.034306,
-    "hash": "45a733068aa6bb74bbd63a3681858590"
+    "mtime": 1787698913.0180542,
+    "hash": "2b713909ef86fc39f8df9921e81e278b"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_SanityTick.lua": {
-    "mtime": 1787524081.2220023,
-    "hash": "ca8530be3dbe3b6836f003bd5d7b4d1d"
+    "mtime": 1787687498.5952647,
+    "hash": "e0a480e74bc959095ec39990115fba7a"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_SpawnTalisman.lua": {
-    "mtime": 1787556125.7049508,
-    "hash": "b8d078450a7bbaf1e5f4a48402a5451b"
+    "mtime": 1787687291.715999,
+    "hash": "c12b42826c0789ba2b47ca905e331c5d"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Sun.lua": {
-    "mtime": 1787588538.4332693,
-    "hash": "13b8bafad8ecf9abb6f21c912b5b1809"
+    "mtime": 1787700316.7560062,
+    "hash": "3b2d94311c927ea642b9b62a9625bab7"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Talisman.lua": {
-    "mtime": 1787588487.4928935,
-    "hash": "4b9c4325cd5402c64e159c79862cb379"
+    "mtime": 1787687292.146029,
+    "hash": "bebed2306850a5670ae12e14ab72b618"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_Town.lua": {
-    "mtime": 1787432370.23015,
-    "hash": "95e11a063be26fc3b0d5876447beabd2"
+    "mtime": 1787687292.3990288,
+    "hash": "ff9faf1a32f5a51ea37f09cb89b675aa"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_UltraStrong.lua": {
-    "mtime": 1787438794.0276122,
-    "hash": "d814fd1b93d19472b5339c727c3e720c"
+    "mtime": 1787700853.6133585,
+    "hash": "666ac05d869a5fa8cfb507764ccbf04f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\server\\FromZoid_ZombieTick.lua": {
-    "mtime": 1787588319.6938853,
-    "hash": "f1694f4d8c5d0a863f0227f273764200"
+    "mtime": 1787700783.9936273,
+    "hash": "c64ae83b839362ccf96084477ab4b5f2"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Core.lua": {
-    "mtime": 1787588482.0337558,
-    "hash": "7e6c1a5d543141ce04c89cde311ed4de"
+    "mtime": 1787698936.2793083,
+    "hash": "3a24aa7f7fd3d7503451fccd597f973f"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\lua\\shared\\FromZoid_Invite.lua": {
     "mtime": 1787415723.549642,
@@ -272,8 +268,8 @@
     "hash": "1be59e684bac760b3aead9db58492401"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sandbox-options.txt": {
-    "mtime": 1787585924.129345,
-    "hash": "342fbfc4fa2e8f09c8a397865828cd91"
+    "mtime": 1787598464.7761996,
+    "hash": "8498093fffd69fb2dc7cc0ff627e1a2e"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\scripts\\fromzoid_items.txt": {
     "mtime": 1787423716.6813636,
@@ -288,8 +284,8 @@
     "hash": "c25479dc6b18da8445b8f972bc97c894"
   },
   "C:\\Users\\Arawn\\fromzoid\\docs\\CLAUDE_HANDOFF.md": {
-    "mtime": 1787592090.995448,
-    "hash": "afa851a405d1a611fe3a3087e068abad"
+    "mtime": 1787678167.4585645,
+    "hash": "f96379b40cbd306a5723744a616ee4b3"
   },
   "C:\\Users\\Arawn\\fromzoid\\docs\\ENGAGEMENT_AND_PERF_PLAN.md": {
     "mtime": 1787592105.9830968,
@@ -326,6 +322,134 @@
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Item_FromTalisman.png": {
     "mtime": 1787356633.795466,
     "hash": "833a9559eb58007fdf37ccf393083240"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody01.png": {
+    "mtime": 1787676352.79505,
+    "hash": "e5fd7c45efa6eab24aff7de38f4878d2"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody01_level1.png": {
+    "mtime": 1787676352.7960498,
+    "hash": "c5b365889b5aa0f365ca2addb314c8e0"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody01_level2.png": {
+    "mtime": 1787676352.7980452,
+    "hash": "786c8a19b39c3bb33ed9c622de616d36"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody01_level3.png": {
+    "mtime": 1787676352.800053,
+    "hash": "11abe41716f91f94461f689ca3e7566c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody02.png": {
+    "mtime": 1787678071.340711,
+    "hash": "cb8c42b11b61634bac13301d01acf74c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody02_level1.png": {
+    "mtime": 1787678071.3617141,
+    "hash": "3285c395d6b68f0dfdac7c65c83eb475"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody02_level2.png": {
+    "mtime": 1787678071.3797183,
+    "hash": "48b2f8fa3cfcff6f70dd9c83dca24d85"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody02_level3.png": {
+    "mtime": 1787678071.3992267,
+    "hash": "dd413e9c2b44006bb5109874a8bde600"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody03.png": {
+    "mtime": 1787676352.8100498,
+    "hash": "94cdfdff3c54404886a525dbc0baae28"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody03_level1.png": {
+    "mtime": 1787676352.81205,
+    "hash": "ffa5744b5213b2f7265679398945a18f"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody03_level2.png": {
+    "mtime": 1787676352.8150496,
+    "hash": "eb70cf95e07f3e63564a87bbb497cd0c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody03_level3.png": {
+    "mtime": 1787676352.8160498,
+    "hash": "132700fba077a6801b9991acd59571da"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody04.png": {
+    "mtime": 1787678071.4162245,
+    "hash": "ec8061770ba47a7b85a6e04ee56e0c44"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody04_level1.png": {
+    "mtime": 1787678071.434736,
+    "hash": "94ff6db0f9d1fa248755ec4c33c45fc4"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody04_level2.png": {
+    "mtime": 1787678071.4527361,
+    "hash": "ee77f9f8c0ab6796b53b0bbd0d3ea6b4"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\F_ZedBody04_level3.png": {
+    "mtime": 1787678071.4687362,
+    "hash": "85f9aa6117e8ae469ff176537f920eb2"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody01.png": {
+    "mtime": 1787676352.8260672,
+    "hash": "a3db102e14a30e4eb7f0e557a5301193"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody01_level1.png": {
+    "mtime": 1787676352.827061,
+    "hash": "20ad4becc719aec87ed71e5fa51dd911"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody01_level2.png": {
+    "mtime": 1787676352.8290396,
+    "hash": "b273c97b6ceb89f3c0b4115a9d2724ec"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody01_level3.png": {
+    "mtime": 1787676352.8310523,
+    "hash": "fcf79c06538f4ed77d99893b944e1380"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody02.png": {
+    "mtime": 1787676352.833055,
+    "hash": "3c6f0d46fd0d5f9b7e87aa15fecdf433"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody02_level1.png": {
+    "mtime": 1787676352.8350558,
+    "hash": "aec1d9ceccfb88cf586ad538e5547978"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody02_level2.png": {
+    "mtime": 1787676352.8370626,
+    "hash": "bd52f108d473b234555e21ce93d5314b"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody02_level3.png": {
+    "mtime": 1787676352.8390617,
+    "hash": "ab1df96026ca778246824ca3871c447c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody03.png": {
+    "mtime": 1787676352.8410554,
+    "hash": "f8fe67f25558de8372a4d7d7127a8722"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody03_level1.png": {
+    "mtime": 1787676352.8430552,
+    "hash": "7562a973dfe6c4c82af736fe1368274e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody03_level2.png": {
+    "mtime": 1787676352.8450563,
+    "hash": "7562a973dfe6c4c82af736fe1368274e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody03_level3.png": {
+    "mtime": 1787676352.8470821,
+    "hash": "7562a973dfe6c4c82af736fe1368274e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody04.png": {
+    "mtime": 1787676352.8480554,
+    "hash": "47a6c550298dffe629db044dda93d9af"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody04_level1.png": {
+    "mtime": 1787676352.8500552,
+    "hash": "623f3725188a79e9ddc3421b7665b03f"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody04_level2.png": {
+    "mtime": 1787676352.8520398,
+    "hash": "c92e4a6b1a2be7a1ae3c72c41feb89d4"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\textures\\Body\\M_ZedBody04_level3.png": {
+    "mtime": 1787676352.8550816,
+    "hash": "cca5d06e767aa19b064a00c0c4438fa2"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\ui\\FromZoidSanity.png": {
     "mtime": 1787470937.6210022,
@@ -366,6 +490,282 @@
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\ui\\32\\FromZoidSanity_Bad_4.png": {
     "mtime": 1787477730.0938463,
     "hash": "2bbfdc25ac5cadd7b3657617ec007bf7"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody01.png": {
+    "mtime": 1787675981.1411912,
+    "hash": "e5fd7c45efa6eab24aff7de38f4878d2"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody01_level1.png": {
+    "mtime": 1787675981.1431935,
+    "hash": "c5b365889b5aa0f365ca2addb314c8e0"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody01_level2.png": {
+    "mtime": 1787675981.1441925,
+    "hash": "786c8a19b39c3bb33ed9c622de616d36"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody01_level3.png": {
+    "mtime": 1787675981.146193,
+    "hash": "11abe41716f91f94461f689ca3e7566c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody02.png": {
+    "mtime": 1787675981.1481936,
+    "hash": "3f1dbb9af6f70e04001054484927c830"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody02_level1.png": {
+    "mtime": 1787675981.152193,
+    "hash": "5481b1ffcdb193afd3276319566ab88e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody02_level2.png": {
+    "mtime": 1787675981.1541946,
+    "hash": "59b81fa3143628d6de802773321fad0e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody02_level3.png": {
+    "mtime": 1787675981.1551917,
+    "hash": "0e00c9426c0f37a4c2a64d3897f573a1"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody03.png": {
+    "mtime": 1787675981.1571913,
+    "hash": "94cdfdff3c54404886a525dbc0baae28"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody03_level1.png": {
+    "mtime": 1787675981.1581912,
+    "hash": "ffa5744b5213b2f7265679398945a18f"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody03_level2.png": {
+    "mtime": 1787675981.1591895,
+    "hash": "eb70cf95e07f3e63564a87bbb497cd0c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody03_level3.png": {
+    "mtime": 1787675981.1611905,
+    "hash": "132700fba077a6801b9991acd59571da"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody04.png": {
+    "mtime": 1787675981.1621914,
+    "hash": "1b09d178853b6451f422c7a1bd08eff5"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody04_level1.png": {
+    "mtime": 1787675981.1641915,
+    "hash": "eb0f792917694f50c056c00133d6b947"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody04_level2.png": {
+    "mtime": 1787675981.16519,
+    "hash": "231674504cc82eb61e477f1a41d6abd5"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\F_ZedBody04_level3.png": {
+    "mtime": 1787675981.1681964,
+    "hash": "49b88bc4a9058de55e3685af02588ddb"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody01.png": {
+    "mtime": 1787675981.1701908,
+    "hash": "a3db102e14a30e4eb7f0e557a5301193"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody01_level1.png": {
+    "mtime": 1787675981.1711905,
+    "hash": "20ad4becc719aec87ed71e5fa51dd911"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody01_level2.png": {
+    "mtime": 1787675981.172713,
+    "hash": "b273c97b6ceb89f3c0b4115a9d2724ec"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody01_level3.png": {
+    "mtime": 1787675981.1737068,
+    "hash": "fcf79c06538f4ed77d99893b944e1380"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody02.png": {
+    "mtime": 1787675981.1757064,
+    "hash": "3c6f0d46fd0d5f9b7e87aa15fecdf433"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody02_level1.png": {
+    "mtime": 1787675981.1767068,
+    "hash": "aec1d9ceccfb88cf586ad538e5547978"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody02_level2.png": {
+    "mtime": 1787675981.1787071,
+    "hash": "bd52f108d473b234555e21ce93d5314b"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody02_level3.png": {
+    "mtime": 1787675981.1797082,
+    "hash": "ab1df96026ca778246824ca3871c447c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody03.png": {
+    "mtime": 1787675981.1817071,
+    "hash": "f8fe67f25558de8372a4d7d7127a8722"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody03_level1.png": {
+    "mtime": 1787675981.184708,
+    "hash": "7562a973dfe6c4c82af736fe1368274e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody03_level2.png": {
+    "mtime": 1787675981.1867075,
+    "hash": "7562a973dfe6c4c82af736fe1368274e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody03_level3.png": {
+    "mtime": 1787675981.1877067,
+    "hash": "7562a973dfe6c4c82af736fe1368274e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody04.png": {
+    "mtime": 1787675981.188707,
+    "hash": "47a6c550298dffe629db044dda93d9af"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody04_level1.png": {
+    "mtime": 1787675981.1907067,
+    "hash": "623f3725188a79e9ddc3421b7665b03f"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody04_level2.png": {
+    "mtime": 1787675981.1917076,
+    "hash": "c92e4a6b1a2be7a1ae3c72c41feb89d4"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\pending_art\\M_ZedBody04_level3.png": {
+    "mtime": 1787675981.1927075,
+    "hash": "cca5d06e767aa19b064a00c0c4438fa2"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody01.png": {
+    "mtime": 1787650132.7752535,
+    "hash": "c47a2a728ac20c073c05ef2dea8385a7"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody01_level1.png": {
+    "mtime": 1787650132.7762523,
+    "hash": "2db5a0ae01b6e21656a2483e5f533881"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody01_level2.png": {
+    "mtime": 1787650132.777253,
+    "hash": "e743ba5e0f59d61f090f72a53b677ca3"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody01_level3.png": {
+    "mtime": 1787650132.7782526,
+    "hash": "7a14f277bafb903f5ad38538b5168775"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody02.png": {
+    "mtime": 1787650132.7802513,
+    "hash": "7ac8e0f28004a03318dd0e71077e3e62"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody02_level1.png": {
+    "mtime": 1787650132.783254,
+    "hash": "5c89de6fdd0035b06e8d39d55160131d"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody02_level2.png": {
+    "mtime": 1787650132.785254,
+    "hash": "a7446e6fb35466aee25e770c4862d90f"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody02_level3.png": {
+    "mtime": 1787650132.787253,
+    "hash": "e9e84c67664b6ae741ac01f447623498"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody03.png": {
+    "mtime": 1787650132.7882535,
+    "hash": "f9f27c7edd2f21c485105fa5e13a3242"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody03_level1.png": {
+    "mtime": 1787650132.7902536,
+    "hash": "7fa284b36b96e71c72deaad899e720a8"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody03_level2.png": {
+    "mtime": 1787650132.7912538,
+    "hash": "60f144121af87018407544abb3af359a"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody03_level3.png": {
+    "mtime": 1787650132.7932532,
+    "hash": "5772587780597eeb99db9e09adb5cf85"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody04.png": {
+    "mtime": 1787650132.795254,
+    "hash": "7a98903f43e39a46120818389cdb2450"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody04_level1.png": {
+    "mtime": 1787650132.7962544,
+    "hash": "1c74131b25b52b9808aa2142a636dfa4"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody04_level2.png": {
+    "mtime": 1787650132.7972531,
+    "hash": "5122a694c61ed3028eb34294a8ce4eac"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\F_ZedBody04_level3.png": {
+    "mtime": 1787650132.799255,
+    "hash": "c7d291d0431e8371921d97a4fca3d0ad"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody01.png": {
+    "mtime": 1787650132.8012543,
+    "hash": "592244311e4e11965462efad7667648b"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody01_level1.png": {
+    "mtime": 1787650132.802254,
+    "hash": "8ad26e4d581207f187812cdbb9fda439"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody01_level2.png": {
+    "mtime": 1787650132.8042533,
+    "hash": "c45315eb29d79e76e89571196305e29e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody01_level3.png": {
+    "mtime": 1787650132.8072536,
+    "hash": "8ed823eac394c9f0c99c0bccd96282a7"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody02.png": {
+    "mtime": 1787650132.808254,
+    "hash": "e9d2a18908c310f07ec2eb62b7d9e7ef"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody02_level1.png": {
+    "mtime": 1787650132.8092532,
+    "hash": "4f2f44028099e09c773b1cf58e1dc09e"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody02_level2.png": {
+    "mtime": 1787650132.8102531,
+    "hash": "8bf7f61fdcc188508fd41d8dbb2c2e8b"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody02_level3.png": {
+    "mtime": 1787650132.811253,
+    "hash": "413c85719e2e8f79802e33edbd4e2a31"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody03.png": {
+    "mtime": 1787650132.8132527,
+    "hash": "bcf52e33ab97fb89831d147d0a08b119"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody03_level1.png": {
+    "mtime": 1787650132.8172548,
+    "hash": "f05b0516d74cc9626d22e5231cebefca"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody03_level2.png": {
+    "mtime": 1787650132.8192544,
+    "hash": "f05b0516d74cc9626d22e5231cebefca"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody03_level3.png": {
+    "mtime": 1787650132.8202553,
+    "hash": "f05b0516d74cc9626d22e5231cebefca"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody04.png": {
+    "mtime": 1787650132.821252,
+    "hash": "9c521dd8ab7034d3a18e99513c446702"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody04_level1.png": {
+    "mtime": 1787650132.8232522,
+    "hash": "7bcdc9a999c80fdf03c01a51f8830d30"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody04_level2.png": {
+    "mtime": 1787650132.8242526,
+    "hash": "2f64c96005e22c43ca9c643ff1108f04"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\M_ZedBody04_level3.png": {
+    "mtime": 1787650132.8252528,
+    "hash": "2e4bebd71a2df7c132d587001c003417"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\Zombie_Body1.png": {
+    "mtime": 1787650132.8582528,
+    "hash": "03a5f7a0d1dc45ead508d88fefcc464a"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\Zombie_Body2.png": {
+    "mtime": 1787650132.8602524,
+    "hash": "8244a7c9611f2ebb31b17bd7ed3b8ce0"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\Zombie_Body3.png": {
+    "mtime": 1787650132.8612523,
+    "hash": "5d5492012ee634c10a3d246f27aeae0c"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\Zombie_Body4.png": {
+    "mtime": 1787650132.862252,
+    "hash": "d2c28334a02f1c0d54f4e33655030e98"
+  },
+  "C:\\Users\\Arawn\\fromzoid\\_textures\\zombie_original\\Zombie_Body5.png": {
+    "mtime": 1787650132.8632522,
+    "hash": "72287b95efa8a36e974b56261182f818"
   },
   "C:\\Users\\Arawn\\fromzoid\\Contents\\mods\\FromZoid\\common\\media\\sound\\FromZoid_Annie_01.ogg": {
     "mtime": 1787422968.7339597,

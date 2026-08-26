@@ -1,13 +1,5 @@
 {
     "ContextMenu_FromZoid_HangTalisman": "Hang Talisman",
     "ContextMenu_FromZoid_TakeTalisman": "Take Down Talisman",
-    "ContextMenu_FromZoid_RefreshTalisman": "Refresh Talisman",
-    "ContextMenu_FromZoid_Debug": "FromZoid sanity",
-    "ContextMenu_FromZoid_DebugStatus": "Sanity status",
-    "ContextMenu_FromZoid_DebugSane": "Set sane",
-    "ContextMenu_FromZoid_DebugDelusion": "Set delusion",
-    "ContextMenu_FromZoid_DebugPsychosis": "Set psychosis",
-    "ContextMenu_FromZoid_DebugPlus": "Strain +10",
-    "ContextMenu_FromZoid_DebugMinus": "Strain -10",
-    "ContextMenu_FromZoid_DebugFx": "Force a hallucination"
+    "ContextMenu_FromZoid_RefreshTalisman": "Refresh Talisman"
 }

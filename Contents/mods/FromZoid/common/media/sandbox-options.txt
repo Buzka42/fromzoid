@@ -405,3 +405,11 @@ option FromZoid.NestEveryOtherHouse
 	page = FromZoid,
 	translation = FromZoid_NestEveryOtherHouse,
 }
+
+option FromZoid.BoardedSpawnHouse
+{
+	type = boolean,
+	default = true,
+	page = FromZoid,
+	translation = FromZoid_BoardedSpawnHouse,
+}

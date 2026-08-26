@@ -6,3 +6,9 @@ Desktop.ini
 .graphify_*.json
 .graphify_*.txt
 .tools/
+
+# Extracted vanilla textures kept locally for reference; do not commit
+_textures/
+_review_dump/
+_review_dump2/
+graphify-out/cache/

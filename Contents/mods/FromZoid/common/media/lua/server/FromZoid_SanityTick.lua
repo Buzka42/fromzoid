@@ -2,6 +2,13 @@ if isClient() then
 	return
 end
 
+-- Everything that BUILDS strain is scaled by this. Player call, 2026-08-25:
+-- the descent into insanity was five times too fast. Recovery rates are
+-- deliberately NOT scaled -- only the climb is slowed.
+-- The sandbox SanitySleepDrain / SanityCrowdDrain multipliers still apply on
+-- top of this, so a player can tune it further either way.
+local STRAIN_GAIN_MUL = 0.2
+
 local function wakePlayer(player)
 	FromZoid.wakePlayer(player)
 end
@@ -27,6 +34,19 @@ local function tickSanity()
 			needGallery = true
 		end
 	end
+	-- Cache the crowd count across accelerated game minutes. The strain maths
+	-- below must still run every game minute (sleep drain depends on it), but
+	-- re-counting the whole zombie list 8x a real second while the player
+	-- sleeps is what makes this sweep expensive.
+	if needGallery and not FromZoid.realTimeGate("gallery", 1000) then
+		local cached = FromZoid._galleryCache
+		if cached then
+			for i = 1, #players do
+				galleries[i] = cached[i] or 0
+			end
+			needGallery = false
+		end
+	end
 	if needGallery then
 		FromZoid.eachLoadedZombie(function(zombie)
 			for i = 1, #players do
@@ -46,6 +66,11 @@ local function tickSanity()
 				end
 			end
 		end)
+		local snap = {}
+		for i = 1, #players do
+			snap[i] = galleries[i]
+		end
+		FromZoid._galleryCache = snap
 	end
 	for i = 1, #players do
 		local player = players[i]
@@ -115,6 +140,11 @@ local function tickSanity()
 		end
 		if delta > 0 and FromZoid.nearbyAudioPlaying and FromZoid.nearbyAudioPlaying(player) then
 			delta = delta * 0.5
+		end
+		-- Applied last so it scales every source uniformly: woods dread, the
+		-- crowd gallery, fatigue and the mental-strain multiplier alike.
+		if delta > 0 then
+			delta = delta * STRAIN_GAIN_MUL
 		end
 		FromZoid.addStrain(player, delta)
 		local level = FromZoid.sanityLevel(player)

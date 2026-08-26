@@ -39,7 +39,7 @@
     "Sandbox_FromZoid_StartWithSpareTalisman": "Start with a spare talisman",
     "Sandbox_FromZoid_StartWithSpareTalisman_tooltip": "New games hang a talisman on the spawn-house door and put one extra talisman in your inventory.",
     "Sandbox_FromZoid_UltraStrong": "Ultra-strong night people",
-    "Sandbox_FromZoid_UltraStrong_tooltip": "On top of double damage, night people get superhuman strength. About three or four unarmored hits kill. Off by default.",
+    "Sandbox_FromZoid_UltraStrong_tooltip": "Each landed hit is much heavier, with a bleeding wound. An unarmored player dies in three or four hits. Off by default — turn this on in the FromZoid sandbox page.",
     "Sandbox_FromZoid_TalismanDebug": "Talisman debug prints",
     "Sandbox_FromZoid_TalismanDebug_tooltip": "Print seal/unseal events to the console. For troubleshooting only.",
     "Sandbox_FromZoid_EnableWornCharms": "Worn charms",
@@ -91,5 +91,7 @@
     "Sandbox_FromZoid_PreferBasementNests": "Prefer real basements",
     "Sandbox_FromZoid_PreferBasementNests_tooltip": "By day they hide in existing cellars when the cell has them. Does not add new basements to vanilla houses.",
     "Sandbox_FromZoid_NestEveryOtherHouse": "Nest in every other house",
-    "Sandbox_FromZoid_NestEveryOtherHouse_tooltip": "Half of residential buildings are daytime nests. The rest stay emptier. Spawn house is never a nest on night 0."
+    "Sandbox_FromZoid_NestEveryOtherHouse_tooltip": "Half of residential buildings are daytime nests. The rest stay emptier. Spawn house is never a nest on night 0.",
+    "Sandbox_FromZoid_BoardedSpawnHouse": "Boarded spawn house",
+    "Sandbox_FromZoid_BoardedSpawnHouse_tooltip": "You start in a house someone already boarded up. Windows and outer doors are planked, except the door the talisman hangs on, so you are never sealed in."
 }
