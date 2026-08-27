@@ -66,6 +66,34 @@ local function addPlanks(target, count)
 	return planked > 0
 end
 
+local function clearPlanks(target)
+	if not target then
+		return
+	end
+	local function strip(bar)
+		if not bar then
+			return
+		end
+		pcall(function()
+			local n = 8
+			if bar.getNumPlanks then
+				n = bar:getNumPlanks() or 0
+			end
+			for _ = 1, n do
+				if bar.removePlank then
+					bar:removePlank(nil, nil)
+				end
+			end
+		end)
+	end
+	if target.getBarricadeOnSameSquare then
+		strip(target:getBarricadeOnSameSquare())
+	end
+	if target.getBarricadeOnOppositeSquare then
+		strip(target:getBarricadeOnOppositeSquare())
+	end
+end
+
 local function smashWindow(obj)
 	if obj.setSmashed then
 		obj:setSmashed(true)
@@ -151,6 +179,9 @@ function FromZoid.boardUpBuilding(building)
 			n = n + 1
 		end
 	end
+	if free then
+		clearPlanks(free)
+	end
 	return n
 end
 
@@ -174,8 +205,8 @@ local function processSquare(square)
 	if FromZoid.isBuildingSealed(building) then
 		return
 	end
-	local spawnId = FromZoid.getState().spawnBuildingId
-	if spawnId and FromZoid.buildingId(building) == spawnId then
+	local spawnId = FromZoid.buildingId(building)
+	if spawnId and FromZoid.isSpawnHouseId(spawnId) then
 		return
 	end
 	if not FromZoid.isResidentialBuilding(building) then
@@ -196,7 +227,7 @@ local function processSquare(square)
 		local obj = objects:get(i)
 		if not isPlayerBuilt(obj) then
 			if kind == "boarded" then
-				if instanceof(obj, "IsoWindow") or instanceof(obj, "IsoDoor") then
+				if (instanceof(obj, "IsoWindow") or instanceof(obj, "IsoDoor")) and FromZoid.openingIsExterior(obj) then
 					addPlanks(obj, 2 + ZombRand(3))
 				end
 			elseif kind == "damaged" then
@@ -208,7 +239,7 @@ local function processSquare(square)
 	end
 	if kind == "damaged" and square:getRoom() then
 		if ZombRand(100) < 12 then
-			local junk = { "Base.Sheet", "Base.RippedSheets", "Base.EmptyTinCan", "Base.Newspaper" }
+			local junk = { "Base.Sheet", "Base.RippedSheets", "Base.TinCanEmpty", "Base.Newspaper" }
 			square:AddWorldInventoryItem(junk[ZombRand(#junk) + 1], ZombRand(100) / 100, ZombRand(100) / 100, 0)
 		end
 		if ZombRand(1000) < 4 and createRandomDeadBody then

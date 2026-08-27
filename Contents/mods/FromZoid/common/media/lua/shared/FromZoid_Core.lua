@@ -192,6 +192,36 @@ function FromZoid.isDay()
 	return not FromZoid.isClockNight()
 end
 
+local function stableId(id)
+	if id == nil then
+		return nil
+	end
+	if type(id) == "number" then
+		return string.format("%.0f", id)
+	end
+	return tostring(id)
+end
+
+local function csvHas(blob, id)
+	if not blob or blob == "" or not id or id == "" then
+		return false
+	end
+	return ("," .. blob .. ","):find("," .. id .. ",", 1, true) ~= nil
+end
+
+local function csvAdd(blob, id)
+	if not id or id == "" then
+		return blob or ""
+	end
+	if csvHas(blob, id) then
+		return blob
+	end
+	if not blob or blob == "" then
+		return id
+	end
+	return blob .. "," .. id
+end
+
 function FromZoid.buildingIdFromDef(def)
 	if not def then
 		return nil
@@ -199,7 +229,7 @@ function FromZoid.buildingIdFromDef(def)
 	if def.getID then
 		local id = def:getID()
 		if id ~= nil then
-			return "b" .. tostring(id)
+			return "b" .. stableId(id)
 		end
 	end
 	local x = def.getX and def:getX() or 0
@@ -220,9 +250,70 @@ function FromZoid.buildingId(building)
 		return FromZoid.buildingIdFromDef(building:getDef())
 	end
 	if building.getID then
-		return "iso" .. tostring(building:getID())
+		return "iso" .. stableId(building:getID())
 	end
 	return nil
+end
+
+function FromZoid.isSpawnHouseId(id)
+	if not id then
+		return false
+	end
+	local state = FromZoid.getState()
+	if state.spawnBuildingId == id then
+		return true
+	end
+	return csvHas(state.spawnHouseIds, id)
+end
+
+function FromZoid.markSpawnHouse(building)
+	if not building then
+		return nil
+	end
+	local id = FromZoid.buildingId(building)
+	if not id then
+		return nil
+	end
+	local state = FromZoid.getState()
+	if not state.spawnBuildingId then
+		state.spawnBuildingId = id
+	end
+	state.spawnHouseIds = csvAdd(state.spawnHouseIds, id)
+	return id
+end
+
+function FromZoid.eachSpawnHouseId(fn)
+	if not fn then
+		return
+	end
+	local state = FromZoid.getState()
+	local seen = {}
+	local function emit(id)
+		if id and id ~= "" and not seen[id] then
+			seen[id] = true
+			fn(id)
+		end
+	end
+	emit(state.spawnBuildingId)
+	local blob = state.spawnHouseIds or ""
+	for piece in string.gmatch(blob, "[^,]+") do
+		emit(piece)
+	end
+end
+
+function FromZoid.spawnFlagHas(key, id)
+	if not key or not id then
+		return false
+	end
+	return csvHas(FromZoid.getState()[key], id)
+end
+
+function FromZoid.spawnFlagSet(key, id)
+	if not key or not id then
+		return
+	end
+	local state = FromZoid.getState()
+	state[key] = csvAdd(state[key], id)
 end
 
 function FromZoid.buildingFromSquare(square)
@@ -274,17 +365,12 @@ function FromZoid.openingIsExterior(obj)
 	if not obj then
 		return false
 	end
-	if obj.isExterior then
-		local ok, ext = pcall(function()
-			return obj:isExterior()
-		end)
-		if ok and ext then
-			return true
-		end
-	end
 	local square = obj.getSquare and obj:getSquare() or nil
+	if not square then
+		return false
+	end
 	local opp = obj.getOppositeSquare and obj:getOppositeSquare() or nil
-	if not opp and square then
+	if not opp then
 		local cell = getCell()
 		if cell then
 			local x, y, z = square:getX(), square:getY(), square:getZ()
@@ -295,31 +381,26 @@ function FromZoid.openingIsExterior(obj)
 			end
 		end
 	end
-	local r1 = square and square.getRoom and square:getRoom() or nil
-	local r2 = opp and opp.getRoom and opp:getRoom() or nil
-	if r1 and not r2 then
-		return true
+	-- Missing opposite square (chunk not streamed) is not proof of exterior.
+	-- Treating that as outside boarded interior doors on spawn.
+	if not opp then
+		return false
 	end
-	if r2 and not r1 then
-		return true
-	end
-	local b1 = square and square.getBuilding and square:getBuilding() or nil
-	local b2 = opp and opp.getBuilding and opp:getBuilding() or nil
-	if r1 and r2 then
-		local rb1 = r1.getBuilding and r1:getBuilding() or b1
-		local rb2 = r2.getBuilding and r2:getBuilding() or b2
-		if rb1 and rb2 and FromZoid.buildingId(rb1) ~= FromZoid.buildingId(rb2) then
-			return true
+	local function isOut(sq)
+		if sq.isOutside then
+			local ok, outside = pcall(function()
+				return sq:isOutside()
+			end)
+			if ok then
+				return outside and true or false
+			end
+		end
+		if sq.getRoom then
+			return sq:getRoom() == nil
 		end
 		return false
 	end
-	if b1 and not b2 then
-		return true
-	end
-	if b2 and not b1 then
-		return true
-	end
-	return false
+	return isOut(square) ~= isOut(opp)
 end
 
 function FromZoid.openingIsOpen(obj)
@@ -1489,8 +1570,7 @@ function FromZoid.isNestHouse(building)
 	if not id then
 		return true
 	end
-	local spawnId = FromZoid.getState().spawnBuildingId
-	if spawnId and spawnId == id then
+	if FromZoid.isSpawnHouseId(id) then
 		return false
 	end
 	local h = 0
@@ -1865,7 +1945,6 @@ function FromZoid.firstDoorInBuilding(building)
 		end
 		return door
 	end
-	local found = nil
 	local rooms = building.getRooms and building:getRooms() or nil
 	if not rooms then
 		local def = FromZoid.getBuildingDef(building)
@@ -1879,13 +1958,9 @@ function FromZoid.firstDoorInBuilding(building)
 			local squares = room and room.getSquares and room:getSquares()
 			if squares then
 				for s = 0, squares:size() - 1 do
-					local door = FromZoid.getDoorOnSquare(squares:get(s))
-					local ext = consider(door, true)
+					local ext = consider(FromZoid.getDoorOnSquare(squares:get(s)), true)
 					if ext then
 						return ext
-					end
-					if not found then
-						found = consider(door, false)
 					end
 				end
 			end
@@ -1901,18 +1976,50 @@ function FromZoid.firstDoorInBuilding(building)
 		for x = x1, x2 do
 			for y = y1, y2 do
 				local sq = cell:getGridSquare(x, y, 0)
-				local door = FromZoid.getDoorOnSquare(sq)
-				local ext = consider(door, true)
+				local ext = consider(FromZoid.getDoorOnSquare(sq), true)
 				if ext then
 					return ext
-				end
-				if not found then
-					found = consider(door, false)
 				end
 			end
 		end
 	end
-	return found
+	return nil
+end
+
+function FromZoid.sleeperShouldWake(zombie, ctx)
+	if not zombie then
+		return false
+	end
+	local players = ctx and ctx.players or FromZoid.playerList()
+	if not players then
+		return false
+	end
+	for i = 1, #players do
+		local player = players[i]
+		if FromZoid.sameUnsealedBuilding(zombie, player) then
+			return true
+		end
+		local d = 99
+		if zombie.DistTo then
+			d = zombie:DistTo(player) or 99
+		end
+		if d <= 3 then
+			local sealed = false
+			if ctx and ctx.infos then
+				for j = 1, #ctx.infos do
+					local info = ctx.infos[j]
+					if info.player == player then
+						sealed = info.sealed and not info.invited
+						break
+					end
+				end
+			end
+			if not sealed then
+				return true
+			end
+		end
+	end
+	return false
 end
 
 function FromZoid.squareIsSafeNest(square)
@@ -2156,6 +2263,9 @@ function FromZoid.squareIsIndoorHide(square)
 	if FromZoid.shouldKeepZombiesOut(building) then
 		return false
 	end
+	if square.isOutside and square:isOutside() then
+		return false
+	end
 	if square.getRoom then
 		return square:getRoom() ~= nil
 	end
@@ -2218,8 +2328,10 @@ function FromZoid.pinZombieSleepPose(zombie)
 	if not zombie then
 		return
 	end
-	-- Strip only the poses that lunge or loop. Knockdown / crawler / fake-dead
-	-- stand them back up or make them pounce when the player walks in.
+	-- Sit, do not lie. setOnFloor / fallOnFront / bOnFloor looks like a lie
+	-- down until vanilla fully updates them (peek through a window) then they
+	-- stand while isOnFloor stays true, so we never re-pin. Leftover floor
+	-- flags also leak onto porches. Knockdown / crawler / fake-dead lunge.
 	pcall(function()
 		if zombie.setFakeDead and zombie.isFakeDead and zombie:isFakeDead() then
 			zombie:setFakeDead(false)
@@ -2229,6 +2341,15 @@ function FromZoid.pinZombieSleepPose(zombie)
 		end
 		if zombie.setKnockedDown and zombie.isKnockedDown and zombie:isKnockedDown() then
 			zombie:setKnockedDown(false)
+		end
+		if zombie.setOnFloor then
+			zombie:setOnFloor(false)
+		end
+		if zombie.setFallOnFront then
+			zombie:setFallOnFront(false)
+		end
+		if zombie.setVariable then
+			zombie:setVariable("bOnFloor", false)
 		end
 	end)
 	if not zombie:isUseless() then
@@ -2242,22 +2363,11 @@ function FromZoid.pinZombieSleepPose(zombie)
 	if zombie.setTarget then
 		zombie:setTarget(nil)
 	end
-	-- Lie on the floor. Only set OnFloor when they are standing, or the fall
-	-- animation restarts every tick and looks like a get-up loop.
-	local down = zombie.isOnFloor and zombie:isOnFloor()
-	if not down then
+	-- Re-apply sit every pin. Sitting has no fall loop, and vanilla standing
+	-- them on peek is undone on the next tick.
+	if zombie.setSitOnGround then
 		pcall(function()
-			if zombie.setOnFloor then
-				zombie:setOnFloor(true)
-			end
-			if zombie.setFallOnFront then
-				zombie:setFallOnFront(true)
-			end
-		end)
-	end
-	if zombie.setVariable then
-		pcall(function()
-			zombie:setVariable("bOnFloor", true)
+			zombie:setSitOnGround(true)
 		end)
 	end
 end
@@ -2814,6 +2924,140 @@ function FromZoid.clearLoiter(zombie)
 	end
 end
 
+function FromZoid.openingStandSquare(opening)
+	if not opening then
+		return nil
+	end
+	local square = opening.getSquare and opening:getSquare() or nil
+	local opp = opening.getOppositeSquare and opening:getOppositeSquare() or nil
+	local function outdoor(sq)
+		if not sq then
+			return nil
+		end
+		if sq.getBuilding and sq:getBuilding() then
+			return nil
+		end
+		if sq.isOutside then
+			local ok, outside = pcall(function()
+				return sq:isOutside()
+			end)
+			if ok and outside then
+				return sq
+			end
+		end
+		if not (sq.getRoom and sq:getRoom()) then
+			return sq
+		end
+		return nil
+	end
+	return outdoor(square) or outdoor(opp) or FromZoid.openingPorchSquare(opening, 1)
+end
+
+function FromZoid.isWhisperWalker(zombie)
+	if not zombie then
+		return false
+	end
+	local md = zombie:getModData()
+	local now = FromZoid.nowMs()
+	if md.fromzoidWhisperUntil and now < md.fromzoidWhisperUntil then
+		return true
+	end
+	if md.fromzoidWhisperBackUntil and now < md.fromzoidWhisperBackUntil then
+		return true
+	end
+	return false
+end
+
+function FromZoid.clearWhisperWalk(zombie)
+	if not zombie then
+		return
+	end
+	local md = zombie:getModData()
+	md.fromzoidWhisperUntil = nil
+	md.fromzoidWhisperBackUntil = nil
+	md.fromzoidWhisperX = nil
+	md.fromzoidWhisperY = nil
+	md.fromzoidWhisperZ = nil
+	md.fromzoidWhisperKind = nil
+	md.fromzoidWhisperMove = nil
+	md.fromzoidWhisperPathed = nil
+end
+
+function FromZoid.startWhisperWalk(zombie, square, kind)
+	if not zombie or not square then
+		return false
+	end
+	local md = zombie:getModData()
+	local now = FromZoid.nowMs()
+	if md.fromzoidHold then
+		FromZoid.releaseHold(zombie)
+	end
+	FromZoid.clearLoiter(zombie)
+	if zombie:isUseless() then
+		FromZoid.wakeZombieBody(zombie)
+	end
+	md.fromzoidWhisperUntil = now + 45000
+	md.fromzoidWhisperBackUntil = nil
+	md.fromzoidWhisperX = square:getX()
+	md.fromzoidWhisperY = square:getY()
+	md.fromzoidWhisperZ = square:getZ()
+	md.fromzoidWhisperKind = kind
+	md.fromzoidGather = nil
+	md.fromzoidHuntUntil = nil
+	md.fromzoidWhisperMove = nil
+	md.fromzoidWhisperPathed = nil
+	if zombie.setTarget then
+		zombie:setTarget(nil)
+	end
+	if zombie.setCanOpenDoors then
+		pcall(function()
+			zombie:setCanOpenDoors(false)
+		end)
+	end
+	-- Sprint off the ring so one body peeling toward the glass is visible.
+	-- loiterNearHouse puts the shamble back after they speak.
+	if FromZoid.isEnabled("NightSprinters") and zombie.setWalkType then
+		pcall(function()
+			zombie:setWalkType("sprint1")
+			if zombie.setSpeedTypeFromWalkType then
+				zombie:setSpeedTypeFromWalkType()
+			end
+		end)
+	end
+	FromZoid.pathZombieToSquare(zombie, square)
+	return true
+end
+
+function FromZoid.whispererArrived(zombie)
+	if not zombie then
+		return false
+	end
+	local md = zombie:getModData()
+	local cell = getCell()
+	if not cell or not md.fromzoidWhisperX then
+		return false
+	end
+	local dest = cell:getGridSquare(md.fromzoidWhisperX, md.fromzoidWhisperY, md.fromzoidWhisperZ or 0)
+	local sq = FromZoid.zombieSquare(zombie)
+	if dest and sq then
+		local dx = dest:getX() - sq:getX()
+		local dy = dest:getY() - sq:getY()
+		if (dx * dx + dy * dy) <= 12 then
+			return true
+		end
+	end
+	return false
+end
+
+function FromZoid.finishWhisperWalk(zombie)
+	if not zombie then
+		return
+	end
+	local md = zombie:getModData()
+	md.fromzoidWhisperUntil = nil
+	md.fromzoidWhisperBackUntil = FromZoid.nowMs() + 12000
+end
+
 -- Reached the house: mill about in the yard. Awake and shambling, never
 -- useless. holdAtGlass is the clamp for zombies actually on an opening, not
 -- for the crowd behind them. Called every tick from enforceTalisman, so the
@@ -3041,7 +3285,13 @@ function FromZoid.shouldSkipNest(building)
 		return true
 	end
 	local id = FromZoid.buildingId(building)
-	if id and FromZoid.occupiedBuildingIds()[id] then
+	if not id then
+		return false
+	end
+	if FromZoid.isSpawnHouseId(id) then
+		return true
+	end
+	if FromZoid.occupiedBuildingIds()[id] then
 		return true
 	end
 	return false
@@ -3051,21 +3301,15 @@ function FromZoid.shouldKeepZombiesOut(building)
 	if not building then
 		return false
 	end
-	if FromZoid.isBuildingSealed(building) and not FromZoid.buildingHasInvitation(building) then
+	if FromZoid.buildingHasInvitation(building) then
+		return false
+	end
+	if FromZoid.isBuildingSealed(building) then
 		return true
 	end
 	local id = FromZoid.buildingId(building)
-	if not id then
-		return false
-	end
-	local spawnId = FromZoid.getState().spawnBuildingId
-	if spawnId and spawnId == id then
-		local gt = getGameTime()
-		if not gt or gt:getNightsSurvived() <= 0 then
-			if not FromZoid.buildingHasOpenEntrance(building) then
-				return true
-			end
-		end
+	if id and FromZoid.isSpawnHouseId(id) then
+		return true
 	end
 	return false
 end

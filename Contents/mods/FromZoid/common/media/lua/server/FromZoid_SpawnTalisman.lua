@@ -3,20 +3,88 @@ if isClient() then
 end
 
 local function lockSpawnBuilding(building)
-	if not building then
+	return FromZoid.markSpawnHouse(building)
+end
+
+local tryHangOnPlayerHouse, tryBoardSpawnHouse, trySpawnAlarmClock
+
+local function rememberSpawnSquare(square)
+	if not square or not square.getX then
 		return
 	end
 	local state = FromZoid.getState()
-	if state.spawnBuildingId then
+	local key = string.format("%d|%d|%d", square:getX(), square:getY(), square:getZ())
+	local blob = state.pendingSpawnSquares or ""
+	if ("," .. blob .. ","):find("," .. key .. ",", 1, true) then
 		return
 	end
-	state.spawnBuildingId = FromZoid.buildingId(building)
+	if blob == "" then
+		state.pendingSpawnSquares = key
+	else
+		state.pendingSpawnSquares = blob .. "," .. key
+	end
 end
 
-local function clearLockedSpawnHouse()
-	local id = FromZoid.getState().spawnBuildingId
-	if id then
-		FromZoid.evictZombiesFromBuilding(id)
+local function houseFullyReady(id)
+	if not id then
+		return false
+	end
+	if not FromZoid.spawnFlagHas("spawnHangIds", id) then
+		return false
+	end
+	if FromZoid.isEnabled("BoardedSpawnHouse") and not FromZoid.spawnFlagHas("spawnBoardIds", id) then
+		return false
+	end
+	if not FromZoid.spawnFlagHas("spawnClockIds", id) then
+		return false
+	end
+	return true
+end
+
+local function resolvePendingSpawns()
+	local state = FromZoid.getState()
+	local blob = state.pendingSpawnSquares
+	if not blob or blob == "" then
+		return
+	end
+	local cell = getCell()
+	if not cell then
+		return
+	end
+	local keep = {}
+	for piece in string.gmatch(blob, "[^,]+") do
+		local x, y, z = piece:match("^(%-?%d+)|(%-?%d+)|(%-?%d+)$")
+		if x then
+			local sq = cell:getGridSquare(tonumber(x), tonumber(y), tonumber(z))
+			local b = sq and sq.getBuilding and sq:getBuilding() or nil
+			if b then
+				local id = FromZoid.markSpawnHouse(b)
+				FromZoid.evictZombiesFromBuilding(b)
+				tryHangOnPlayerHouse(nil, b)
+				tryBoardSpawnHouse(b)
+				trySpawnAlarmClock(b, nil)
+				if not houseFullyReady(id) then
+					keep[#keep + 1] = piece
+				end
+			else
+				keep[#keep + 1] = piece
+			end
+		end
+	end
+	state.pendingSpawnSquares = table.concat(keep, ",")
+end
+
+local function clearLockedSpawnHouses()
+	local toRemove = {}
+	FromZoid.eachLoadedZombie(function(zombie)
+		local sq = FromZoid.zombieSquare(zombie)
+		local b = sq and sq:getBuilding() or nil
+		if b and FromZoid.isSpawnHouseId(FromZoid.buildingId(b)) and FromZoid.shouldKeepZombiesOut(b) then
+			toRemove[#toRemove + 1] = zombie
+		end
+	end)
+	for i = 1, #toRemove do
+		FromZoid.removeZombieQuiet(toRemove[i])
 	end
 end
 
@@ -292,11 +360,12 @@ local function dropClockOnSquare(square)
 	return false
 end
 
-local function giveClockToPlayer()
-	local players = FromZoid.playerList()
-	for i = 1, #players do
-		local player = players[i]
-		local inv = player and player.getInventory and player:getInventory() or nil
+local function giveClockToPlayer(player)
+	local function giveTo(p)
+		if not p then
+			return false
+		end
+		local inv = p.getInventory and p:getInventory() or nil
 		if inv then
 			local item = makeClock()
 			if item and inv.AddItem then
@@ -309,173 +378,200 @@ local function giveClockToPlayer()
 				end
 			end
 		end
-		local sq = player and player.getCurrentSquare and player:getCurrentSquare() or nil
-		if dropClockOnSquare(sq) then
+		local sq = p.getCurrentSquare and p:getCurrentSquare() or nil
+		return dropClockOnSquare(sq)
+	end
+	if giveTo(player) then
+		return true
+	end
+	local players = FromZoid.playerList()
+	for i = 1, #players do
+		if players[i] ~= player and giveTo(players[i]) then
 			return true
 		end
 	end
 	return false
 end
 
-local function spawnBuildingForClock()
-	local state = FromZoid.getState()
+local function spawnBuildingForClock(player)
+	if player then
+		local sq = player.getCurrentSquare and player:getCurrentSquare() or nil
+		local building = sq and sq:getBuilding() or nil
+		if building then
+			lockSpawnBuilding(building)
+			return building
+		end
+	end
 	local players = FromZoid.playerList()
 	for i = 1, #players do
 		local sq = players[i]:getCurrentSquare()
 		local building = sq and sq:getBuilding() or nil
-		if building then
-			lockSpawnBuilding(building)
-			if not state.spawnBuildingId or FromZoid.buildingId(building) == state.spawnBuildingId then
-				return building
-			end
+		if building and FromZoid.isSpawnHouseId(FromZoid.buildingId(building)) then
+			return building
 		end
 	end
 	return nil
 end
 
-local function trySpawnAlarmClock(building)
-	local state = FromZoid.getState()
-	if state.spawnAlarmClock2 then
+trySpawnAlarmClock = function(building, player)
+	building = building or spawnBuildingForClock(player)
+	if not building then
+		return false
+	end
+	lockSpawnBuilding(building)
+	local id = FromZoid.buildingId(building)
+	if not id then
+		return false
+	end
+	if FromZoid.spawnFlagHas("spawnClockIds", id) then
 		return true
 	end
-	building = building or spawnBuildingForClock()
+	local state = FromZoid.getState()
 	local found = 0
 	local best = nil
 	local bestScore = 0
 	local dropSq = nil
-	if building then
-		lockSpawnBuilding(building)
-		eachLiveSquare(building, function(square, room)
-			if not square then
-				return
-			end
-			eachWorldItemOnSquare(square, function(item)
-				if isHouseAlarmClock(item) then
-					armClock(item)
-					found = found + 1
-				end
-			end)
-			eachContainerOnSquare(square, function(container)
-				if not container then
-					return
-				end
-				local items = container.getItems and container:getItems() or nil
-				if items then
-					for i = 0, items:size() - 1 do
-						local item = items:get(i)
-						if isHouseAlarmClock(item) then
-							armClock(item)
-							found = found + 1
-						end
-					end
-				end
-				local score = containerScore(container, room, square)
-				if score > bestScore then
-					bestScore = score
-					best = container
-				end
-			end)
-			if isBedroom(room, square) then
-				dropSq = square
-			elseif not dropSq then
-				dropSq = square
+	eachLiveSquare(building, function(square, room)
+		if not square then
+			return
+		end
+		eachWorldItemOnSquare(square, function(item)
+			if isHouseAlarmClock(item) then
+				armClock(item)
+				found = found + 1
 			end
 		end)
-	end
-	if found > 0 then
-		state.spawnAlarmClock2 = true
-		state.spawnAlarmClockDone = true
+		eachContainerOnSquare(square, function(container)
+			if not container then
+				return
+			end
+			local items = container.getItems and container:getItems() or nil
+			if items then
+				for i = 0, items:size() - 1 do
+					local item = items:get(i)
+					if isHouseAlarmClock(item) then
+						armClock(item)
+						found = found + 1
+					end
+				end
+			end
+			local score = containerScore(container, room, square)
+			if score > bestScore then
+				bestScore = score
+				best = container
+			end
+		end)
+		if isBedroom(room, square) then
+			dropSq = square
+		elseif not dropSq then
+			dropSq = square
+		end
+	end)
+	if found > 0 or (best and addClockToContainer(best)) or (dropSq and dropClockOnSquare(dropSq)) then
+		FromZoid.spawnFlagSet("spawnClockIds", id)
 		return true
 	end
-	if best and addClockToContainer(best) then
-		state.spawnAlarmClock2 = true
-		state.spawnAlarmClockDone = true
-		return true
-	end
-	if dropSq and dropClockOnSquare(dropSq) then
-		state.spawnAlarmClock2 = true
-		state.spawnAlarmClockDone = true
-		return true
-	end
-	state.spawnAlarmClockTries = (state.spawnAlarmClockTries or 0) + 1
-	if state.spawnAlarmClockTries >= 3 and giveClockToPlayer() then
-		state.spawnAlarmClock2 = true
-		state.spawnAlarmClockDone = true
+	local triesKey = "scTries_" .. id
+	state[triesKey] = (state[triesKey] or 0) + 1
+	if state[triesKey] >= 3 and giveClockToPlayer(player) then
+		FromZoid.spawnFlagSet("spawnClockIds", id)
 		return true
 	end
 	return false
 end
 
--- Always board the spawn house. Runs after the talisman is hung so the door
--- the charm picked is the one left clear.
 -- Always board the spawn house. Runs after the talisman is hung so the door
 -- the charm picked is the one left clear.
 --
--- Deliberately keeps re-running across the first few minutes of day 0:
--- OnNewGame fires before most of the building's squares have streamed in, so
--- an early pass finds barely any windows. The old version boarded whatever it
--- could see, reported success and never came back, which is why the spawn
--- house came out unboarded. addPlanks skips anything already barricaded, so
--- repeat passes only top up.
-local function tryBoardSpawnHouse(building)
+-- Deliberately keeps re-running until the building has streamed in:
+-- OnNewGame fires before most of the building's squares exist, so an early
+-- pass finds barely any windows. addPlanks skips anything already barricaded.
+tryBoardSpawnHouse = function(building)
 	if not FromZoid.isEnabled("BoardedSpawnHouse") then
 		return true
 	end
-	local state = FromZoid.getState()
-	if state.spawnBoardedDone then
-		return true
-	end
 	if not building then
-		local id = state.spawnBuildingId
-		local players = FromZoid.playerList()
-		local sq = players[1] and players[1]:getCurrentSquare() or nil
-		local b = sq and sq:getBuilding() or nil
-		if b and (not id or FromZoid.buildingId(b) == id) then
-			building = b
-		end
-	end
-	if not building or not FromZoid.boardUpBuilding then
 		return false
 	end
+	local id = FromZoid.buildingId(building)
+	if not id then
+		return false
+	end
+	if FromZoid.spawnFlagHas("spawnBoardIds", id) then
+		return true
+	end
+	if not FromZoid.boardUpBuilding then
+		return false
+	end
+	lockSpawnBuilding(building)
+	local state = FromZoid.getState()
 	local n = FromZoid.boardUpBuilding(building) or 0
-	state.spawnBoardedCount = (state.spawnBoardedCount or 0) + n
-	state.spawnBoardTries = (state.spawnBoardTries or 0) + 1
+	local triesKey = "sbTries_" .. id
+	local countKey = "sbCount_" .. id
+	state[countKey] = (state[countKey] or 0) + n
+	state[triesKey] = (state[triesKey] or 0) + 1
 	if FromZoid.isEnabled("TalismanDebug") then
 		print(string.format("[FromZoid] board pass %d: +%d planked, %d total, house %s",
-			state.spawnBoardTries, n, state.spawnBoardedCount,
-			tostring(FromZoid.buildingId(building))))
+			state[triesKey], n, state[countKey], tostring(id)))
 	end
-	if state.spawnBoardTries >= 10 and state.spawnBoardedCount > 0 then
-		state.spawnBoardedDone = true
+	if state[triesKey] >= 10 and state[countKey] > 0 then
+		FromZoid.spawnFlagSet("spawnBoardIds", id)
 		return true
 	end
 	return false
 end
 
-local function tryHangOnPlayerHouse()
-	if not FromZoid.isEnabled("EnableTalismans") then
-		return false
+local function giveSpareTalisman(player)
+	if not player or not FromZoid.isEnabled("EnableTalismans") then
+		return
 	end
-	local state = FromZoid.getState()
-	if state.spawnTalismanDone then
+	if not FromZoid.isEnabled("StartWithSpareTalisman") then
+		return
+	end
+	local inv = player.getInventory and player:getInventory() or nil
+	if not inv then
+		return
+	end
+	local has = false
+	if FromZoid.findTalismanInInventory then
+		local ok, item = pcall(FromZoid.findTalismanInInventory, inv)
+		has = ok and item
+	end
+	if has then
+		return
+	end
+	inv:AddItem(FromZoid.ITEM_TALISMAN)
+end
+
+tryHangOnPlayerHouse = function(player, building)
+	if not FromZoid.isEnabled("EnableTalismans") then
+		if building then
+			local id = FromZoid.buildingId(building)
+			if id then
+				FromZoid.spawnFlagSet("spawnHangIds", id)
+			end
+		end
 		return true
 	end
-	local players = FromZoid.playerList()
-	if #players == 0 then
-		return false
-	end
-	local square = players[1]:getCurrentSquare()
-	local building = square and square:getBuilding() or nil
-	lockSpawnBuilding(building)
-	if not building and state.spawnBuildingId then
-		return false
+	if not building then
+		if player then
+			local square = player.getCurrentSquare and player:getCurrentSquare() or nil
+			building = square and square:getBuilding() or nil
+		end
 	end
 	if not building then
 		return false
 	end
+	local id = lockSpawnBuilding(building)
+	if not id then
+		return false
+	end
+	if FromZoid.spawnFlagHas("spawnHangIds", id) then
+		return true
+	end
 	FromZoid.evictZombiesFromBuilding(building)
 	if FromZoid.isBuildingSealed(building) then
-		state.spawnTalismanDone = true
+		FromZoid.spawnFlagSet("spawnHangIds", id)
 		return true
 	end
 	local door = FromZoid.firstDoorInBuilding(building)
@@ -483,64 +579,95 @@ local function tryHangOnPlayerHouse()
 		return false
 	end
 	if FromZoid.hangTalismanOnDoor(nil, door) then
-		state.spawnTalismanDone = true
+		FromZoid.spawnFlagSet("spawnHangIds", id)
 		FromZoid.evictZombiesFromBuilding(building)
 		return true
 	end
 	return false
 end
 
-Events.OnNewGame.Add(function(player, square)
-	if FromZoid.isEnabled("EnableTalismans") and FromZoid.isEnabled("StartWithSpareTalisman") and player then
-		player:getInventory():AddItem(FromZoid.ITEM_TALISMAN)
+local function prepareSpawnHouse(player, square)
+	if square then
+		rememberSpawnSquare(square)
+	elseif player and player.getCurrentSquare then
+		square = player:getCurrentSquare()
+		rememberSpawnSquare(square)
 	end
-	local building = square and square:getBuilding() or (player and player:getCurrentSquare() and player:getCurrentSquare():getBuilding())
+	giveSpareTalisman(player)
+	local building = square and square.getBuilding and square:getBuilding() or nil
+	if not building and player and player.getCurrentSquare then
+		local sq = player:getCurrentSquare()
+		building = sq and sq:getBuilding() or nil
+	end
+	if not building then
+		return false
+	end
 	lockSpawnBuilding(building)
-	if building then
-		FromZoid.evictZombiesFromBuilding(building)
-	end
-	tryHangOnPlayerHouse()
+	FromZoid.evictZombiesFromBuilding(building)
+	tryHangOnPlayerHouse(player, building)
 	tryBoardSpawnHouse(building)
-	trySpawnAlarmClock(building)
+	trySpawnAlarmClock(building, player)
+	if player and player.getModData then
+		player:getModData().fromzoidHouseReady = true
+	end
+	return true
+end
+
+local function retrySpawnHouses()
+	resolvePendingSpawns()
+	local players = FromZoid.playerList()
+	for i = 1, #players do
+		local player = players[i]
+		local sq = player and player.getCurrentSquare and player:getCurrentSquare() or nil
+		local building = sq and sq:getBuilding() or nil
+		if building and FromZoid.isSpawnHouseId(FromZoid.buildingId(building)) then
+			tryHangOnPlayerHouse(player, building)
+			tryBoardSpawnHouse(building)
+			trySpawnAlarmClock(building, player)
+		end
+	end
+end
+
+Events.OnNewGame.Add(function(player, square)
+	prepareSpawnHouse(player, square)
+end)
+
+Events.OnCreatePlayer.Add(function(_, player)
+	if not player then
+		return
+	end
+	local md = player.getModData and player:getModData() or nil
+	if md and md.fromzoidHouseReady then
+		return
+	end
+	local hours = 0
+	if player.getHoursSurvived then
+		hours = player:getHoursSurvived() or 0
+	end
+	-- Load recreates the player. Hours > 0 means an existing survivor; do
+	-- not treat their current house as a new spawn. A brand-new character
+	-- is ~0 and may not get OnNewGame (second survivor in an old world).
+	if hours > 0.05 then
+		if md then
+			md.fromzoidHouseReady = true
+		end
+		return
+	end
+	local square = player.getCurrentSquare and player:getCurrentSquare() or nil
+	prepareSpawnHouse(player, square)
 end)
 
 Events.OnGameStart.Add(function()
-	trySpawnAlarmClock()
+	retrySpawnHouses()
 end)
 
 Events.EveryTenMinutes.Add(function()
-	local gt = getGameTime()
-	if gt and gt:getNightsSurvived() <= 0 then
-		local players = FromZoid.playerList()
-		if #players > 0 then
-			local sq = players[1]:getCurrentSquare()
-			lockSpawnBuilding(sq and sq:getBuilding() or nil)
-		end
-		clearLockedSpawnHouse()
-	end
+	resolvePendingSpawns()
+	clearLockedSpawnHouses()
 end)
 
 Events.EveryOneMinute.Add(function()
-	local state = FromZoid.getState()
-	local gt = getGameTime()
-	local day0 = gt and gt:getNightsSurvived() <= 0
-	if not state.spawnTalismanDone then
-		if not gt or not day0 then
-			if gt and not day0 then
-				state.spawnTalismanDone = true
-			end
-		else
-			tryHangOnPlayerHouse()
-		end
-	end
-	if not state.spawnAlarmClock2 then
-		trySpawnAlarmClock()
-	end
-	-- Retry: on a fresh game the building is often not resolvable yet when
-	-- OnNewGame fires, and LoadGridsquare ordering is not guaranteed either.
-	if not state.spawnBoardedDone and day0 then
-		tryBoardSpawnHouse(nil)
-	end
+	retrySpawnHouses()
 end)
 
 Events.OnZombieCreate.Add(function(zombie)
@@ -550,6 +677,6 @@ Events.OnZombieCreate.Add(function(zombie)
 	local sq = FromZoid.zombieSquare(zombie)
 	local building = sq and sq:getBuilding() or nil
 	if building and FromZoid.shouldKeepZombiesOut(building) then
-		FromZoid.removeZombieQuiet(zombie)
+		zombie:getModData().fromzoidEvict = true
 	end
 end)

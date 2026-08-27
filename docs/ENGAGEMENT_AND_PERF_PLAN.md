@@ -1,6 +1,9 @@
 # FromZoid — engagement + performance plan
 
-Status: **implemented**. Live pack is **1.2.2**. For current tick order, hold/nest rules, and playtest fixes, use [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md). Gathering defaults below are stale (`GatheringMax` is 40, interval is 1, sprinters are on day and night).
+Status: **historical**. Live pack is **1.2.3**. Do not implement from this file.
+
+For current tick order, hold/nest/doors/damage rules, sandbox defaults, and playtest fixes, use [CLAUDE_HANDOFF.md](CLAUDE_HANDOFF.md). Gathering, sprinter, strain, and UltraStrong numbers in this plan are stale.
+
 
 Restart PZ so sandbox options, items, and Lua load. New FromZoid sandbox rows default on; turn off what you do not want.
 

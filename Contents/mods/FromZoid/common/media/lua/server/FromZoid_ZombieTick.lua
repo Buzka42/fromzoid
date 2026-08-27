@@ -6,13 +6,39 @@ Events.OnZombieUpdate.Add(function(zombie)
 	if not zombie or not zombie:isAlive() then
 		return
 	end
+	local md = zombie:getModData()
+	-- Never removeFromWorld inside OnZombieCreate; that can hard-crash while
+	-- a cell is streaming. Flag there, drop them on the first real tick.
+	if md.fromzoidEvict then
+		FromZoid.removeZombieQuiet(zombie)
+		return
+	end
 	local ctx = FromZoid.refreshTickContext()
 	local sliced = FromZoid.inSlice(zombie, ctx)
-	local md = zombie:getModData()
 	local now = FromZoid.nowMs()
 	local indoor = FromZoid.squareIsIndoorHide(FromZoid.zombieSquare(zombie))
-	if md.fromzoidAsleep and not indoor then
+	local wakeSleeper = md.fromzoidAsleep and indoor and FromZoid.sleeperShouldWake(zombie, ctx)
+	if md.fromzoidAsleep and (not indoor or wakeSleeper) then
 		FromZoid.wakeZombieBody(zombie)
+		if wakeSleeper then
+			local nearest, nearestD = nil, 99
+			if ctx.players then
+				for i = 1, #ctx.players do
+					local p = ctx.players[i]
+					local d = zombie.DistTo and zombie:DistTo(p) or 99
+					if d < nearestD then
+						nearestD = d
+						nearest = p
+					end
+				end
+			end
+			if nearest and zombie.setTarget then
+				zombie:setTarget(nearest)
+			end
+			if FromZoid.markZombieHunting then
+				FromZoid.markZombieHunting(zombie, 25000)
+			end
+		end
 	elseif md.fromzoidAsleep then
 		FromZoid.pinZombieSleepPose(zombie)
 	elseif not indoor then
@@ -42,7 +68,7 @@ Events.OnZombieUpdate.Add(function(zombie)
 	end
 	-- Vanilla defaults canOpenDoors to false and may reset it. Keep ordinary
 	-- doors usable except while the talisman field has them held or loitering.
-	if sliced and not md.fromzoidHold and not md.fromzoidLoiter then
+	if sliced and not md.fromzoidHold and not md.fromzoidLoiter and not FromZoid.isWhisperWalker(zombie) then
 		if zombie.setCanOpenDoors then
 			pcall(function()
 				zombie:setCanOpenDoors(true)

@@ -53,9 +53,11 @@ function FromZoid.findTalismanInInventory(inv)
 		end
 	end
 	if inv.getFirstTagRecurse then
-		item = inv:getFirstTagRecurse("fromzoidtalisman")
-		if item then
-			return item
+		local ok, tagged = pcall(function()
+			return inv:getFirstTagRecurse("fromzoidtalisman")
+		end)
+		if ok and tagged then
+			return tagged
 		end
 	end
 	if not inv.getItems then

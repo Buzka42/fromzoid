@@ -1,6 +1,7 @@
 local lastEvent = 0
 local lastWoods = 0
 local flareUntil = 0
+local deviceBlip = nil
 
 local function offsetAround(player, minDist, maxDist)
 	minDist = minDist or 8
@@ -53,36 +54,104 @@ local function findRadio(player)
 	if not sq or not cell then
 		return nil
 	end
-	for dx = -3, 3 do
-		for dy = -3, 3 do
+	local found = {}
+	for dx = -8, 8 do
+		for dy = -8, 8 do
 			local n = cell:getGridSquare(sq:getX() + dx, sq:getY() + dy, sq:getZ())
 			if n and n.getObjects then
 				local objs = n:getObjects()
 				if objs then
 					for i = 0, objs:size() - 1 do
 						local obj = objs:get(i)
-						if obj and (instanceof(obj, "IsoRadio") or instanceof(obj, "IsoTelevision") or (obj.getDeviceData and obj:getDeviceData())) then
-							return obj
+						if obj and (instanceof(obj, "IsoRadio") or instanceof(obj, "IsoTelevision")) then
+							found[#found + 1] = obj
 						end
 					end
 				end
 			end
 		end
 	end
-	return nil
+	if #found == 0 then
+		return nil
+	end
+	return found[ZombRand(#found) + 1]
 end
 
-local function turnOnRadio(obj, player)
+local function deviceIsOn(obj)
+	local dd = obj and obj.getDeviceData and obj:getDeviceData() or nil
+	if not dd or not dd.getIsTurnedOn then
+		return false
+	end
+	local ok, on = pcall(function()
+		return dd:getIsTurnedOn()
+	end)
+	return ok and on and true or false
+end
+
+local function turnOffDevice(obj)
 	if not obj then
 		return
 	end
 	pcall(function()
 		local dd = obj.getDeviceData and obj:getDeviceData() or nil
 		if dd and dd.setIsTurnedOn then
-			dd:setIsTurnedOn(true)
+			dd:setIsTurnedOn(false)
 		end
 	end)
-	playNameWhisper(player)
+end
+
+local function tickDeviceBlip()
+	if not deviceBlip then
+		return
+	end
+	local now = FromZoid.nowMs and FromZoid.nowMs() or 0
+	if now < deviceBlip.offAt then
+		return
+	end
+	turnOffDevice(deviceBlip.obj)
+	deviceBlip = nil
+end
+
+local function turnOnRadio(obj, player)
+	if not obj or deviceIsOn(obj) then
+		return false
+	end
+	local ok = false
+	pcall(function()
+		local dd = obj.getDeviceData and obj:getDeviceData() or nil
+		if not dd or not dd.setIsTurnedOn then
+			return
+		end
+		if dd.setIsBatteryPowered then
+			dd:setIsBatteryPowered(true)
+		end
+		if dd.setHasBattery then
+			dd:setHasBattery(true)
+		end
+		if dd.setPower then
+			dd:setPower(100)
+		end
+		if dd.setDeviceVolume then
+			dd:setDeviceVolume(0.7)
+		end
+		if dd.setChannel then
+			if instanceof(obj, "IsoTelevision") then
+				dd:setChannel(203)
+			else
+				dd:setChannel(89000)
+			end
+		end
+		dd:setIsTurnedOn(true)
+		ok = true
+	end)
+	if not ok then
+		return false
+	end
+	deviceBlip = {
+		obj = obj,
+		offAt = (FromZoid.nowMs and FromZoid.nowMs() or 0) + 2500,
+	}
+	return true
 end
 
 local function flickerLights(player)
@@ -266,23 +335,22 @@ local function toggleUnsealedDoor(player)
 end
 
 local function delusionTrick(player)
-	local roll = ZombRand(7)
-	if roll == 0 then
-		local radio = findRadio(player)
-		if radio then
-			turnOnRadio(radio, player)
-		else
-			playNameWhisper(player)
+	local radio = findRadio(player)
+	if radio and ZombRand(100) < 40 then
+		if turnOnRadio(radio, player) then
+			return
 		end
-	elseif roll == 1 then
+	end
+	local roll = ZombRand(6)
+	if roll == 0 then
 		playNameWhisper(player)
-	elseif roll == 2 then
+	elseif roll == 1 then
 		playWorld(player, "ZombieSurprisedPlayer")
-	elseif roll == 3 then
+	elseif roll == 2 then
 		playWorld(player, "HumanFootstepsCombined")
-	elseif roll == 4 then
+	elseif roll == 3 then
 		playWorld(player, "DoorIsLocked")
-	elseif roll == 5 then
+	elseif roll == 4 then
 		flickerLights(player)
 	else
 		playNameWhisper(player)
@@ -358,6 +426,7 @@ Events.OnGameStart.Add(function()
 	lastEvent = 0
 	lastWoods = 0
 	flareUntil = 0
+	deviceBlip = nil
 end)
 
 function FromZoid.forceSanityFx(player)
@@ -574,6 +643,7 @@ end)
 local veilTick = 0
 local wasAsleep = false
 Events.OnPlayerUpdate.Add(function()
+	tickDeviceBlip()
 	local player = getPlayer()
 	local asleep = FromZoid.playerAsleep and FromZoid.playerAsleep(player)
 	if wasAsleep and not asleep then

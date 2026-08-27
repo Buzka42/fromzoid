@@ -325,6 +325,7 @@ function FromZoid.enforceTalisman(zombie, ctx, sliced)
 	-- or has one within reach. Keeping it held or stripping its target is
 	-- what stopped them ever connecting.
 	if FromZoid.targetIsExposedPlayer(zombie) or FromZoid.exposedPlayerNear(zombie, 3) then
+		FromZoid.clearWhisperWalk(zombie)
 		leaveSiege()
 		return
 	end
@@ -339,10 +340,13 @@ function FromZoid.enforceTalisman(zombie, ctx, sliced)
 	local building = sq and sq:getBuilding() or nil
 	if building and FromZoid.isBuildingSealed(building) then
 		if not FromZoid.buildingHasInvitation(building) then
-			keepOffSealedHouse(zombie, building, true)
-			return
-		end
-		if day then
+			if FromZoid.isWhisperWalker(zombie) then
+				ejectIfInside(zombie, building)
+			else
+				keepOffSealedHouse(zombie, building, true)
+				return
+			end
+		elseif day then
 			-- Invited overnight, but daybreak still clears the house.
 			shooFromSealed(zombie, building)
 			return
@@ -374,6 +378,57 @@ function FromZoid.enforceTalisman(zombie, ctx, sliced)
 	-- Already hidden indoors nearby: leave them alone.
 	if FromZoid.squareIsIndoorHide(sq) then
 		leaveSiege()
+		return
+	end
+
+	local function guideWhisperWalker()
+		if md.fromzoidWhisperUntil and now >= md.fromzoidWhisperUntil and not (md.fromzoidWhisperBackUntil and now < md.fromzoidWhisperBackUntil) then
+			if FromZoid.isEnabled("TalismanDebug") then
+				local dx = (md.fromzoidWhisperX or 0) - zombie:getX()
+				local dy = (md.fromzoidWhisperY or 0) - zombie:getY()
+				print(string.format("[FromZoid] whisper: gave up %.1f tiles out", math.sqrt(dx * dx + dy * dy)))
+			end
+			FromZoid.clearWhisperWalk(zombie)
+		end
+		if not FromZoid.isWhisperWalker(zombie) then
+			return false
+		end
+		if md.fromzoidHold then
+			FromZoid.releaseHold(zombie)
+		end
+		if zombie.setTarget then
+			zombie:setTarget(nil)
+		end
+		if zombie.setCanOpenDoors then
+			pcall(function()
+				zombie:setCanOpenDoors(false)
+			end)
+		end
+		ejectIfInside(zombie, sealed)
+		if md.fromzoidWhisperUntil and now < md.fromzoidWhisperUntil then
+			FromZoid.clearLoiter(zombie)
+			local cell = getCell()
+			local dest = cell and cell:getGridSquare(md.fromzoidWhisperX, md.fromzoidWhisperY, md.fromzoidWhisperZ or 0)
+			-- Do not repath on slice. Issuing pathToLocation every 10 ticks
+			-- restarts A* before they take a step, which is why Annie/Zelda
+			-- were assigned walks and never left the ring.
+			if dest and not FromZoid.whispererArrived(zombie) then
+				if not md.fromzoidWhisperPathed then
+					md.fromzoidWhisperPathed = true
+					FromZoid.pathZombieToSquare(zombie, dest)
+				elseif FromZoid.zombieStalled(zombie, "fromzoidWhisperMove", 1500) then
+					FromZoid.pathZombieToSquare(zombie, dest)
+				end
+			end
+			return true
+		end
+		if md.fromzoidWhisperBackUntil and now < md.fromzoidWhisperBackUntil then
+			FromZoid.loiterNearHouse(zombie, sealed)
+			return true
+		end
+		return false
+	end
+	if guideWhisperWalker() then
 		return
 	end
 

@@ -11,7 +11,7 @@
     "Sandbox_FromZoid_EnableWhispers": "Window whispers",
     "Sandbox_FromZoid_EnableWhispers_tooltip": "Night people speak only while loitering at a talisman-sealed house. Knox only speaks at windows.",
     "Sandbox_FromZoid_WhisperChance": "Whisper chance (percent / check)",
-    "Sandbox_FromZoid_WhisperChance_tooltip": "Once per minute, chance a night person at your sealed door or window speaks. Then at least 45 seconds of silence.",
+    "Sandbox_FromZoid_WhisperChance_tooltip": "About every 15 seconds at night, chance one person from the yard walks up to a window or door, speaks, then goes back. Then at least 45 seconds of silence.",
     "Sandbox_FromZoid_EnableDarkness": "Darkness events",
     "Sandbox_FromZoid_EnableDarkness_tooltip": "Rare fog and blackout events that last one to three days.",
     "Sandbox_FromZoid_DarknessDayChance": "Darkness roll each day (percent)",

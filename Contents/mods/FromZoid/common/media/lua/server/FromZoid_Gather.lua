@@ -78,7 +78,7 @@ local function tickGathering()
 	local candidates = {}
 	FromZoid.eachLoadedZombie(function(zombie)
 		local md = zombie:getModData()
-		if md.fromzoidHold or md.fromzoidLoiter then
+		if md.fromzoidHold or md.fromzoidLoiter or FromZoid.isWhisperWalker(zombie) then
 			enrolled = enrolled + 1
 			return
 		end

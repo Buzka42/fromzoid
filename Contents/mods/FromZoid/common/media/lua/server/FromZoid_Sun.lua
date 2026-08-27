@@ -570,7 +570,7 @@ local function tickCensus()
 	if not FromZoid.realTimeGate("census", 2000) then
 		return
 	end
-	local n = { total = 0, hold = 0, loiter = 0, gather = 0, asleep = 0, outdoor = 0, hunting = 0, porch = 0, inside = 0, walking = 0, targeting = 0, leaving = 0, stuck = 0, yard = 0 }
+	local n = { total = 0, hold = 0, loiter = 0, gather = 0, asleep = 0, outdoor = 0, hunting = 0, porch = 0, inside = 0, walking = 0, targeting = 0, leaving = 0, stuck = 0, yard = 0, whisper = 0 }
 	local now = FromZoid.nowMs()
 	-- The building the player is sealed inside, if any: "porch" counts who is
 	-- still pressed against it, which is the number that has to fall at dawn.
@@ -604,6 +604,9 @@ local function tickCensus()
 		-- this is the window charge; it should stay at or near zero.
 		if zombie.getTarget and zombie:getTarget() then
 			n.targeting = n.targeting + 1
+		end
+		if FromZoid.isWhisperWalker(zombie) then
+			n.whisper = n.whisper + 1
 		end
 		if md.fromzoidHold then
 			n.hold = n.hold + 1
@@ -672,11 +675,11 @@ local function tickCensus()
 	end
 	FromZoid._nestStats = {}
 	print(string.format(
-		"[FromZoid] %s tod=%.1f dawn+%s | loaded=%d outdoor=%d indoor=%d atwall=%d yard=%d insidesealed=%d walking=%d targeting=%d hold=%d loiter=%d leaving=%d stuck=%d gather=%d hunt=%d",
+		"[FromZoid] %s tod=%.1f dawn+%s | loaded=%d outdoor=%d indoor=%d atwall=%d yard=%d insidesealed=%d walking=%d targeting=%d hold=%d loiter=%d leaving=%d stuck=%d gather=%d hunt=%d whisper=%d",
 		FromZoid.isClockNight() and "night" or "day",
 		FromZoid.getTimeOfDayHours(),
 		tostring(dawnMinute),
-		n.total, n.outdoor, n.asleep, n.porch, n.yard, n.inside, n.walking, n.targeting, n.hold, n.loiter, n.leaving, n.stuck, n.gather, n.hunting))
+		n.total, n.outdoor, n.asleep, n.porch, n.yard, n.inside, n.walking, n.targeting, n.hold, n.loiter, n.leaving, n.stuck, n.gather, n.hunting, n.whisper))
 end
 
 Events.EveryOneMinute.Add(processSunCycle)

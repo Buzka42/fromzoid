@@ -109,7 +109,7 @@ local function applyWalkType(zombie, night, sprinters, hunting)
 	-- Loiterers own their own gait. They sprint the approach and shamble
 	-- once they reach the yard; letting the sprint pass reclaim them puts
 	-- them back to grinding into the wall at full speed.
-	if zombie:getModData().fromzoidLoiter then
+	if zombie:getModData().fromzoidLoiter or FromZoid.isWhisperWalker(zombie) then
 		return
 	end
 	local want = ""
@@ -167,7 +167,7 @@ function FromZoid.onCalmZombieUpdate(zombie, ctx, sliced)
 	if not FromZoid.isEnabled("CalmUntilProvoked") then
 		return
 	end
-	if zombie:getModData().fromzoidHold or zombie:getModData().fromzoidLoiter then
+	if zombie:getModData().fromzoidHold or zombie:getModData().fromzoidLoiter or FromZoid.isWhisperWalker(zombie) then
 		return
 	end
 	if huntUntil(zombie) then
@@ -230,7 +230,7 @@ local function applyAll()
 	local sprinters = FromZoid.isEnabled("NightSprinters")
 	local calm = FromZoid.isEnabled("CalmUntilProvoked")
 	FromZoid.eachLoadedZombie(function(zombie)
-		if zombie:getModData().fromzoidHold or zombie:getModData().fromzoidLoiter then
+		if zombie:getModData().fromzoidHold or zombie:getModData().fromzoidLoiter or FromZoid.isWhisperWalker(zombie) then
 			return
 		end
 		local hunting = (not calm) or huntUntil(zombie)
